@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* KaushalSaathi brand colors (PDF theme) */
+  --background:#fdf6f9; /* Soft warm pinkish background */
+  --foreground:#1f2937; /* Dark slate text */
+  --card:#ffffff;       /* White cards for clarity */
+  --card-foreground:#1f2937;
+  --popover:#ffffff;
+  --popover-foreground:#1f2937;
+
+  --primary:#f97316; /* Orange (main CTA / highlight) */
+  --primary-foreground:#ffffff;
+
+  --secondary:#3b82f6; /* Blue (secondary CTA / headings) */
+  --secondary-foreground:#ffffff;
+
+  --accent:#ec4899; /* Pink accent (matches PDF feel) */
+  --accent-foreground:#ffffff;
+
+  --muted:#f9e8ef; /* Very light pink muted areas */
+  --muted-foreground:#6b7280;
+
+  --destructive:#dc2626;
+  --destructive-foreground:#ffffff;
+
+  --border:#f3d9e2; /* Soft pinkish borders */
+  --input:#ffffff;
+  --ring:#f97316; /* Orange focus ring */
+
+  /* Charts (harmonized with PDF theme) */
+  --chart-1:#f97316; /* Orange */
+  --chart-2:#3b82f6; /* Blue */
+  --chart-3:#ec4899; /* Pink */
+  --chart-4:#fb923c; /* Light orange */
+  --chart-5:#60a5fa; /* Light blue */
+
+  --radius:0.75rem;
+
+  --sidebar:#ffffff;
+  --sidebar-foreground:#1f2937;
+  --sidebar-primary:#f97316;
+  --sidebar-primary-foreground:#ffffff;
+  --sidebar-accent:#3b82f6;
+  --sidebar-accent-foreground:#ffffff;
+  --sidebar-border:#f3d9e2;
+  --sidebar-ring:#ec4899;
+}
+
+.dark {
+  --background:#2d1b1f; 
+  --foreground:#f9fafb;
+
+  --card:#1f1f23;
+  --card-foreground:#f9fafb;
+
+  --popover:#2d1b1f;
+  --popover-foreground:#f9fafb;
+
+  --primary:#fb923c; /* Softer orange in dark mode */
+  --primary-foreground:#1f1f23;
+
+  --secondary:#60a5fa; /* Softer blue */
+  --secondary-foreground:#1f1f23;
+
+  --accent:#f472b6; /* Softer pink */
+  --accent-foreground:#1f1f23;
+
+  --muted:#3f2d33;
+  --muted-foreground:#d1d5db;
+
+  --destructive:#ef4444;
+  --destructive-foreground:#f9fafb;
+
+  --border:#3f2d33;
+  --input:#1f1f23;
+  --ring:#fb923c;
+
+  --chart-1:#fb923c;
+  --chart-2:#60a5fa;
+  --chart-3:#f472b6;
+  --chart-4:#f97316;
+  --chart-5:#3b82f6;
+
+  --sidebar:#1f1f23;
+  --sidebar-foreground:#f9fafb;
+  --sidebar-primary:#fb923c;
+  --sidebar-primary-foreground:#1f1f23;
+  --sidebar-accent:#60a5fa;
+  --sidebar-accent-foreground:#1f1f23;
+  --sidebar-border:#3f2d33;
+  --sidebar-ring:#f472b6;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Animations remain same */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes pulse-slow {
+  0%,100% { opacity:1; }
+  50% { opacity:0.8; }
+}
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
+.animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
