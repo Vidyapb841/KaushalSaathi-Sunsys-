@@ -52,11 +52,10 @@ export function Navigation() {
               <Image
                 src="/logos/ks-logo.jpg"
                 alt="KaushalSaathi Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
-                />
-
+                width={140}
+                height={50}
+                className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+              />
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-accent rounded-full animate-bounce opacity-80"></div>
             </div>
           </Link>
@@ -80,17 +79,17 @@ export function Navigation() {
             ))}
 
             {user ? (
-              <DropdownMenu>
+              <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                    <Avatar className="h-10 w-10">
-                      <AvatarFallback className="bg-primary text-primary-foreground">
-                        {user.name?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
+                  <Button
+                    variant="ghost"
+                    className="flex items-center space-x-2 font-medium hover:text-primary transition-colors"
+                  >
+                    <User className="h-5 w-5" />
+                    <span>Profile</span>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuContent align="end" sideOffset={8} className="w-48">
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium leading-none">{user.name || "User"}</p>
@@ -117,7 +116,7 @@ export function Navigation() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
+                  <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-600">
                     <LogOut className="mr-2 h-4 w-4" />
                     <span>Log out</span>
                   </DropdownMenuItem>
@@ -163,37 +162,32 @@ export function Navigation() {
               ))}
 
               {user ? (
-                <div className="space-y-2 pt-2 border-t border-border">
-                  <div className="px-3 py-2">
-                    <p className="text-sm font-medium">{user.name || "User"}</p>
-                    <p className="text-xs text-muted-foreground">{user.email}</p>
-                  </div>
-                  <Link
-                    href="/profile"
-                    className="block px-3 py-2 text-foreground hover:text-primary transition-all duration-300 font-medium rounded-md hover:bg-primary/10"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Profile
-                  </Link>
-                  <Link
-                    href="/my-courses"
-                    className="block px-3 py-2 text-foreground hover:text-primary transition-all duration-300 font-medium rounded-md hover:bg-primary/10"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    My Courses
-                  </Link>
-                  <Button
-                    onClick={() => {
-                      handleLogout()
-                      setIsOpen(false)
-                    }}
-                    variant="ghost"
-                    className="w-full justify-start text-left"
-                  >
-                    <LogOut className="mr-2 h-4 w-4" />
-                    Log out
-                  </Button>
-                </div>
+                <DropdownMenu modal={false}>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start px-3 py-2 text-foreground hover:text-primary font-medium"
+                    >
+                      <User className="mr-2 h-5 w-5" />
+                      <span>Profile</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" sideOffset={4} className="w-48">
+                    <DropdownMenuItem asChild>
+                      <Link href="/profile">Profile</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/my-courses">My Courses</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/settings">Settings</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout} className="text-red-600">
+                      Log out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               ) : (
                 <Button asChild className="w-full mt-2 bg-accent hover:bg-accent/90">
                   <Link href="/">Login</Link>

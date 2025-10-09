@@ -1,7 +1,7 @@
+// C:\Koushalsaathi(sunsys)1\app\page.tsx
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -21,12 +21,18 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
-  // Check backend session
   useEffect(() => {
     ;(async () => {
-      const res = await fetch("/api/auth/session")
-      const data = await res.json()
-      if (data?.user) router.push("/home")
+      try {
+        const res = await fetch("/api/auth/session", { cache: "no-store" })
+        if (res.ok) {
+          const data = await res.json()
+          if (data?.user) {
+            localStorage.setItem("kaushalsaathi_user", JSON.stringify(data.user))
+            router.push("/home")
+          }
+        }
+      } catch {}
     })()
   }, [router])
 
@@ -40,8 +46,9 @@ export default function LoginPage() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
         })
-        const data = await res.json()
-        if (!res.ok) throw new Error(data?.error || "Login failed")
+        const data = await res.json().catch(() => ({}))
+        if (!res.ok) throw new Error(data?.error || data?.message || "Login failed")
+        localStorage.setItem("kaushalsaathi_user", JSON.stringify(data.user || data))
         router.push("/home")
       } else {
         const res = await fetch("/api/auth/register", {
@@ -49,36 +56,34 @@ export default function LoginPage() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password, name, phone }),
         })
-        const data = await res.json()
-        if (!res.ok) throw new Error(data?.error || "Registration failed")
-        // auto-login after register
-        await fetch("/api/auth/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        })
+        const data = await res.json().catch(() => ({}))
+        if (!res.ok) throw new Error(data?.error || data?.message || "Registration failed")
+        localStorage.setItem("kaushalsaathi_user", JSON.stringify(data.user || data))
         router.push("/home")
       }
     } catch (err: any) {
-      alert(err.message)
+      alert(err.message || "Something went wrong")
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[url('/women-empowerment-digital-learning-illustration.png')] bg-cover bg-center opacity-5"></div>
+    <div className="flex flex-col items-center justify-start p-4 flex-grow relative">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-[url('/women-empowerment-digital-learning-illustration.png')] bg-cover bg-center opacity-5 pointer-events-none"></div>
 
+      {/* Center Card */}
       <Card className="w-full max-w-md relative z-10 shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
         <CardHeader className="text-center space-y-4">
+          {/* Center KaushalSaathi Logo */}
           <div className="flex justify-center">
             <Image
-              src="/logos/kaushalsaathi.png"
+              src="/logos/koushalsaathi.png"
               alt="KaushalSaathi Logo"
-              width={200}
-              height={80}
-              className="h-16 w-auto"
+              width={120}
+              height={120}
+              className="h-24 w-auto"
             />
           </div>
           <CardTitle className="text-2xl font-bold text-primary">
@@ -103,7 +108,7 @@ export default function LoginPage() {
                     placeholder="Enter your full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    required={!isLogin}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -114,7 +119,7 @@ export default function LoginPage() {
                     placeholder="Enter your phone number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    required={!isLogin}
+                    required
                   />
                 </div>
               </>
@@ -134,12 +139,6 @@ export default function LoginPage() {
                   required
                 />
               </div>
-              {isLogin && (
-                <p className="text-xs text-muted-foreground">
-                  Tip: Use your admin email ({process.env.NEXT_PUBLIC_ADMIN_HINT || "vidyapb2004@gmail.com"}) with
-                  password "pk" for admin access in dev.
-                </p>
-              )}
             </div>
 
             <div className="space-y-2">
@@ -171,12 +170,63 @@ export default function LoginPage() {
           </form>
 
           <div className="mt-6 text-center">
-            <button type="button" onClick={() => setIsLogin(!isLogin)} className="text-sm text-primary hover:underline">
+            <button
+              type="button"
+              onClick={() => setIsLogin(!isLogin)}
+              className="text-sm text-primary hover:underline"
+            >
               {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
             </button>
           </div>
         </CardContent>
       </Card>
+
+      {/* Side Logos */}
+      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between w-full mt-6 space-y-4 md:space-y-0 md:px-6 md:absolute md:top-1/4">
+        {/* Left Logos */}
+        <div className="flex flex-row md:flex-col items-center md:space-y-6 space-x-6 md:space-x-0">
+          <a href="https://chalosaathi.com" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/logos/chalosaathi.jpg"
+              alt="Chalo Saathi"
+              width={300}
+              height={300}
+              className="rounded"
+            />
+          </a>
+          <a href="https://internsaathi.com" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/logos/internsaathi.jpg"
+              alt="Intern Saathi"
+              width={300}
+              height={300}
+              className="rounded"
+            />
+          </a>
+        </div>
+
+        {/* Right Logos */}
+        <div className="flex flex-row md:flex-col items-center md:space-y-6 space-x-6 md:space-x-0 mt-4 md:mt-0">
+          <a href="https://naukrisaathi.com" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/logos/NAUKRISAATHI-Logo.jpg"
+              alt="Naukri Saathi"
+              width={300}
+              height={300}
+              className="rounded"
+            />
+          </a>
+          <a href="https://tasksaathi.com" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/logos/task saathi png.png"
+              alt="Task Saathi"
+              width={300}
+              height={300}
+              className="rounded"
+            />
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

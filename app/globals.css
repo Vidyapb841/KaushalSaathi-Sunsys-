@@ -1,98 +1,111 @@
+/* C:\Koushalsaathi(sunsys)1\app\globals.css */
+
+/* keep your imports and theme - unchanged */
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* KaushalSaathi brand colors (PDF theme) */
-  --background:#fdf6f9; /* Soft warm pinkish background */
-  --foreground:#1f2937; /* Dark slate text */
-  --card:#ffffff;       /* White cards for clarity */
-  --card-foreground:#1f2937;
-  --popover:#ffffff;
-  --popover-foreground:#1f2937;
+  /* 🌸 KaushalSaathi Lavender Theme */
+  --background: #b78ed3; /* Soft lavender main background */
+  --foreground: #15151c; /* Deep charcoal text for contrast */
 
-  --primary:#f97316; /* Orange (main CTA / highlight) */
-  --primary-foreground:#ffffff;
+  --card: #ffffff; /* White cards for clarity */
+  --card-foreground: #1f1f2e;
 
-  --secondary:#3b82f6; /* Blue (secondary CTA / headings) */
-  --secondary-foreground:#ffffff;
+  --popover: #ffffff;
+  --popover-foreground: #1f1f2e;
 
-  --accent:#ec4899; /* Pink accent (matches PDF feel) */
-  --accent-foreground:#ffffff;
+  /* 🟣 Primary (lavender tone highlight) */
+  --primary: #a678d5;
+  --primary-foreground: #ffffff;
 
-  --muted:#f9e8ef; /* Very light pink muted areas */
-  --muted-foreground:#6b7280;
+  /* 🔵 Secondary (calm blue tone) */
+  --secondary: #6174cb;
+  --secondary-foreground: #ffffff;
 
-  --destructive:#dc2626;
-  --destructive-foreground:#ffffff;
+  /* 💜 Accent (soft pinkish lavender) */
+  --accent: #b48ed6;
+  --accent-foreground: #ffffff;
 
-  --border:#f3d9e2; /* Soft pinkish borders */
-  --input:#ffffff;
-  --ring:#f97316; /* Orange focus ring */
+  /* Muted (light lavender tint) */
+  --muted: #e8dbf2;
+  --muted-foreground: #5b5b7a;
 
-  /* Charts (harmonized with PDF theme) */
-  --chart-1:#f97316; /* Orange */
-  --chart-2:#3b82f6; /* Blue */
-  --chart-3:#ec4899; /* Pink */
-  --chart-4:#fb923c; /* Light orange */
-  --chart-5:#60a5fa; /* Light blue */
+  /* 🔴 Destructive */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
 
-  --radius:0.75rem;
+  /* Borders & Input */
+  --border: #c9b5e0; /* Lavender border */
+  --input: #ffffff;
+  --ring: #a678d5;
 
-  --sidebar:#ffffff;
-  --sidebar-foreground:#1f2937;
-  --sidebar-primary:#f97316;
-  --sidebar-primary-foreground:#ffffff;
-  --sidebar-accent:#3b82f6;
-  --sidebar-accent-foreground:#ffffff;
-  --sidebar-border:#f3d9e2;
-  --sidebar-ring:#ec4899;
+  /* 📊 Charts */
+  --chart-1: #a678d5; /* Lavender */
+  --chart-2: #6b7fd7; /* Blue */
+  --chart-3: #b48ed6; /* Pink lavender */
+  --chart-4: #d8b4fe; /* Light purple */
+  --chart-5: #9ca3af; /* Neutral gray */
+
+  --radius: 0.75rem;
+
+  /* Sidebar theme */
+  --sidebar: #ede3f7; /* Pale lavender */
+  --sidebar-foreground: #1f1f2e;
+  --sidebar-primary: #a678d5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #6b7fd7;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #c9b5e0;
+  --sidebar-ring: #a678d5;
 }
 
+/* 🌙 Dark mode - deep lavender night */
 .dark {
-  --background:#2d1b1f; 
-  --foreground:#f9fafb;
+  --background: #2b1f38; 
+  --foreground: #f9fafb;
 
-  --card:#1f1f23;
-  --card-foreground:#f9fafb;
+  --card: #3a2a4b;
+  --card-foreground: #f9fafb;
 
-  --popover:#2d1b1f;
-  --popover-foreground:#f9fafb;
+  --popover: #3a2a4b;
+  --popover-foreground: #f9fafb;
 
-  --primary:#fb923c; /* Softer orange in dark mode */
-  --primary-foreground:#1f1f23;
+  --primary: #c9a6f3;
+  --primary-foreground: #1f1f2e;
 
-  --secondary:#60a5fa; /* Softer blue */
-  --secondary-foreground:#1f1f23;
+  --secondary: #8899f2;
+  --secondary-foreground: #1f1f2e;
 
-  --accent:#f472b6; /* Softer pink */
-  --accent-foreground:#1f1f23;
+  --accent: #b48ed6;
+  --accent-foreground: #1f1f2e;
 
-  --muted:#3f2d33;
-  --muted-foreground:#d1d5db;
+  --muted: #4b3a5e;
+  --muted-foreground: #d1d5db;
 
-  --destructive:#ef4444;
-  --destructive-foreground:#f9fafb;
+  --destructive: #ef4444;
+  --destructive-foreground: #f9fafb;
 
-  --border:#3f2d33;
-  --input:#1f1f23;
-  --ring:#fb923c;
+  --border: #5a4a6b;
+  --input: #3a2a4b;
+  --ring: #c9a6f3;
 
-  --chart-1:#fb923c;
-  --chart-2:#60a5fa;
-  --chart-3:#f472b6;
-  --chart-4:#f97316;
-  --chart-5:#3b82f6;
+  --chart-1: #c9a6f3;
+  --chart-2: #8899f2;
+  --chart-3: #b48ed6;
+  --chart-4: #a678d5;
+  --chart-5: #6b7fd7;
 
-  --sidebar:#1f1f23;
-  --sidebar-foreground:#f9fafb;
-  --sidebar-primary:#fb923c;
-  --sidebar-primary-foreground:#1f1f23;
-  --sidebar-accent:#60a5fa;
-  --sidebar-accent-foreground:#1f1f23;
-  --sidebar-border:#3f2d33;
-  --sidebar-ring:#f472b6;
+  --sidebar: #3a2a4b;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #c9a6f3;
+  --sidebar-primary-foreground: #1f1f2e;
+  --sidebar-accent: #8899f2;
+  --sidebar-accent-foreground: #1f1f2e;
+  --sidebar-border: #5a4a6b;
+  --sidebar-ring: #b48ed6;
 }
 
 @theme inline {
@@ -137,18 +150,22 @@
 }
 
 @layer base {
-  * { @apply border-border outline-ring/50; }
-  body { @apply bg-background text-foreground; }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-/* Animations remain same */
+/* 🌟 Animations (unchanged) */
 @keyframes fadeInUp {
-  from { opacity:0; transform:translateY(30px); }
-  to { opacity:1; transform:translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 @keyframes pulse-slow {
-  0%,100% { opacity:1; }
-  50% { opacity:0.8; }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
 .animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
 .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }

@@ -1,3 +1,5 @@
+// C:\Koushalsaathi(sunsys)1\app\layout.tsx
+
 import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
@@ -18,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>{children}</body>
+      <body
+        className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   )
 }

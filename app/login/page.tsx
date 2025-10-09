@@ -36,9 +36,7 @@ export default function LoginPage() {
         throw new Error(data.message || "Login failed")
       }
 
-      // Save token in localStorage
       localStorage.setItem("token", data.token)
-
       router.push("/home")
     } catch (err: any) {
       setError(err.message)
@@ -48,9 +46,32 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4 relative">
+
+      {/* Left Logos */}
+      <div className="absolute left-2 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
+        <a href="https://chalosaathi.com" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/chalosaathi.jpg" alt="ChaloSaathi" className="w-16 h-16 object-contain" />
+        </a>
+        <a href="https://internsaathi.com" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/internsaathi.jpg" alt="InternSaathi" className="w-16 h-16 object-contain" />
+        </a>
+      </div>
+
+      {/* Right Logos */}
+      <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
+        <a href="https://naukrisaathi.com" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/NAUKRISAATHI-Logo.jpg" alt="NaukriSaathi" className="w-16 h-16 object-contain" />
+        </a>
+        <a href="https://tasksaathi.com" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/task saathi png.png" alt="TaskSaathi" className="w-16 h-16 object-contain" />
+        </a>
+      </div>
+
+      {/* Login Card */}
+      <div className="w-full max-w-md z-40">
         <div className="text-center mb-8">
+          <img src="/logos/kaushalsaathi.png" alt="KaushalSaathi" className="mx-auto mb-3 w-20 h-20 object-contain" />
           <h1 className="text-3xl font-bold text-primary mb-2">KaushalSaathi</h1>
           <p className="text-muted-foreground">Empowering Women Through Skills</p>
         </div>
