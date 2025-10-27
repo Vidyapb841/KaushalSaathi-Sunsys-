@@ -127,8 +127,8 @@ export default function CoursesPage() {
               <CardHeader className="pb-4">
                 <CardTitle className="text-2xl text-secondary">ADVANCED 6-Month Course</CardTitle>
                 <div className="flex items-center gap-2">
-                  <span className="text-3xl font-bold text-foreground">₹4,999</span>
-                  <span className="text-lg text-muted-foreground line-through">₹10,000</span>
+                  <span className="text-3xl font-bold text-foreground">₹2,999</span>
+                  <span className="text-lg text-muted-foreground line-through">₹5,000</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -152,7 +152,7 @@ export default function CoursesPage() {
                 </div>
                 <Button asChild variant="secondary" className="w-full text-lg py-6">
                   <Link href="/register?course=advanced">
-                    Enroll Now - Only ₹4,999 <ArrowRight className="ml-2 h-5 w-5" />
+                    Enroll Now - Only ₹2,999 <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </CardContent>

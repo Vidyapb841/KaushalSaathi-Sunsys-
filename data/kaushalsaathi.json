@@ -519,6 +519,24 @@
       "phone": "09071159976",
       "role": "user",
       "createdAt": "2025-10-09T14:50:49.366Z"
+    },
+    {
+      "id": "47943092-868a-4917-92ad-e28618a388ae",
+      "email": "testuser7867@gmail.com",
+      "passwordHash": "Test@123",
+      "name": "Vidya P B",
+      "phone": "09071159976",
+      "role": "user",
+      "createdAt": "2025-10-10T09:52:26.145Z"
+    },
+    {
+      "id": "39dc0939-af4e-46ac-8eba-7c9c1d3b78ba",
+      "email": "ashapb300@gmail.com",
+      "passwordHash": "Ashapb@1234567",
+      "name": "ashapb20@gmail.com",
+      "phone": "00000000",
+      "role": "user",
+      "createdAt": "2025-10-11T17:49:15.371Z"
     }
   ],
   "sessions": [

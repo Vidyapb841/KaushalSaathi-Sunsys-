@@ -5,7 +5,9 @@ import { readDb, writeDb } from "../utils/jsonDb.js";
 
 const router = express.Router();
 
+// -------------------------------
 // REGISTER
+// -------------------------------
 router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -41,7 +43,9 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// -------------------------------
 // LOGIN
+// -------------------------------
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -51,10 +55,13 @@ router.post("/login", async (req, res) => {
 
     if (!user) return res.status(400).json({ message: "User not found" });
 
-    const isMatch = await bcrypt.compare(password, user.passwordHash);
+    // ✅ Login works for both plain-text and hashed passwords
+    const isMatch =
+      user.passwordHash === password || (await bcrypt.compare(password, user.passwordHash));
+
     if (!isMatch) return res.status(400).json({ message: "Invalid password" });
 
-    // Remove password before sending back
+    // Remove password before sending response
     const { passwordHash, ...userData } = user;
     res.status(200).json({ message: "Login success", user: userData });
   } catch (err) {
