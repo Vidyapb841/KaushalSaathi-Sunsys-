@@ -1,80 +1,166 @@
 "use client";
 
 import Link from "next/link";
-import { Twitter, Instagram, Linkedin } from "lucide-react";
+import { Linkedin, Instagram, Twitter, Mail, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-primary via-secondary to-accent text-white">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-4">
-        {/* Top Section: Contact | Powered By | Social */}
-        <div className="grid grid-cols-3 items-center gap-2 text-xs sm:text-sm">
-          
-          {/* Contact Info - Left */}
-          <div className="flex flex-col items-start space-y-0.5">
-            <p className="font-semibold">Contact Us:</p>
-            <p>info@kaushalsaathi.com</p>
-            <p>admin@kaushalsaathi.com</p>
-          </div>
-
-          {/* Powered By - Center */}
-          <div className="flex flex-col items-center space-y-1">
-            <p className="opacity-80 text-sm">Powered by</p>
+    <footer className="bg-[#001A6E] text-white py-14 px-4 sm:px-8 border-t border-[#074799]/40">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+        {/* Column 1 - Brand Info */}
+        <div className="col-span-2">
+          <h2 className="text-2xl font-bold text-[#E1FFBB] mb-3">
+            KaushalSaathi
+          </h2>
+          <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+            Education that empowers skills that last. <br />
+            Join the best platform for career growth and digital learning.
+          </p>
+          <p className="text-sm text-gray-400 mb-3">Join our social media</p>
+          <div className="flex space-x-3 mt-3">
             <a
-              href="http://www.sunsysglobal.com"
+              href="https://www.linkedin.com/company/kaushalsaathi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2"
+              className="p-2 bg-white rounded-full hover:scale-110 transition-transform"
             >
-              <div className="flex items-center gap-3">
-                {/* Enlarged Sunsys logo */}
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-28%20at%2017.35.46_ad39b6ae.jpg-VrhYLWOIONEzRpB4xwJQ92eD9YcpCJ.jpeg"
-                  alt="Sunsys Techsol Pvt. Ltd."
-                  className="h-20 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                />
-                {/* LinkedIn Icon beside logo */}
-                <a
-                  href="https://www.linkedin.com/company/sunsystechsol-pvt-ltd/posts/?feedView=all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
-                  title="Visit Sunsys LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" style={{ color: "#0A66C2" }} />
-                </a>
-              </div>
-              <span className="font-bold text-base opacity-90 leading-tight text-center">
-                Sunsys Techsol Pvt. Ltd.
-              </span>
+              <Linkedin className="h-5 w-5" style={{ color: "#0A66C2" }} />
             </a>
-          </div>
-
-          {/* Social Links - Right */}
-          <div className="flex justify-end space-x-3">
-            {[
-              { Icon: Linkedin, link: "https://www.linkedin.com/company/kaushalsaathi/", color: "#0A66C2" },
-              { Icon: Instagram, link: "https://www.instagram.com/sunsystechsol", color: "#E1306C" },
-              { Icon: Twitter, link: "https://twitter.com/sunsystechsol", color: "#1DA1F2" },
-            ].map(({ Icon, link, color }, index) => (
-              <a
-                key={index}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
-              >
-                <Icon className="h-6 w-6" style={{ color }} />
-              </a>
-            ))}
+            <a
+              href="https://www.instagram.com/sunsystechsol"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-white rounded-full hover:scale-110 transition-transform"
+            >
+              <Instagram className="h-5 w-5" style={{ color: "#E1306C" }} />
+            </a>
+            <a
+              href="https://twitter.com/sunsystechsol"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-white rounded-full hover:scale-110 transition-transform"
+            >
+              <Twitter className="h-5 w-5" style={{ color: "#1DA1F2" }} />
+            </a>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-3 pt-2 text-center text-xs opacity-80">
-          © 2025 KaushalSaathi. All Rights Reserved. |{" "}
-          <Link href="#" className="hover:underline">Privacy Policy</Link> |{" "}
-          <Link href="#" className="hover:underline">Terms & Conditions</Link>
+        {/* Column 2 - Home */}
+        <div>
+          <h3 className="text-[#E1FFBB] font-semibold mb-3 text-lg">Home</h3>
+          <ul className="space-y-2 text-gray-300 text-sm">
+            <li>
+              <Link href="/about" className="hover:text-[#009990]">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link href="/courses" className="hover:text-[#009990]">
+                Courses
+              </Link>
+            </li>
+            <li>
+              <Link href="/features" className="hover:text-[#009990]">
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="hover:text-[#009990]">
+                Blog
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 3 - Quick Links */}
+        <div>
+          <h3 className="text-[#E1FFBB] font-semibold mb-3 text-lg">
+            Quick Links
+          </h3>
+          <ul className="space-y-2 text-gray-300 text-sm">
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                Discussion
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                Terms & Conditions
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                FAQ
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 4 - Resources */}
+        <div>
+          <h3 className="text-[#E1FFBB] font-semibold mb-3 text-lg">
+            Resources
+          </h3>
+          <ul className="space-y-2 text-gray-300 text-sm">
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                Feedback
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                Support
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                Community
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-[#009990]">
+                Guides
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 5 - Contact */}
+        <div>
+          <h3 className="text-[#E1FFBB] font-semibold mb-3 text-lg">
+            Contact Us
+          </h3>
+          <ul className="space-y-3 text-gray-300 text-sm">
+            <li className="flex items-center gap-3">
+              <Mail className="h-5 w-5 text-[#009990]" />
+              <span>skillz@gmail.com</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Phone className="h-5 w-5 text-[#009990]" />
+              <span>+451 245 3687</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Divider */}
+      <div className="mt-10 border-t border-[#074799]/40 pt-6 flex flex-col md:flex-row justify-between text-xs text-gray-400">
+        <p>Copyright © KaushalSaathi. All Rights Reserved.</p>
+        <div className="flex gap-6 mt-3 md:mt-0">
+          <Link href="#" className="hover:text-[#009990]">
+            Privacy
+          </Link>
+          <Link href="#" className="hover:text-[#009990]">
+            Security
+          </Link>
+          <Link href="#" className="hover:text-[#009990]">
+            Terms
+          </Link>
         </div>
       </div>
     </footer>

@@ -37,7 +37,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#009990] hover:bg-[#074799] text-white px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl"
+                className="bg-[#009990] hover:bg-[#074799] text-white px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 "
               >
                 <Link href="/courses">Explore Programs</Link>
               </Button>
@@ -68,36 +68,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ✅ Stats Section (unchanged) */}
-      <section className="py-10 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[
-              { number: "1000+", label: "Women Empowered", color: "primary" },
-              { number: "15+", label: "Expert Mentors", color: "secondary" },
-              { number: "95%", label: "Success Rate", color: "accent" },
-              {
-                number: "Remote Access",
-                label: "Remotly Accessible",
-                color: "primary",
-              },
-            ].map((stat, index) => (
-              <div key={index} className="group">
-                <div
-                  className={`text-2xl md:text-3xl font-bold text-${stat.color} mb-1 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {stat.number}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ✅ Features Section (unchanged) */}
+     
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
