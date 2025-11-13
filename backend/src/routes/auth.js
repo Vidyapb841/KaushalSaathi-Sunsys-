@@ -2,6 +2,7 @@ import express from "express";
 import bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
 import { readDb, writeDb } from "../utils/jsonDb.js";
+import { forgotPassword, resetPassword } from '../models/authController.js'; // Fixed import path
 
 const router = express.Router();
 
@@ -69,5 +70,9 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+// Password routes
+router.post('/forgot-password', forgotPassword);
+router.post('/reset-password', resetPassword);
 
 export default router;

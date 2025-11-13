@@ -537,6 +537,22 @@
       "phone": "00000000",
       "role": "user",
       "createdAt": "2025-10-11T17:49:15.371Z"
+    },
+    {
+      "id": "5a4d6b62-f067-4537-8f13-74450481bcff",
+      "name": "Anushka Jain",
+      "email": "janushkaa.123@gmail.com",
+      "passwordHash": "$2a$10$oFUnNIgyIBpEnO.m8RKOjOJnT4c9iedWbfnt/idg8t2Yy9x8x40Wa",
+      "role": "user",
+      "createdAt": "2025-11-11T10:34:40.173Z"
+    },
+    {
+      "id": "8a28d4ca-ac93-4bc2-8536-d4ac6630041f",
+      "name": "Anushka Jain",
+      "email": "anushka@gmail.com",
+      "passwordHash": "$2a$12$TxNQavWwaticMx8x2j/vZ.fdjsXD6J20tBIgBFjBHDuELnoKU.Ow6",
+      "role": "user",
+      "createdAt": "2025-11-11T11:07:00.745Z"
     }
   ],
   "sessions": [

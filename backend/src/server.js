@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/auth.js";
 
-
 dotenv.config();
 
 const app = express();
@@ -22,8 +21,13 @@ mongoose
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// Routes
+// Routes - ONLY use authRoutes
 app.use("/api/auth", authRoutes);
+
+// Test route
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend is working!" });
+});
 
 // Start server
 const PORT = process.env.PORT || 5000;

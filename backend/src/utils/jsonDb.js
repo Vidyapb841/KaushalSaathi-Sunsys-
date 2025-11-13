@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const dbPath = path.resolve("C:/Koushalsaathi(sunsys)/data/kaushalsaathi.json");
+const dbPath = path.resolve("F:/sunsys/part2/part2/data/kaushalsaathi.json");
 
 // Read JSON
 export function readDb() {
