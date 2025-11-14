@@ -240,4 +240,8 @@ export default function AboutPage() {
       <Footer />
     </div>
   );
+
+
 }
+
+// maru comment?
