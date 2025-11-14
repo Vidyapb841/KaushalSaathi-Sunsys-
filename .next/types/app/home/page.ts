@@ -1,4 +1,4 @@
-// File: C:\Users\navee\OneDrive\Desktop\sunsys\KaushalSaathi-Sunsys-\app\home\page.tsx
+// File: E:\new ks\KaushalSaathi-Sunsys-\app\home\page.tsx
 import * as entry from '../../../../app/home/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
