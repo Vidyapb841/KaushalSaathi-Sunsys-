@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -28,33 +27,65 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  // Check if already logged in
+  // Check if already logged in - BUT ONLY FOR LOGIN MODE
   useEffect(() => {
-    (async () => {
-      try {
-        const res = await fetch("/api/auth/session", { cache: "no-store" });
-        if (res.ok) {
-          const data = await res.json();
-          if (data?.user) {
-            localStorage.setItem(
-              "kaushalsaathi_user",
-              JSON.stringify(data.user)
-            );
-            router.push("/home");
+    if (!isForgot) { // Only check session if not in forgot password mode
+      (async () => {
+        try {
+          const res = await fetch("/api/auth/session", { cache: "no-store" });
+          if (res.ok) {
+            const data = await res.json();
+            if (data?.user) {
+              localStorage.setItem(
+                "kaushalsaathi_user",
+                JSON.stringify(data.user)
+              );
+              router.push("/home");
+            }
           }
-        }
-      } catch {}
-    })();
-  }, [router]);
+        } catch {}
+      })();
+    }
+  }, [router, isForgot]); // Add isForgot as dependency
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     try {
+      // STEP 4: Forgot Password functionality - FIXED
       if (isForgot) {
-        alert("Password reset link sent to your email (demo only).");
-      } else if (isLogin) {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        console.log("Sending reset link to:", email);
+        
+        // Check if backend URL is available
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+        if (!backendUrl) {
+          alert("Backend URL not configured. Please check your environment variables.");
+          setIsLoading(false);
+          return;
+        }
+
+        const res = await fetch(`${backendUrl}/api/auth/forgot-password`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        
+        const data = await res.json();
+        console.log("Reset response:", data);
+        
+        alert(data.message || "Reset link sent to your email!");
+        setIsForgot(false); // Go back to login after sending reset link
+        setIsLoading(false);
+        return; // IMPORTANT: Return here to prevent further execution
+      }
+
+      // Login functionality
+      if (isLogin) {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
@@ -68,7 +99,8 @@ export default function LoginPage() {
         );
         router.push("/home");
       } else {
-        const res = await fetch("http://localhost:5000/api/auth/register", {
+        // Registration functionality
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password, name, phone }),
@@ -85,10 +117,34 @@ export default function LoginPage() {
         router.push("/home");
       }
     } catch (err: any) {
-      alert(err.message || "Something went wrong");
+      console.error("Submit error:", err);
+      alert(err.message || "Something went wrong. Please check if the backend server is running.");
     } finally {
       setIsLoading(false);
     }
+  };
+
+  // Reset form when switching modes - BUT KEEP EMAIL
+  const handleModeSwitch = (newIsForgot: boolean, newIsLogin: boolean) => {
+    setIsForgot(newIsForgot);
+    setIsLogin(newIsLogin);
+    // Keep the email, but clear other fields
+    setPassword("");
+    setName("");
+    setPhone("");
+  };
+
+  // Switch to forgot password mode WITH current email
+  const switchToForgotPassword = () => {
+    setIsForgot(true);
+    // Email is already populated from the login form
+  };
+
+  // Switch back to login from forgot password - KEEP EMAIL
+  const switchBackToLogin = () => {
+    setIsForgot(false);
+    setIsLogin(true);
+    // Keep the email for login
   };
 
   return (
@@ -160,12 +216,15 @@ export default function LoginPage() {
             )}
 
             <div>
-              <div className="relative ">
+              <Label htmlFor="email" className="text-[#E1FFBB]">
+                Email
+              </Label>
+              <div className="relative">
                 <Mail className="absolute left-3 top-3 h-4 w-4 text-[#009990]" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Username or Email"
+                  placeholder="Enter your email"
                   className="pl-9 text-[#001A6E] bg-white"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -176,6 +235,9 @@ export default function LoginPage() {
 
             {!isForgot && (
               <div>
+                <Label htmlFor="password" className="text-[#E1FFBB]">
+                  Password
+                </Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-[#009990]" />
                   <Input
@@ -202,8 +264,8 @@ export default function LoginPage() {
             )}
 
             {isForgot && (
-              <p className="text-sm text-white  inline-block px-2 py-1 rounded-md">
-                Enter your email to receive password reset instructions.
+              <p className="text-sm text-white inline-block px-2 py-1 rounded-md">
+                We'll send a reset link to: <strong>{email}</strong>
               </p>
             )}
 
@@ -254,11 +316,11 @@ export default function LoginPage() {
 
           {/* Links */}
           <div className="text-center text-sm mt-4">
-            {!isForgot && (
+            {!isForgot && isLogin && (
               <button
                 type="button"
                 className="text-white hover:underline"
-                onClick={() => setIsForgot(true)}
+                onClick={switchToForgotPassword}
               >
                 Forgot Password?
               </button>
@@ -268,17 +330,17 @@ export default function LoginPage() {
                 <button
                   type="button"
                   className="text-[#E1FFBB] hover:underline"
-                  onClick={() => setIsForgot(false)}
+                  onClick={switchBackToLogin}
                 >
                   Back to Sign In
                 </button>
               ) : isLogin ? (
                 <span className="text-white">
-                  Don’t have an account?{" "}
+                  Don't have an account?{" "}
                   <button
                     type="button"
                     className="text-[#E1FFBB] hover:underline"
-                    onClick={() => setIsLogin(false)}
+                    onClick={() => handleModeSwitch(false, false)}
                   >
                     Sign Up
                   </button>
@@ -288,8 +350,8 @@ export default function LoginPage() {
                   Already have an account?{" "}
                   <button
                     type="button"
-                    className="text-[#E1FFBB] hover:underline"
-                    onClick={() => setIsLogin(true)}
+                    className="text-[#E1FFBB] hover-underline"
+                    onClick={() => handleModeSwitch(false, true)}
                   >
                     Sign In
                   </button>

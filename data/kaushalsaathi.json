@@ -537,6 +537,14 @@
       "phone": "00000000",
       "role": "user",
       "createdAt": "2025-10-11T17:49:15.371Z"
+    },
+    {
+      "id": "f249980d-35db-4ed7-a515-1915221b3dd6",
+      "name": "Naveen Kumar",
+      "email": "naveenkumar80032@gmail.com",
+      "passwordHash": "$2a$10$yuC7vTY5viT1UaGSUCb1qOSh5ohBpP1Zy6bLJUHylFqpiArnbL1Hm",
+      "role": "user",
+      "createdAt": "2025-11-14T07:07:46.793Z"
     }
   ],
   "sessions": [
