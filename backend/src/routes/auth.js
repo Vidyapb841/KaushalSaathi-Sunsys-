@@ -1,10 +1,17 @@
 import express from "express";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import User from "../models/User.js";
 import { v4 as uuidv4 } from "uuid";
 import { readDb, writeDb } from "../utils/jsonDb.js";
 import { forgotPassword, resetPassword } from '../models/authController.js'; 
 
 const router = express.Router();
+
+
+
+
+
 
 // -------------------------------
 // REGISTER
