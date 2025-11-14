@@ -81,6 +81,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "(ssr)/./node_modules/lucide-react/dist/esm/icons/circle-check-big.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/circle-check-big.js ***!
@@ -91,6 +92,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+=======
+>>>>>>> b10f5ef08428b4aea1e323f4b58a2546515e4998
 /***/ "(ssr)/./node_modules/lucide-react/dist/esm/icons/eye-off.js":
 /*!*************************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/eye-off.js ***!
@@ -181,6 +184,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "(ssr)/./node_modules/lucide-react/dist/esm/icons/send.js":
 /*!**********************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/send.js ***!
@@ -191,6 +195,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+=======
+>>>>>>> b10f5ef08428b4aea1e323f4b58a2546515e4998
 /***/ "(ssr)/./node_modules/lucide-react/dist/esm/icons/settings.js":
 /*!**************************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/settings.js ***!
