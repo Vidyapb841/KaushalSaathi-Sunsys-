@@ -300,6 +300,9 @@ font-weight: 100 900;
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
+  .top-2\.5 {
+    top: calc(var(--spacing) * 2.5);
+  }
   .top-3 {
     top: calc(var(--spacing) * 3);
   }
@@ -591,8 +594,14 @@ font-weight: 100 900;
   .w-24 {
     width: calc(var(--spacing) * 24);
   }
+  .w-40 {
+    width: calc(var(--spacing) * 40);
+  }
   .w-48 {
     width: calc(var(--spacing) * 48);
+  }
+  .w-60 {
+    width: calc(var(--spacing) * 60);
   }
   .w-64 {
     width: calc(var(--spacing) * 64);
@@ -906,6 +915,9 @@ font-weight: 100 900;
   }
   .border-\[\#001A6E\]\/20 {
     border-color: color-mix(in oklab, #001A6E 20%, transparent);
+  }
+  .border-\[\#009990\] {
+    border-color: #009990;
   }
   .border-\[\#009990\]\/40 {
     border-color: color-mix(in oklab, #009990 40%, transparent);
@@ -1860,10 +1872,24 @@ font-weight: 100 900;
       }
     }
   }
+  .hover\:bg-\[\#009990\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #009990;
+      }
+    }
+  }
   .hover\:bg-\[\#074799\] {
     &:hover {
       @media (hover: hover) {
         background-color: #074799;
+      }
+    }
+  }
+  .hover\:bg-\[\#E1FFBB\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #E1FFBB;
       }
     }
   }
@@ -1970,6 +1996,13 @@ font-weight: 100 900;
     &:hover {
       @media (hover: hover) {
         color: var(--primary);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }
