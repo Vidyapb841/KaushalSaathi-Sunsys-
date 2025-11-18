@@ -53,18 +53,19 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link
-            href="/home"
-            className="flex items-center space-x-3 group shrink-0"
-          >
-            <Image
-              src="/logos/ks-logo.jpg"
-              alt="KaushalSaathi Logo"
-              width={140}
-              height={50}
-              priority
-              className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
-            />
-          </Link>
+  href="/home"
+  className="flex items-center space-x-3 group shrink-0"
+>
+  <Image
+    src="/logos/ks(new-logo).jpg"
+    alt="KaushalSaathi Logo"
+    width={320}
+    height={200}
+    priority
+    className="h-16 w-auto group-hover:scale-105 transition-transform duration-300"
+  />
+</Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

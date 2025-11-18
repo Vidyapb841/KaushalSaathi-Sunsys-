@@ -200,6 +200,73 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+{/* CERTIFICATE + POINTS SECTION */}
+<section className="py-20 px-6 md:px-12 bg-white">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    {/* LEFT SIDE – CERTIFICATE IMAGE */}
+    <div className="relative flex justify-center items-center">
+
+      {/* Removed Welcome Name Tag to avoid userName error */}
+      {/* <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-[#009990] text-white px-4 py-1 rounded-full shadow-lg animate-pulse">
+        <span className="font-semibold text-sm">Welcome, Student</span>
+      </div> */}
+
+      <Image
+        src="/logos/certificate.jpg"
+        alt="Certificate"
+        width={550}
+        height={400}
+        className="rounded-xl shadow-xl border-[4px] border-[#E1FFBB] object-cover"
+      />
+    </div>
+
+    {/* RIGHT SIDE – POINTS */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#001A6E] mb-6">
+        What You Will Gain
+      </h2>
+
+      <ul className="space-y-5 text-gray-700">
+        <li className="flex items-start gap-3">
+          <span className="text-[#009990] text-xl">✔</span>
+          <p className="leading-relaxed">
+            Courses designed to build <b>strong foundational skills</b> for real career growth.
+          </p>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-[#009990] text-xl">✔</span>
+          <p className="leading-relaxed">
+            Learn from <b>Industry Experts</b> with practical knowledge.
+          </p>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-[#009990] text-xl">✔</span>
+          <p className="leading-relaxed">
+            Access <b>resources</b> — career guides, interview prep, salary insights & more.
+          </p>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-[#009990] text-xl">✔</span>
+          <p className="leading-relaxed">
+            <b>Skill-based learning</b> with 50+ job-ready skills across top domains.
+          </p>
+        </li>
+
+        <li className="flex items-start gap-3">
+          <span className="text-[#009990] text-xl">✔</span>
+          <p className="leading-relaxed">
+            <b>Learn anytime, anywhere</b> from any device — fully flexible learning.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
       {/* ================================================= */}
       {/*   📌 INSERTED COURSES CARDS (REPLACES POPULAR DOMAINS)  */}
@@ -298,55 +365,80 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Us Section */}
-      <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative flex justify-center items-center">
-            <Image
-              src={WhyImage}
-              alt="Why Us"
-              width={550}
-              height={400}
-              className="rounded-lg shadow-lg object-cover"
-            />
+     {/* Why Us Section */}
+<section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <div className="relative flex justify-center items-center">
+      <Image
+        src={WhyImage}
+        alt="Why Us"
+        width={550}
+        height={400}
+        className="rounded-lg shadow-lg object-cover"
+      />
+    </div>
+
+    <div>
+      <h2 className="text-4xl font-extrabold text-[#001A6E] mb-4">
+        Why we are best <br />
+        <span className="text-[#009990]">from others?</span>
+      </h2>
+
+      <p className="text-gray-700 mb-10">
+        Education that empowers you with skills that create real career transformation.
+      </p>
+
+      {[
+        "Placement Support",
+        "Internship Opportunities",
+        "Live Classes",
+        "Best Class Instructors",
+        "Discover Courses",
+        "Flexible Course Plan",
+        "Align Skills & Goals",
+        "Post-Course Certificate",
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="flex items-start gap-4 border border-gray-300 rounded-lg p-4 mb-4"
+        >
+          <div className="bg-[#E1FFBB] text-[#001A6E] font-bold rounded-full h-8 w-8 flex justify-center items-center">
+            {index + 1}
           </div>
 
           <div>
-            <h2 className="text-4xl font-extrabold text-[#001A6E] mb-4">
-              Why we are best <br />
-              <span className="text-[#009990]">from others?</span>
-            </h2>
+            <h3 className="font-semibold text-lg text-[#001A6E]">
+              {item}
+            </h3>
 
-            <p className="text-gray-700 mb-10">
-              Education that empowers skills that last a lifetime. Transform your future today.
+            <p className="text-gray-600 text-sm mt-1">
+              {{
+                "Placement Support":
+                  "Get complete placement assistance with resume building, mock interviews, and job referrals.",
+                "Internship Opportunities":
+                  "Gain hands-on industry experience through guided internships.",
+                "Live Classes":
+                  "Attend interactive live sessions for real-time learning and doubt-clearing.",
+                "Best Class Instructors":
+                  "Get trained by industry experts with real-world experience.",
+                "Discover Courses":
+                  "Learn at your own pace with structured lessons and expert guidance.",
+                "Flexible Course Plan":
+                  "Study with complete freedom and choose schedules that fit your lifestyle.",
+                "Align Skills & Goals":
+                  "Gain job-ready skills that match your career goals and industry demands.",
+                "Post-Course Certificate":
+                  "Receive a verified certificate that enhances your professional credibility.",
+              }[item]}
             </p>
-
-            {[
-              "Discover Courses",
-              "Flexible Course Plan",
-              "Best Class Instructors",
-              "Align Skills & Goals",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-4 border border-gray-300 rounded-lg p-4 mb-4"
-              >
-                <div className="bg-[#E1FFBB] text-[#001A6E] font-bold rounded-full h-8 w-8 flex justify-center items-center">
-                  {index + 1}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg text-[#001A6E]">
-                    {item}
-                  </h3>
-                  <p className="text-gray-600 text-sm mt-1">
-                    Learn at your own pace with structured lessons and expert guidance.
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>
 
       <Footer />
     </div>
