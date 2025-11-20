@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "ac67a2a0-eae9-47e3-9a24-1befb8c5e56b",
+      "name": "Vidya P B",
+      "email": "vidyapb@123",
+      "passwordHash": "$2a$10$FsCIgzNB6uuK.f7rGelvPeVqr6QJ4jRNNHWCq7ketPwEriXeYTyVK",
+      "role": "user",
+      "createdAt": "2025-11-19T11:43:37.933Z"
+    }
+  ],
+  "sessions": [],
+  "courses": []
+}

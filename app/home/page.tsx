@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import HeroSlider from "../heroslider/heroslider";
 import Link from "next/link";
 import Image from "next/image";
+import HomeCourse from "../homecourse/homecourse"; // ← ADDED IMPORT
 
 import {
   Code,
@@ -163,22 +164,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section className="relative w-full py-10 px-4 bg-gradient-to-br from-[#E1FFBB] via-white to-[#E1FFBB]">
         <div className="w-full">
           <HeroSlider />
         </div>
       </section>
-      {/* CERTIFICATE + POINTS SECTION */}
+
+      {/* ============================= */}
+      {/*  📌 CERTIFICATE MOVED HERE   */}
+      {/* ============================= */}
+
       <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          {/* LEFT SIDE – CERTIFICATE IMAGE */}
           <div className="relative flex justify-center items-center">
-            {/* Removed Welcome Name Tag to avoid userName error */}
-            {/* <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-[#009990] text-white px-4 py-1 rounded-full shadow-lg animate-pulse">
-        <span className="font-semibold text-sm">Welcome, Student</span>
-      </div> */}
-
             <Image
               src="/logos/certificate.jpg"
               alt="Certificate"
@@ -188,124 +187,33 @@ export default function HomePage() {
             />
           </div>
 
-          {/* RIGHT SIDE – POINTS */}
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#001A6E] mb-6">
               What You Will Gain
             </h2>
 
             <ul className="space-y-5 text-gray-700">
-              <li className="flex items-start gap-3">
-                <span className="text-[#009990] text-xl">✔</span>
-                <p className="leading-relaxed">
-                  Courses designed to build <b>strong foundational skills</b>{" "}
-                  for real career growth.
-                </p>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="text-[#009990] text-xl">✔</span>
-                <p className="leading-relaxed">
-                  Learn from <b>Industry Experts</b> with practical knowledge.
-                </p>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="text-[#009990] text-xl">✔</span>
-                <p className="leading-relaxed">
-                  Access <b>resources</b> — career guides, interview prep,
-                  salary insights & more.
-                </p>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="text-[#009990] text-xl">✔</span>
-                <p className="leading-relaxed">
-                  <b>Skill-based learning</b> with 50+ job-ready skills across
-                  top domains.
-                </p>
-              </li>
-
-              <li className="flex items-start gap-3">
-                <span className="text-[#009990] text-xl">✔</span>
-                <p className="leading-relaxed">
-                  <b>Learn anytime, anywhere</b> from any device — fully
-                  flexible learning.
-                </p>
-              </li>
+              {[
+                "Courses designed to build strong foundational skills for real career growth.",
+                "Learn from Industry Experts with practical knowledge.",
+                "Access resources — career guides, interview prep, salary insights & more.",
+                "Skill-based learning with 50+ job-ready skills.",
+                "Learn anytime, anywhere — fully flexible learning.",
+              ].map((text, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-[#009990] text-xl">✔</span>
+                  <p className="leading-relaxed">{text}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </section>
 
-      {/* ================================================= */}
-      {/*   📌 INSERTED COURSES CARDS (REPLACES POPULAR DOMAINS)  */}
-      {/* ================================================= */}
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#001A6E] mb-4">
-            Explore Our Courses
-          </h2>
-          <p className="text-lg text-gray-600">
-            Track your progress & learn at your own pace.
-          </p>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          {courses.map((course) => (
-            <Card
-              key={course.id}
-              className="border hover:shadow-lg transition-all duration-300 relative"
-            >
-              {course.favorite && (
-                <span className="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
-                  Favorite
-                </span>
-              )}
-
-              <CardContent className="p-6 text-center">
-                <Image
-                  src={course.img}
-                  alt={course.title}
-                  width={180}
-                  height={120}
-                  className="mx-auto rounded-md object-contain mb-6"
-                />
-
-                <h3 className="text-2xl font-semibold mb-2">{course.title}</h3>
-
-                <div className="flex justify-center items-center gap-2 text-sm text-muted-foreground mb-4">
-                  <span>⭐ {course.rating}</span>•<span>{course.students}</span>
-                </div>
-
-                <div className="flex justify-center items-center gap-4 text-sm text-gray-500 mb-3">
-                  <span>
-                    🎥 {course.watched}/{course.videos} Videos
-                  </span>
-                  <span>⏱️ {course.hours} Hours</span>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <Button
-                    onClick={() => handleWatchVideo(course.id)}
-                    className="bg-[#009990] hover:bg-[#074799] text-white"
-                  >
-                    Watch Next Video
-                  </Button>
-
-                  <Button
-                    asChild
-                    className="bg-[#074799] hover:bg-[#009990] text-white"
-                  >
-                    <Link href={`/courses/${course.id}`}>View Details</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+      {/* ============================= */}
+      {/*  📌 YOUR COURSES SECTION HERE */}
+      {/* ============================= */}
+      <HomeCourse /> {/* ← INSERTED HomeCourse component here */}
 
       {/* Alumni Section */}
       <section className="bg-[#E1FFBB] py-10 overflow-x-auto">
@@ -388,7 +296,6 @@ export default function HomePage() {
                   <h3 className="font-semibold text-lg text-[#001A6E]">
                     {item}
                   </h3>
-
                   <p className="text-gray-600 text-sm mt-1">
                     {
                       {
