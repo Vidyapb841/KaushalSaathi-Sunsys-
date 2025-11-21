@@ -12,7 +12,6 @@ import Image from "next/image";
 import HomeCourse from "../homecourse/homecourse";
 import FAQHome from "@/app/homecourse/faq-home";
 
-
 import {
   Code,
   Brush,
@@ -142,9 +141,9 @@ export default function HomePage() {
       <section className="py-4 bg-[#E1FFBB]">
         <div className="max-w-6xl mx-auto px-2 flex flex-wrap justify-center items-center gap-20 sm:gap-20">
           {[
-            { icon: Code, name: "Web Dev", link: "/pages/fullstack" },
+            { icon: Code, name: "Web Dev", link: "/coursepage/fullstack" },
             { icon: Brush, name: "Design", link: "/courses/design" },
-            { icon: Settings, name: "Marketing", link: "/courses/marketing" },
+            { icon: Settings, name: "DevOps", link: "/coursepage/devops" }, // ⭐ FIXED
             { icon: Cpu, name: "AI & ML", link: "/courses/ai-ml" },
             { icon: Globe, name: "Soft Skills", link: "/courses/soft-skills" },
             {
@@ -174,7 +173,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CERTIFICATE SECTION */}
+      {/* Certificate Section */}
       <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center items-center">
@@ -210,7 +209,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* YOUR COURSES SECTION */}
+      {/* Your Courses */}
       <HomeCourse />
 
       {/* Alumni Section */}
@@ -248,7 +247,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY US SECTION */}
+      {/* Why Us Section */}
       <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center items-center">
@@ -295,26 +294,24 @@ export default function HomePage() {
                     {item}
                   </h3>
                   <p className="text-gray-600 text-sm mt-1">
-                    {
-                      {
-                        "Placement Support":
-                          "Get complete placement assistance with resume building, mock interviews, and job referrals.",
-                        "Internship Opportunities":
-                          "Gain hands-on industry experience through guided internships.",
-                        "Live Classes":
-                          "Attend interactive live sessions for real-time learning and doubt-clearing.",
-                        "Best Class Instructors":
-                          "Get trained by industry experts with real-world experience.",
-                        "Discover Courses":
-                          "Learn at your own pace with structured lessons and expert guidance.",
-                        "Flexible Course Plan":
-                          "Study with complete freedom and choose schedules that fit your lifestyle.",
-                        "Align Skills & Goals":
-                          "Gain job-ready skills that match your career goals and industry demands.",
-                        "Post-Course Certificate":
-                          "Receive a verified certificate that enhances your professional credibility.",
-                      }[item]
-                    }
+                    {{
+                      "Placement Support":
+                        "Get complete placement assistance with resume building, mock interviews, and job referrals.",
+                      "Internship Opportunities":
+                        "Gain hands-on industry experience through guided internships.",
+                      "Live Classes":
+                        "Attend interactive live sessions for real-time learning and doubt-clearing.",
+                      "Best Class Instructors":
+                        "Get trained by industry experts with real-world experience.",
+                      "Discover Courses":
+                        "Learn at your own pace with structured lessons and expert guidance.",
+                      "Flexible Course Plan":
+                        "Study with complete freedom and choose schedules that fit your lifestyle.",
+                      "Align Skills & Goals":
+                        "Gain job-ready skills that match your career goals and industry demands.",
+                      "Post-Course Certificate":
+                        "Receive a verified certificate that enhances your professional credibility.",
+                    }[item]}
                   </p>
                 </div>
               </div>
@@ -322,7 +319,51 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Existing Full Stack FAQ */}
       <FAQHome />
+
+      {/* ⭐ NEW DEVOPS FAQ SECTION */}
+      <section className="w-full py-20 px-6 md:px-12 bg-white">
+        <h2 className="text-3xl font-bold text-center text-[#001A6E] mb-10">
+          DevOps – Frequently Asked Questions
+        </h2>
+
+        <div className="max-w-4xl mx-auto space-y-6">
+          {[
+            {
+              q: "What is DevOps?",
+              a: "DevOps is a collaboration of Development and Operations to automate and improve software delivery.",
+            },
+            {
+              q: "Do I need coding knowledge?",
+              a: "Basic scripting helps, but DevOps can be learned by anyone with dedication.",
+            },
+            {
+              q: "Which tools will I learn?",
+              a: "Git, AWS, Docker, Kubernetes, Jenkins, Terraform, Linux, CI/CD pipelines and more.",
+            },
+            {
+              q: "Is DevOps good for freshers?",
+              a: "Yes! DevOps is one of the fastest-growing and highest-paying technical careers.",
+            },
+            {
+              q: "Will I work on real projects?",
+              a: "Yes, the course includes hands-on projects and cloud-based automation tasks.",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="border border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition"
+            >
+              <h3 className="text-lg font-semibold text-[#001A6E]">
+                {item.q}
+              </h3>
+              <p className="text-gray-700 mt-2">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <Footer />
     </div>

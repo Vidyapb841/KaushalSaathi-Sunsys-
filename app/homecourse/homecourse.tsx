@@ -43,21 +43,38 @@ export default function CoursesSection() {
 
               <div className="flex flex-col gap-3">
 
-                {/* Fullstack = Link to course page */}
-                {course.title === "Full Stack Web Development" ? (
+                {/* Full Stack */}
+                {course.title === "Full Stack Web Development" && (
                   <Link href="/coursepage">
-                    <Button
-                      variant="outline"
-                      className="w-full font-medium rounded-xl"
-                    >
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>
                   </Link>
-                ) : (
-                  <Button
-                    variant="outline"
-                    className="w-full font-medium rounded-xl"
-                  >
+                )}
+
+                {/* DevOps */}
+                {course.title === "DevOps" && (
+                  <Link href="/coursepage/devops">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+
+                {/* ✅ UI/UX Button Added */}
+                {course.title === "UI/UX Designing" && (
+                  <Link href="/coursepage/ui-ux">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+
+                {/* Other courses - disabled button */}
+                {course.title !== "Full Stack Web Development" &&
+                 course.title !== "DevOps" &&
+                 course.title !== "UI/UX Designing" && (
+                  <Button variant="outline" className="w-full font-medium rounded-xl">
                     View Course
                   </Button>
                 )}

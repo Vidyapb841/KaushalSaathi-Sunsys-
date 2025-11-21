@@ -26,6 +26,16 @@
       "static/chunks/main-app.js",
       "static/chunks/app/coursepage/page.js"
     ],
+    "/coursepage/devops/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/coursepage/devops/page.js"
+    ],
+    "/coursepage/ui-ux/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/coursepage/ui-ux/page.js"
+    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
