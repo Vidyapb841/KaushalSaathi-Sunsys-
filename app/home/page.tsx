@@ -5,9 +5,13 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import HeroSlider from "../heroslider/heroslider";
+import CoursePage from "../coursepage/page";
+import FullStackCoursePage from "../pages/fullstack/page";
 import Link from "next/link";
 import Image from "next/image";
-import HomeCourse from "../homecourse/homecourse"; // ← ADDED IMPORT
+import HomeCourse from "../homecourse/homecourse";
+import FAQHome from "@/app/homecourse/faq-home";
+
 
 import {
   Code,
@@ -21,7 +25,6 @@ import {
 } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import WhyImage from "../whyus/whyus.jpg";
 
 /* ---------------------- COURSES DATA ---------------------- */
@@ -139,7 +142,7 @@ export default function HomePage() {
       <section className="py-4 bg-[#E1FFBB]">
         <div className="max-w-6xl mx-auto px-2 flex flex-wrap justify-center items-center gap-20 sm:gap-20">
           {[
-            { icon: Code, name: "Web Dev", link: "/courses/web-dev" },
+            { icon: Code, name: "Web Dev", link: "/pages/fullstack" },
             { icon: Brush, name: "Design", link: "/courses/design" },
             { icon: Settings, name: "Marketing", link: "/courses/marketing" },
             { icon: Cpu, name: "AI & ML", link: "/courses/ai-ml" },
@@ -164,17 +167,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HERO SECTION */}
+      {/* Hero Section */}
       <section className="relative w-full py-10 px-4 bg-gradient-to-br from-[#E1FFBB] via-white to-[#E1FFBB]">
         <div className="w-full">
           <HeroSlider />
         </div>
       </section>
 
-      {/* ============================= */}
-      {/*  📌 CERTIFICATE MOVED HERE   */}
-      {/* ============================= */}
-
+      {/* CERTIFICATE SECTION */}
       <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center items-center">
@@ -210,10 +210,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============================= */}
-      {/*  📌 YOUR COURSES SECTION HERE */}
-      {/* ============================= */}
-      <HomeCourse /> {/* ← INSERTED HomeCourse component here */}
+      {/* YOUR COURSES SECTION */}
+      <HomeCourse />
 
       {/* Alumni Section */}
       <section className="bg-[#E1FFBB] py-10 overflow-x-auto">
@@ -250,7 +248,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Us Section */}
+      {/* WHY US SECTION */}
       <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center items-center">
@@ -324,6 +322,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <FAQHome />
 
       <Footer />
     </div>
