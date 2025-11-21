@@ -83,17 +83,36 @@ function FAQAccordion({ faqs }) {
 }
 
 export default function CoursePage({
-  title,
-  subtitle,
-  rating,
-  learners,
-  level,
-  description,
-  features,
-  syllabus,
-  instructor,
-  faqs,
-  heroImage,
+  title = "Full Stack Development",
+  subtitle = "Become job-ready with complete hands-on training.",
+  rating = "4.8",
+  learners = "12,000+ learners",
+  level = "Beginner to Advanced",
+  description = "Learn front-end, back-end, APIs, databases and deployment in one course.",
+  features = [
+    "Frontend Development",
+    "Backend APIs",
+    "Database Management",
+    "Deployment Skills",
+    "Debugging & Best Practices",
+  ],
+  syllabus = [
+    { title: "Module 1: HTML & CSS", time: "1 hr" },
+    { title: "Module 2: JavaScript Basics", time: "1.2 hrs" },
+    { title: "Module 3: React Fundamentals", time: "1 hr" },
+    { title: "Module 4: Backend API", time: "40 mins" },
+  ],
+  instructor = {
+    name: "John Doe",
+    title: "Senior Software Engineer",
+    bio: "10+ years of experience in full-stack development.",
+    photo: "/logos/profile.png",
+  },
+  faqs = [
+    { q: "Is the course free?", a: "Yes, this is 100% free to learn." },
+    { q: "Do I get a certificate?", a: "Yes, after completing the course." },
+  ],
+  heroImage = "/logos/course-banner.jpg",
 }) {
   const modulesRef = useRef(null);
 
@@ -226,8 +245,7 @@ export default function CoursePage({
           </div>
         </div>
 
-        {/* Certificate / Why */}
-
+        {/* Certificate */}
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
             Get A Completion Certificate
@@ -236,10 +254,9 @@ export default function CoursePage({
             Share your certificate on LinkedIn and showcase your skills.
           </p>
 
-          {/* Certificate Image */}
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg" // <-- replace with your own certificate image
+              src="/logos/certificate-sample.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />
@@ -271,7 +288,9 @@ export default function CoursePage({
 
           <div>
             <h5 className="font-semibold">{instructor.name}</h5>
-            <div className="text-sm text-gray-600 mb-2">{instructor.title}</div>
+            <div className="text-sm text-gray-600 mb-2">
+              {instructor.title}
+            </div>
             <p className="text-sm text-gray-700">{instructor.bio}</p>
           </div>
         </div>

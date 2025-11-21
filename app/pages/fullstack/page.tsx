@@ -1,4 +1,4 @@
-import CoursePage from "../../coursepage/coursepage";
+import CoursePage from "../../coursepage/page";
 import React from "react";
 import Image from "next/image";
 import fsHero from "/logos/fsw.jpg";

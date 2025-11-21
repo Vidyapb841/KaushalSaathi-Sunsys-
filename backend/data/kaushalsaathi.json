@@ -15,6 +15,14 @@
       "passwordHash": "$2a$10$796sdXFSBrS8kCCBm3zqcO0N14lGPCK3V2bF6PKvmjH2eq4mPbmH6",
       "role": "user",
       "createdAt": "2025-11-20T10:37:50.006Z"
+    },
+    {
+      "id": "c5cfba91-be80-4da4-b50b-0e80682d43e4",
+      "name": "Vidya P B",
+      "email": "testuser@gmail.com",
+      "passwordHash": "$2a$10$EYaEvohnPJRoKLm7d7Pyl.ewc5YzzgBv1fdz65WXxLKC2V7tEbfOK",
+      "role": "user",
+      "createdAt": "2025-11-20T10:57:55.735Z"
     }
   ],
   "sessions": [],
