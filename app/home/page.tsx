@@ -178,7 +178,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center items-center">
             <Image
-              src="/logos/certificate.jpg"
+              src="/logos/certificate.jpg" 
               alt="Certificate"
               width={550}
               height={400}
@@ -322,48 +322,6 @@ export default function HomePage() {
 
       {/* Existing Full Stack FAQ */}
       <FAQHome />
-
-      {/* ⭐ NEW DEVOPS FAQ SECTION */}
-      <section className="w-full py-20 px-6 md:px-12 bg-white">
-        <h2 className="text-3xl font-bold text-center text-[#001A6E] mb-10">
-          DevOps – Frequently Asked Questions
-        </h2>
-
-        <div className="max-w-4xl mx-auto space-y-6">
-          {[
-            {
-              q: "What is DevOps?",
-              a: "DevOps is a collaboration of Development and Operations to automate and improve software delivery.",
-            },
-            {
-              q: "Do I need coding knowledge?",
-              a: "Basic scripting helps, but DevOps can be learned by anyone with dedication.",
-            },
-            {
-              q: "Which tools will I learn?",
-              a: "Git, AWS, Docker, Kubernetes, Jenkins, Terraform, Linux, CI/CD pipelines and more.",
-            },
-            {
-              q: "Is DevOps good for freshers?",
-              a: "Yes! DevOps is one of the fastest-growing and highest-paying technical careers.",
-            },
-            {
-              q: "Will I work on real projects?",
-              a: "Yes, the course includes hands-on projects and cloud-based automation tasks.",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="border border-gray-300 rounded-xl p-5 shadow-sm hover:shadow-md transition"
-            >
-              <h3 className="text-lg font-semibold text-[#001A6E]">
-                {item.q}
-              </h3>
-              <p className="text-gray-700 mt-2">{item.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <Footer />
     </div>
