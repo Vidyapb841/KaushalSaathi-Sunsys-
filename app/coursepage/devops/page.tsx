@@ -35,10 +35,10 @@ function SyllabusList({ items }) {
         {visibleItems.map((it, i) => (
           <li
             key={i}
-            className="flex justify-center font-bold items-center px-4 py-3 border-b last:border-b-0"
+            className="flex justify-start font-bold items-center px-4 py-3 border-b last:border-b-0"
           >
-            <div className="text-sm">{it.title}</div>
-            <div className="text-xs text-gray-600">{it.time}</div>
+            {/* LEFT ALIGNED & removed hours */}
+            <div className="text-sm text-left">{it.title}</div>
           </li>
         ))}
       </ul>
@@ -55,6 +55,7 @@ function SyllabusList({ items }) {
     </div>
   );
 }
+
 
 function FAQAccordion({ faqs }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -97,23 +98,23 @@ export default function CoursePage({
   description = "Master Linux, Git, CI/CD, Docker, Kubernetes, Terraform, AWS, Ansible, Monitoring & full DevOps pipeline automation.",
 
   // ⭐ UPDATED 15-MODULE SYLLABUS
-  syllabus = [
-    { title: "Module 1: Linux Administration Essentials", time: "1.5 hrs" },
-    { title: "Module 2: Git & GitHub Version Control", time: "1 hr" },
-    { title: "Module 3: Build Tools (Maven/Gradle/npm)", time: "1 hr" },
-    { title: "Module 4: Jenkins Continuous Integration", time: "1.5 hrs" },
-    { title: "Module 5: Nexus / Artifactory Repository", time: "45 mins" },
-    { title: "Module 6: Ansible Configuration Management", time: "1 hr" },
-    { title: "Module 7: Docker Containerization", time: "1.5 hrs" },
-    { title: "Module 8: Kubernetes Orchestration", time: "2 hrs" },
-    { title: "Module 9: AWS Cloud Fundamentals", time: "1.5 hrs" },
-    { title: "Module 10: Terraform Infrastructure as Code", time: "1 hr" },
-    { title: "Module 11: Continuous Deployment", time: "1 hr" },
-    { title: "Module 12: Monitoring & Logging Tools", time: "1 hr" },
-    { title: "Module 13: DevSecOps Security", time: "45 mins" },
-    { title: "Module 14: Agile & Scrum Workflow", time: "45 mins" },
-    { title: "Module 15: Capstone End-to-End DevOps Project", time: "2 hrs" },
-  ],
+syllabus = [
+  { title: "Module 1: Linux Administration Essentials (Basics + Commands)" },
+  { title: "Module 2: Git & GitHub Version Control (Code Tracking + Workflow)" },
+  { title: "Module 3: Build Tools (Maven/Gradle/npm) (Build + Dependency)" },
+  { title: "Module 4: Jenkins Continuous Integration (Automation + Pipelines)" },
+  { title: "Module 5: Nexus / Artifactory Repository (Artifact + Storage)" },
+  { title: "Module 6: Ansible Configuration Management (Automation + Provisioning)" },
+  { title: "Module 7: Docker Containerization (Images + Containers)" },
+  { title: "Module 8: Kubernetes Orchestration (Clustering + Scaling)" },
+  { title: "Module 9: AWS Cloud Fundamentals (Cloud Basics + Services)" },
+  { title: "Module 10: Terraform Infrastructure as Code (IaC + Automation)" },
+  { title: "Module 11: Continuous Deployment (Delivery + Automation)" },
+  { title: "Module 12: Monitoring & Logging Tools (Metrics + Observability)" },
+  { title: "Module 13: DevSecOps Security (Security + Compliance)" },
+  { title: "Module 14: Agile & Scrum Workflow (Teamwork + Sprints)" },
+  { title: "Module 15: Capstone End-to-End DevOps Project (Real-Time + Implementation)" },
+],
 
   features = [
     "Linux Administration",

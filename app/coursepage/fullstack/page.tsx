@@ -20,36 +20,52 @@ function Chip({ children }) {
   );
 }
 
+// ---------------- SYLLABUS LIST (FIXED) ------------------
 function SyllabusList({ items }) {
+  const [showAll, setShowAll] = useState(false);
+
+  // FIX 1: Remove max height when showAll=true
+  const listStyle = showAll ? {} : { maxHeight: "14rem" };
+
+  const visibleItems = showAll ? items : items.slice(0, 4);
+
   return (
     <div className="bg-white rounded-md shadow-sm overflow-hidden">
       <div className="p-4 border-b" style={{ background: COLORS.highlight }}>
         <strong>Syllabus Overview</strong>
       </div>
-      <ul className="max-h-56 overflow-auto">
-        {items.map((it, i) => (
+
+      {/* FIX 2: Remove overflow-hidden when showAll=true */}
+      <ul
+        className="overflow-auto"
+        style={{
+          ...listStyle,
+        }}
+      >
+        {visibleItems.map((it, i) => (
           <li
             key={i}
-            className="flex justify-center font-bold items-center px-4 py-3 border-b last:border-b-0"
+            className="flex items-center px-4 py-3 border-b last:border-b-0 font-bold"
           >
-            <div className="text-sm">{it.title}</div>
-            <div className="text-xs text-gray-600">{it.time}</div>
+            <div className="text-sm text-left w-full">{it.title}</div>
           </li>
         ))}
       </ul>
 
       <div className="p-3 text-center">
         <button
+          onClick={() => setShowAll(!showAll)}
           className="text-sm underline"
           style={{ color: COLORS.secondary }}
         >
-          View More
+          {showAll ? "View Less" : "View More"}
         </button>
       </div>
     </div>
   );
 }
 
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -82,6 +98,7 @@ function FAQAccordion({ faqs }) {
   );
 }
 
+// ---------------- PAGE ------------------
 export default function CoursePage({
   title = "Full Stack Development",
   subtitle = "Become job-ready with complete hands-on training.",
@@ -96,22 +113,37 @@ export default function CoursePage({
     "Deployment Skills",
     "Debugging & Best Practices",
   ],
+
   syllabus = [
-    { title: "Module 1: HTML & CSS", time: "1 hr" },
-    { title: "Module 2: JavaScript Basics", time: "1.2 hrs" },
-    { title: "Module 3: React Fundamentals", time: "1 hr" },
-    { title: "Module 4: Backend API", time: "40 mins" },
+    { title: "Module 1: Web Fundamentals (Frontend + Backend Basics)" },
+    { title: "Module 2: Front-End Development (HTML + CSS + JavaScript)" },
+    { title: "Module 3: Front-End Framework (React.js Basics + Hooks)" },
+    { title: "Module 4: Backend Foundations (Node.js Essentials)" },
+    { title: "Module 5: Backend Framework (Express.js + Routing)" },
+    { title: "Module 6: Databases (MongoDB + SQL Basics)" },
+    { title: "Module 7: Full-Stack Integration (Frontend + Backend Connect)" },
+    { title: "Module 8: Advanced Backend Concepts (Caching + Queues)" },
+    { title: "Module 9: DevOps Basics (Docker + CI/CD)" },
+    { title: "Module 10: Testing (Frontend + Backend + API)" },
+    { title: "Module 11: Deployment (Cloud + Production Build)" },
+    { title: "Full-Stack Capstone: Ecommerce Application" },
+    { title: "Full-Stack Capstone: Social Media App" },
+    { title: "Full-Stack Capstone: Hotel Booking App" },
+    { title: "Full-Stack Capstone: Chat App with WebSocket" },
   ],
+
   instructor = {
     name: "John Doe",
     title: "Senior Software Engineer",
     bio: "10+ years of experience in full-stack development.",
     photo: "/logos/profile.png",
   },
+
   faqs = [
     { q: "Is the course free?", a: "Yes, this is 100% free to learn." },
     { q: "Do I get a certificate?", a: "Yes, after completing the course." },
   ],
+
   heroImage = "/logos/course-banner.jpg",
 }) {
   const modulesRef = useRef(null);
@@ -306,6 +338,7 @@ export default function CoursePage({
           </button>
         </div>
       </section>
+
       <Footer />
     </main>
   );
