@@ -138,7 +138,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Compact Courses Icons */}
-      <section className="py-4 bg-[#E1FFBB]">
+      {/* <section className="py-4 bg-[#E1FFBB]">
         <div className="max-w-6xl mx-auto px-2 flex flex-wrap justify-center items-center gap-20 sm:gap-20">
           {[
             { icon: Code, name: "Web Dev", link: "/coursepage/fullstack" },
@@ -164,7 +164,7 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Hero Section */}
       <section className="relative w-full py-10 px-4 bg-gradient-to-br from-[#E1FFBB] via-white to-[#E1FFBB]">

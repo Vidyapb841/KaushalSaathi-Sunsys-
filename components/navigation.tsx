@@ -10,6 +10,7 @@ import Image from "next/image"
 import { Input } from "@/components/ui/input"
 
 export function Navigation() {
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [isProfileOpen, setIsProfileOpen] = useState(false)
@@ -48,7 +49,7 @@ export function Navigation() {
 
   return (
     <nav className="bg-[#001A6E] shadow-lg border-b border-border sticky top-0 z-50 animate-fade-in-up text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto pl-0 pr-6">
         {/* Top Row */}
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -83,6 +84,42 @@ export function Navigation() {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#009990]" />
               )}
             </Link>
+            {/* ===================== CATEGORIES DROPDOWN ===================== */}
+<div className="relative group">
+  <button className="text-white hover:text-[#009990] transition-all duration-300 font-medium flex items-center space-x-1">
+    <span>Categories</span>
+    <svg
+      className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  {/* Dropdown Menu */}
+  <div className="absolute left-0 mt-2 w-48 bg-white text-[#001A6E] shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+    {[
+      { name: "Web Dev", link: "/coursepage/fullstack" },
+      { name: "Design", link: "/courses/design" },
+      { name: "DevOps", link: "/coursepage/devops" },
+      { name: "AI & ML", link: "/courses/ai-ml" },
+      { name: "Soft Skills", link: "/courses/soft-skills" },
+      { name: "Entrepreneurship", link: "/courses/entrepreneurship" },
+    ].map((item, idx) => (
+      <Link
+        key={idx}
+        href={item.link}
+        className="block px-4 py-2 hover:bg-[#E1FFBB] transition-all"
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+</div>
+
 
             {/* Search */}
             <form onSubmit={handleSearch} className="relative w-60">
@@ -95,22 +132,7 @@ export function Navigation() {
                 className="pl-10 pr-4 py-2 w-full rounded-full bg-white text-[#001A6E] placeholder-gray-500 focus:ring-2 focus:ring-[#009990] border border-[#009990]"
               />
             </form>
-
-            {/* Blog */}
-            <Link
-              href="/blog"
-              className={cn(
-                "text-white hover:text-[#009990] transition-all duration-300 font-medium relative group",
-                pathname === "/blog" && "text-[#E1FFBB]"
-              )}
-            >
-              Blog
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#009990] transition-all duration-300 group-hover:w-full"></span>
-              {pathname === "/blog" && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#009990]" />
-              )}
-            </Link>
-
+         
             {/* Internship */}
             <Link
               href="https://internsaathi.com/"
@@ -224,6 +246,39 @@ export function Navigation() {
               >
                 About Us
               </Link>
+              {/* Mobile Categories Dropdown */}
+<div>
+  <button
+    onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+    className="w-full flex justify-between items-center px-3 py-2 font-medium hover:text-[#009990] transition-all"
+  >
+    Categories
+    <span>{isCategoriesOpen ? "▲" : "▼"}</span>
+  </button>
+
+  {isCategoriesOpen && (
+    <div className="ml-4 space-y-1">
+      {[
+        { name: "Web Dev", link: "/coursepage/fullstack" },
+        { name: "Design", link: "/courses/design" },
+        { name: "DevOps", link: "/coursepage/devops" },
+        { name: "AI & ML", link: "/courses/ai-ml" },
+        { name: "Soft Skills", link: "/courses/soft-skills" },
+        { name: "Entrepreneurship", link: "/courses/entrepreneurship" },
+      ].map((item, idx) => (
+        <Link
+          key={idx}
+          href={item.link}
+          onClick={() => setIsOpen(false)}
+          className="block px-4 py-2 text-sm hover:text-[#009990] transition-all"
+        >
+          {item.name}
+        </Link>
+      ))}
+    </div>
+  )}
+</div>
+
               <Link
                 href="/blog"
                 onClick={() => setIsOpen(false)}
