@@ -1,213 +1,247 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Lightbulb, Users, BarChart3, ShieldCheck } from "lucide-react";
-import Image from "next/image";
+import { Users, Target, Heart, Award, Globe, Briefcase } from "lucide-react";
+import WhyUsSection from "../whyus/page";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-muted/20">
       <Navigation />
 
-      {/* =====================================
-          TOP SECTION (IMAGE LEFT + TEXT RIGHT)
-      ======================================== */}
-      <section className="w-full bg-white py-16 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
-          {/* IMAGE LEFT */}
-          <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/logos/fullstack.jpg"
-              alt="About Banner"
-              fill
-              priority
-              unoptimized={true}
-              className="object-cover"
-            />
-          </div>
-
-          {/* TEXT RIGHT */}
-          <div className="text-[#001A6E]">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              We Transform Lives by Empowering People Via Digital Skills.
-            </h1>
-
-            <div className="flex flex-col gap-6 mt-6">
-              <div>
-                <p className="text-5xl font-bold text-[#009990]">8M+</p>
-                <p className="text-lg text-gray-700">Careers Advanced</p>
-              </div>
-
-              <div>
-                <p className="text-5xl font-bold text-[#009990]">1,500+</p>
-                <p className="text-lg text-gray-700">Live classes per month</p>
-              </div>
-
-              <div>
-                <p className="text-5xl font-bold text-[#009990]">400+</p>
-                <p className="text-lg text-gray-700">Courses</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* =====================================
-          WHO WE ARE
-      ======================================== */}
-      <section className="py-16 px-6 bg-white">
+      {/* Hero Section */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#001A6E] mb-6">
-            Who We Are
-          </h2>
-
-          <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            KaushalSaathi is a women-centric initiative that uplifts and empowers
-            individuals through high-impact digital skills, career pathways, 
-            and lifestyle growth.
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            About <span className="text-primary">KaushalSaathi</span>
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8">
+            Empowering Women through Multi‑Skilling, Career Growth & Lifestyle
+            Enhancement
           </p>
-
-          {/* Video placeholder */}
-          <div className="w-full h-64 bg-gray-200 rounded-xl flex items-center justify-center">
-            <p className="text-gray-600 text-lg">Video Coming Soon</p>
+          <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-xl p-6">
+            <blockquote className="text-2xl font-semibold text-foreground italic">
+              "When women grow, families thrive, and societies progress."
+            </blockquote>
           </div>
         </div>
       </section>
 
-      {/* =====================================
-          CORE VALUES WITH ICONS
-      ======================================== */}
-      <section className="py-16 px-6 bg-[#E1FFBB]">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#001A6E] mb-10">
-            Our Core Values
+      {/* Overview */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">
+            🌟 Overview
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <Card className="bg-[#074799] text-white p-6 rounded-2xl shadow-md">
-              <CardContent>
-                <div className="flex items-center gap-3 mb-3">
-                  <Lightbulb size={28} className="text-[#E1FFBB]" />
-                  <h3 className="text-2xl font-bold">Entrepreneurship</h3>
-                </div>
-                <p className="text-gray-200">
-                  We embrace innovation and act with agility to seize opportunities.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-[#074799] text-white p-6 rounded-2xl shadow-md">
-              <CardContent>
-                <div className="flex items-center gap-3 mb-3">
-                  <Users size={28} className="text-[#E1FFBB]" />
-                  <h3 className="text-2xl font-bold">Teamwork</h3>
-                </div>
-                <p className="text-gray-200">
-                  We collaborate openly, leveraging diverse perspectives to achieve success.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-[#074799] text-white p-6 rounded-2xl shadow-md">
-              <CardContent>
-                <div className="flex items-center gap-3 mb-3">
-                  <BarChart3 size={28} className="text-[#E1FFBB]" />
-                  <h3 className="text-2xl font-bold">Data-Driven</h3>
-                </div>
-                <p className="text-gray-200">
-                  We rely on evidence-based insights to make decisions and drive results.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-[#074799] text-white p-6 rounded-2xl shadow-md">
-              <CardContent>
-                <div className="flex items-center gap-3 mb-3">
-                  <ShieldCheck size={28} className="text-[#E1FFBB]" />
-                  <h3 className="text-2xl font-bold">Transparency</h3>
-                </div>
-                <p className="text-gray-200">
-                  We foster trust by communicating openly and being accountable.
-                </p>
-              </CardContent>
-            </Card>
-
-          </div>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            <strong>KaushalSaathi</strong>, an initiative by{" "}
+            <a
+              href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A107474202&keywords=SunsysTechsol%20Pvt.%20Ltd."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline"
+            >
+              Sunsys Techsol Pvt. Ltd.
+            </a>
+            , is a women-focused platform dedicated to multi-skilling, career
+            empowerment, and lifestyle enhancement. We help women develop
+            professional abilities, gain financial independence, and lead
+            fulfilling lives. Through structured learning, real-world exposure,
+            and guided mentorship, KaushalSaathi bridges the gap between
+            education and employability — empowering women to grow both
+            professionally and personally.
+          </p>
         </div>
       </section>
 
-      {/* =====================================
-          TEAM SECTION
-      ======================================== */}
-      <section className="py-16 px-6 bg-white">
+      {/* Mission & Vision */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-primary/10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          <Card className="p-6 border border-muted bg-white">
+            <CardContent className="pt-0">
+              <Target className="h-10 w-10 text-primary mb-4" />
+              <h2 className="text-2xl font-bold mb-2 text-primary">
+                Our Mission
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                To enable women from diverse backgrounds to acquire practical
+                skills, unlock their potential, and achieve balance between
+                career ambitions and lifestyle aspirations.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="p-6 border border-muted bg-white">
+            <CardContent className="pt-0">
+              <Heart className="h-10 w-10 text-secondary mb-4" />
+              <h2 className="text-2xl font-bold mb-2 text-secondary">
+                Our Vision
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                To become India’s most trusted and impactful women’s
+                multi-skilling and empowerment platform, supporting women
+                through every stage — from education to employment to
+                entrepreneurship.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Team & Mentorship */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center">
-
-          <h2 className="text-3xl font-bold text-[#001A6E] mb-6">Meet the Team</h2>
-
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Our leadership and team members are passionate about creating impact 
-            through skill-building and empowerment.
+          <h2 className="text-3xl font-bold text-foreground mb-6">
+            👩‍💼 Our Team & Mentorship
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            Behind KaushalSaathi is a passionate and purpose-driven team
+            committed to meaningful change through skill-based empowerment.
           </p>
-
-          <p className="text-lg text-gray-600 mb-4">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             Our core team —{" "}
-            <a href="https://www.linkedin.com/in/vidya-p-b-03955a25b/"
-              className="text-[#009990] underline" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/vidya-p-b-03955a25b/"
+              className="text-primary underline"
+              target="_blank"
+            >
               Vidya P. B
+            </a>{" "}
+            (
+            <a
+              href="https://www.kitcoek.in/"
+              target="_blank"
+              className="underline"
+            >
+              KIT
             </a>
-            ,{" "}
-            <a href="https://www.linkedin.com/in/yogesh-lokhande-1b0b4029a/"
-              className="text-[#009990] underline" target="_blank">
+            ),{" "}
+            <a
+              href="https://www.linkedin.com/in/yogesh-lokhande-1b0b4029a/"
+              className="text-primary underline"
+              target="_blank"
+            >
               Yogesh Sadanand Lokhande
+            </a>{" "}
+            (
+            <a
+              href="https://www.mitacsc.ac.in/"
+              target="_blank"
+              className="underline"
+            >
+              MIT ACS College
             </a>
-            ,{" "}
-            <a href="https://www.linkedin.com/in/divya-bhogawade-264194253/"
-              className="text-[#009990] underline" target="_blank">
+            ),{" "}
+            <a
+              href="https://www.linkedin.com/in/divya-bhogawade-264194253/"
+              className="text-primary underline"
+              target="_blank"
+            >
               Divya Bhogawade
+            </a>{" "}
+            (
+            <a
+              href="https://svims-pune.edu.in/"
+              target="_blank"
+              className="underline"
+            >
+              SVIMSG
             </a>
+            )
           </p>
-
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-muted-foreground">
             Guided by{" "}
-            <a href="https://www.linkedin.com/in/ashwanigarg-chro/"
-              className="text-[#009990] underline" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/ashwanigarg-chro/"
+              className="text-primary underline"
+              target="_blank"
+            >
               Ashwani Garg
             </a>
-            , CHRO at Sunsys Techsol Pvt. Ltd.
+            , CHRO at{" "}
+            <a
+              href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A107474202&keywords=SunsysTechsol%20Pvt.%20Ltd."
+              target="_blank"
+              className="text-primary underline"
+            >
+              Sunsys Techsol Pvt. Ltd.
+            </a>
+            , whose leadership drives KaushalSaathi's vision and evolution.
           </p>
         </div>
       </section>
 
-      {/* =====================================
-          PARTNERS
-      ======================================== */}
-      <section className="py-16 px-6 bg-gray-50">
+      {/* Why KaushalSaathi */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-5xl mx-auto text-center">
-
-          <h2 className="text-3xl font-bold text-[#001A6E] mb-8">Our Partners</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 1</p>
-            </div>
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 2</p>
-            </div>
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 3</p>
-            </div>
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 4</p>
-            </div>
+          <h2 className="text-3xl font-bold text-foreground mb-6">
+            💫 Why KaushalSaathi?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            <ul className="text-lg text-muted-foreground list-disc list-inside space-y-3">
+              <li>
+                Dedicated to women’s skill empowerment and career development
+              </li>
+              <li>
+                Focuses equally on personal growth and lifestyle enrichment
+              </li>
+              <li>
+                Offers expert mentorship and real-world project experience
+              </li>
+            </ul>
+            <ul className="text-lg text-muted-foreground list-disc list-inside space-y-3">
+              <li>
+                Encourages confidence, independence, and continuous learning
+              </li>
+              <li>
+                Builds a community of strong, skilled, and future-ready women
+              </li>
+            </ul>
           </div>
-
         </div>
       </section>
 
+      {/* Join the Movement */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
+            🚀 Join the Movement
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Whether you’re a student, homemaker, or working professional,
+            KaushalSaathi is your partner in transformation. Step into a world
+            of learning, growth, and empowerment — where every woman is inspired
+            to be skilled, confident, and unstoppable.
+          </p>
+        </div>
+      </section>
+
+      {/* Powered By */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-xl font-bold text-foreground mb-2">
+            Powered by{" "}
+            <a
+              href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A107474202&keywords=SunsysTechsol%20Pvt.%20Ltd."
+              target="_blank"
+              className="text-primary underline"
+            >
+              Sunsys Techsol Pvt. Ltd.
+            </a>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            KaushalSaathi is backed by Sunsys Techsol, a leading technology
+            company committed to digital transformation and empowerment
+            initiatives across India.
+          </p>
+        </div>
+      </section>
+      <WhyUsSection />
       <Footer />
     </div>
   );
+
+
 }
+//my name is vidya
+//my name is Naveen
