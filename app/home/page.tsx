@@ -142,7 +142,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-2 flex flex-wrap justify-center items-center gap-20 sm:gap-20">
           {[
             { icon: Code, name: "Web Dev", link: "/coursepage/fullstack" },
-            { icon: Brush, name: "Design", link: "/courses/design" },
+            { icon: Brush, name: "Design", link: "/coursepage/fashiond" },
             { icon: Settings, name: "DevOps", link: "/coursepage/devops" }, // ⭐ FIXED
             { icon: Cpu, name: "AI & ML", link: "/courses/ai-ml" },
             { icon: Globe, name: "Soft Skills", link: "/courses/soft-skills" },

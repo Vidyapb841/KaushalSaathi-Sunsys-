@@ -201,26 +201,27 @@ export default function CoursePage() {
         </div>
 
         {/* Syllabus */}
-        <div className="mb-10 w-full" ref={modulesRef}>
-          <SyllabusList
-            items={[
-              { title: "Module 1: Introduction to UI/UX", time: "1 hr" },
-              { title: "Module 2: UX Research & Strategy", time: "1.2 hrs" },
-              { title: "Module 3: Information Architecture", time: "1 hr" },
-              { title: "Module 4: Interaction Design", time: "1 hr" },
-              { title: "Module 5: Wireframing", time: "1 hr" },
-              { title: "Module 6: Visual Design (UI)", time: "1.5 hr" },
-              { title: "Module 7: Figma Mastery", time: "2 hrs" },
-              { title: "Module 8: Responsive Design", time: "1 hr" },
-              { title: "Module 9: Usability Testing", time: "1 hr" },
-              { title: "Module 10: Prototyping", time: "1.2 hr" },
-              { title: "Module 11: Design Systems", time: "1 hr" },
-              { title: "Module 12: UX Writing", time: "45 mins" },
-              { title: "Module 13: Portfolio Building", time: "1 hr" },
-              { title: "Module 14: Career Preparation", time: "1 hr" },
-            ]}
-          />
-        </div>
+<div className="mb-10 w-full" ref={modulesRef}>
+  <SyllabusList
+    items={[
+      { title: "Module 1: Introduction to UI/UX (Basics + Foundation)" },
+      { title: "Module 2: UX Research & Strategy (Core Research Skills)" },
+      { title: "Module 3: Information Architecture (Structure + Organization)" },
+      { title: "Module 4: Interaction Design (User Behaviour + Actions)" },
+      { title: "Module 5: Wireframing (Layout + Sketching)" },
+      { title: "Module 6: Visual Design (UI) (Colors + Typography)" },
+      { title: "Module 7: Figma Mastery (Tools + Components)" },
+      { title: "Module 8: Responsive Design (Devices + Accessibility)" },
+      { title: "Module 9: Usability Testing (Testing + Validation)" },
+      { title: "Module 10: Prototyping (Animation + Flow)" },
+      { title: "Module 11: Design Systems (Consistency + Components)" },
+      { title: "Module 12: UX Writing (Content + Clarity)" },
+      { title: "Module 13: Portfolio Building (Presentation + Storytelling)" },
+      { title: "Module 14: Career Preparation (Jobs + Interviews)" },
+    ]}
+  />
+</div>
+
 
         {/* FAQ */}
         <div className="bg-white rounded-md shadow p-6 mb-10">

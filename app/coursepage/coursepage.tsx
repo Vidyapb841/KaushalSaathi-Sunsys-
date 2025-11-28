@@ -21,41 +21,34 @@ function Chip({ children }) {
 }
 
 function SyllabusList({ items }) {
-  const [showAll, setShowAll] = useState(false);
-
-  const visibleItems = showAll ? items : items.slice(0, 4);
-
   return (
     <div className="bg-white rounded-md shadow-sm overflow-hidden">
       <div className="p-4 border-b" style={{ background: COLORS.highlight }}>
         <strong>Syllabus Overview</strong>
       </div>
-
       <ul className="max-h-56 overflow-auto">
-        {visibleItems.map((it, i) => (
+        {items.map((it, i) => (
           <li
             key={i}
-            className="flex justify-start font-bold items-center px-4 py-3 border-b last:border-b-0"
+            className="flex justify-center font-bold items-center px-4 py-3 border-b last:border-b-0"
           >
-            {/* LEFT ALIGNED & removed hours */}
-            <div className="text-sm text-left">{it.title}</div>
+            <div className="text-sm">{it.title}</div>
+            <div className="text-xs text-gray-600">{it.time}</div>
           </li>
         ))}
       </ul>
 
       <div className="p-3 text-center">
         <button
-          onClick={() => setShowAll(!showAll)}
           className="text-sm underline"
           style={{ color: COLORS.secondary }}
         >
-          {showAll ? "View Less" : "View More"}
+          View More
         </button>
       </div>
     </div>
   );
 }
-
 
 function FAQAccordion({ faqs }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -90,61 +83,17 @@ function FAQAccordion({ faqs }) {
 }
 
 export default function CoursePage({
-  title = "DevOps Mastery Program",
-  subtitle = "Become a job-ready DevOps Engineer with hands-on practical training.",
-  rating = "4.8",
-  learners = "18,000+ learners",
-  level = "Beginner to Advanced",
-  description = "Master Linux, Git, CI/CD, Docker, Kubernetes, Terraform, AWS, Ansible, Monitoring & full DevOps pipeline automation.",
-
-  // ⭐ UPDATED 15-MODULE SYLLABUS
-syllabus = [
-  { title: "Module 1: Linux Administration Essentials (Basics + Commands)" },
-  { title: "Module 2: Git & GitHub Version Control (Code Tracking + Workflow)" },
-  { title: "Module 3: Build Tools (Maven/Gradle/npm) (Build + Dependency)" },
-  { title: "Module 4: Jenkins Continuous Integration (Automation + Pipelines)" },
-  { title: "Module 5: Nexus / Artifactory Repository (Artifact + Storage)" },
-  { title: "Module 6: Ansible Configuration Management (Automation + Provisioning)" },
-  { title: "Module 7: Docker Containerization (Images + Containers)" },
-  { title: "Module 8: Kubernetes Orchestration (Clustering + Scaling)" },
-  { title: "Module 9: AWS Cloud Fundamentals (Cloud Basics + Services)" },
-  { title: "Module 10: Terraform Infrastructure as Code (IaC + Automation)" },
-  { title: "Module 11: Continuous Deployment (Delivery + Automation)" },
-  { title: "Module 12: Monitoring & Logging Tools (Metrics + Observability)" },
-  { title: "Module 13: DevSecOps Security (Security + Compliance)" },
-  { title: "Module 14: Agile & Scrum Workflow (Teamwork + Sprints)" },
-  { title: "Module 15: Capstone End-to-End DevOps Project (Real-Time + Implementation)" },
-],
-
-  features = [
-    "Linux Administration",
-    "Git & GitHub Version Control",
-    "Build & CI/CD Pipelines",
-    "Docker & Kubernetes",
-    "Terraform & AWS Cloud",
-    "Monitoring & DevSecOps",
-  ],
-
-  instructor = {
-    name: "Alex Carter",
-    title: "Senior DevOps Architect",
-    bio: "12+ years of experience in DevOps, Cloud & CI/CD automation.",
-    photo: "/logos/profile.png",
-  },
-
-  faqs = [
-    { q: "Is the course free?", a: "Yes, this course is 100% free." },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, you receive a professional certificate after completion.",
-    },
-    {
-      q: "Do I need prior experience?",
-      a: "No, everything starts from beginner level.",
-    },
-  ],
-
-  heroImage = "/logos/course-banner.jpg",
+  title,
+  subtitle,
+  rating,
+  learners,
+  level,
+  description,
+  features,
+  syllabus,
+  instructor,
+  faqs,
+  heroImage,
 }) {
   const modulesRef = useRef(null);
 
@@ -158,7 +107,7 @@ syllabus = [
       <section className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85 text-white">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            {/* LEFT */}
+            {/* Left */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
                 Home &gt; SkillUp &gt; Course Page
@@ -203,7 +152,7 @@ syllabus = [
               </div>
             </div>
 
-            {/* RIGHT CARD */}
+            {/* Right Card */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
@@ -277,7 +226,8 @@ syllabus = [
           </div>
         </div>
 
-        {/* Certificate */}
+        {/* Certificate / Why */}
+
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
             Get A Completion Certificate
@@ -286,9 +236,10 @@ syllabus = [
             Share your certificate on LinkedIn and showcase your skills.
           </p>
 
+          {/* Certificate Image */}
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate-sample.jpg" // <-- replace with your own certificate image
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />
@@ -300,9 +251,8 @@ syllabus = [
           <h4 className="font-semibold mb-3">About the Course</h4>
 
           <p className="text-sm text-gray-700">
-            Master the entire DevOps pipeline including Linux, Git, CI/CD,
-            Docker, Kubernetes, Terraform, AWS, and automation tools used in
-            top companies.
+            This course covers front-end, back-end, databases and deployment —
+            everything needed to build modern web applications.
           </p>
         </div>
 
@@ -321,9 +271,7 @@ syllabus = [
 
           <div>
             <h5 className="font-semibold">{instructor.name}</h5>
-            <div className="text-sm text-gray-600 mb-2">
-              {instructor.title}
-            </div>
+            <div className="text-sm text-gray-600 mb-2">{instructor.title}</div>
             <p className="text-sm text-gray-700">{instructor.bio}</p>
           </div>
         </div>
