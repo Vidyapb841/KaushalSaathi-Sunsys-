@@ -137,8 +137,13 @@ export default function HomePage() {
     <div className="flex flex-col bg-white">
       <Navigation />
 
+<<<<<<< HEAD
+      {/* Compact Courses Icons */}
+      {/* <section className="py-4 bg-[#E1FFBB]">
+=======
       {/* Compact Courses Icons
       <section className="py-4 bg-[#E1FFBB]">
+>>>>>>> 09045c3b04f2ffcc184e5ce07fbe247d322cdd8b
         <div className="max-w-6xl mx-auto px-2 flex flex-wrap justify-center items-center gap-20 sm:gap-20">
           {[
             { icon: Code, name: "Web Dev", link: "/coursepage/fullstack" },

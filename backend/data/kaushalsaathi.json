@@ -23,6 +23,22 @@
       "passwordHash": "$2a$10$EYaEvohnPJRoKLm7d7Pyl.ewc5YzzgBv1fdz65WXxLKC2V7tEbfOK",
       "role": "user",
       "createdAt": "2025-11-20T10:57:55.735Z"
+    },
+    {
+      "id": "a43a6cfd-72f5-416a-9114-3ac1fc3d3931",
+      "name": "Aneek",
+      "email": "ghoshaneek02@gmail.com",
+      "passwordHash": "$2a$10$DliKUQfkTbgdTOjuGmM1vuhNr/y4wa1rNN5y.9YfwaamIlgd9OcAq",
+      "role": "user",
+      "createdAt": "2025-11-24T15:56:41.279Z"
+    },
+    {
+      "id": "84a344b2-dfad-4c65-934c-7d4f47343622",
+      "name": "Aneek Ghosh",
+      "email": "ghoshaneek2002@gmail.com",
+      "passwordHash": "$2a$10$sAetqdvwZb8W/Alj4ulmsOijroydL/TI2VLD1lMk2Uxea/RSZPuH.",
+      "role": "user",
+      "createdAt": "2025-11-27T12:47:11.600Z"
     }
   ],
   "sessions": [],

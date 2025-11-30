@@ -1,5 +1,15 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "/home/page": "app/home/page.js",
+  "/page": "app/page.js"
+=======
+  "/page": "app/page.js",
+  "/home/page": "app/home/page.js"
+>>>>>>> 4197c8896cddfff81d57c74d60c22ee9e60379e2
+=======
   "/home/page": "app/home/page.js",
   "/about/page": "app/about/page.js"
+>>>>>>> 09045c3b04f2ffcc184e5ce07fbe247d322cdd8b
 }
