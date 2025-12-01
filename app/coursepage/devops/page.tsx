@@ -144,7 +144,7 @@ syllabus = [
     },
   ],
 
-  heroImage = "/logos/course-banner.jpg",
+  heroImage = "/logos/4.png",
 }) {
   const modulesRef = useRef(null);
 

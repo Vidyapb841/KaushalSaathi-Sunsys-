@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-const FullStackImg = "/logos/fullstack.jpg"; 
-const UIUXImg = "/logos/ui-ux.jpg";
-const FashionImg = "/logos/fashion.jpg";
-const DevOpsImg = "/logos/devops.jpg";
-const DigitalMarketingImg = "/logos/digital.jpg";
+const FullStackImg = "/logos/fsw.jpg";
+const UIUXImg = "/logos/5.png";
+const FashionImg = "/logos/8.png";
+const DevOpsImg = "/logos/4.png";
+const DigitalMarketingImg = "/logos/6.png";
 
 export default function CoursesSection() {
   const courses = [
@@ -30,12 +30,14 @@ export default function CoursesSection() {
             className="min-w-[260px] max-w-[260px] rounded-2xl shadow-md bg-white"
           >
             <CardContent className="p-4">
-              <div className="relative w-full h-40 mb-4">
+              
+              {/* FIXED IMAGE WRAPPER */}
+              <div className="relative w-full h-44 mb-4 bg-white rounded-xl flex items-center justify-center p-2">
                 <Image
                   src={course.img}
                   alt={course.title}
                   fill
-                  className="object-cover rounded-xl"
+                  className="object-contain rounded-xl"
                 />
               </div>
 
@@ -61,7 +63,7 @@ export default function CoursesSection() {
                   </Link>
                 )}
 
-                {/* ✅ UI/UX Button Added */}
+                {/* UI/UX */}
                 {course.title === "UI/UX Designing" && (
                   <Link href="/coursepage/ui-ux">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -70,13 +72,22 @@ export default function CoursesSection() {
                   </Link>
                 )}
 
-                {/* Other courses - disabled button */}
-                {course.title !== "Full Stack Web Development" &&
-                 course.title !== "DevOps" &&
-                 course.title !== "UI/UX Designing" && (
-                  <Button variant="outline" className="w-full font-medium rounded-xl">
-                    View Course
-                  </Button>
+                {/* Fashion Designing */}
+                {course.title === "Fashion Designing" && (
+                  <Link href="/coursepage/fashiond">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+
+                {/* Digital Marketing */}
+                {course.title === "Digital Marketing" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
                 )}
 
                 <Button className="w-full text-white font-medium rounded-xl">
