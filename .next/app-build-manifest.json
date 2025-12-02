@@ -21,31 +21,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/home/page.js"
     ],
-    "/coursepage/fashiond/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/fashiond/page.js"
-    ],
-    "/coursepage/digitalm/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/digitalm/page.js"
-    ],
-    "/coursepage/devops/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/devops/page.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/about/page.js"
-    ],
-    "/coursepage/ui-ux/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/ui-ux/page.js"
-    ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
