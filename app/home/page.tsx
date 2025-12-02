@@ -24,7 +24,8 @@ import {
 } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import WhyImage from "../whyus/whyus.jpg";
+import WhyImage from "/logos/whybest.jpg";
+
 
 /* ---------------------- COURSES DATA ---------------------- */
 
@@ -247,11 +248,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative flex justify-center items-center">
             <Image
-              src={WhyImage}
+              src="/logos/whybest.jpg"
               alt="Why Us"
               width={550}
               height={400}
-              className="rounded-lg shadow-lg object-cover"
+              className="relative rounded-lg shadow-lg object-cover"
             />
           </div>
 

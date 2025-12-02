@@ -1,17 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import WhyImage from "./whyus.jpg";
 
 export default function WhyUsSection() {
   return (
     <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        
         {/* Left Side Image */}
         <div className="relative flex justify-center items-center">
           <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#E1FFBB] rounded-tl-[60px] rounded-br-[60px]"></div>
+
           <Image
-            src={WhyImage}
+            src="/logos/whybest.jpg"
             alt="Students discussing learning"
             width={550}
             height={400}
@@ -34,7 +35,8 @@ export default function WhyUsSection() {
           </p>
 
           <div className="space-y-4">
-            {/* Card 1 - Highlighted */}
+            
+            {/* Card 1 */}
             <div className="flex items-start gap-4 bg-[#E1FFBB] border border-[#009990]/40 rounded-lg p-4 shadow-sm">
               <div className="flex items-center justify-center bg-[#009990] text-white font-bold rounded-full h-8 w-8 flex-shrink-0">
                 1
@@ -97,6 +99,7 @@ export default function WhyUsSection() {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
