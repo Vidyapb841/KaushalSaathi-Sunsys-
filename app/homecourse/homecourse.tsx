@@ -9,15 +9,38 @@ const UIUXImg = "/logos/5.png";
 const FashionImg = "/logos/8.png";
 const DevOpsImg = "/logos/4.png";
 const DigitalMarketingImg = "/logos/6.png";
+const Front = "/logos/1.png";
+const back = "/logos/2.png";
+const ssm = "/logos/7.png";
+const id = "/logos/9.png";
+const mkpup = "/logos/10.png";
+const HR = "/logos/11.png";
+const MB = "/logos/12.png";
+const SEO = "/logos/13.png";
+const SLS = "/logos/14.png";
+const ENG = "/logos/15.png";
 
-export default function CoursesSection() {
   const courses = [
-    { title: "Full Stack Web Development", img: FullStackImg },
+    { title: "Front End Development", img: Front },
+    { title: "Back End Development", img: back },
+    { title: "Full Stack Development", img: FullStackImg },
     { title: "UI/UX Designing", img: UIUXImg },
-    { title: "Fashion Designing", img: FashionImg },
-    { title: "DevOps", img: DevOpsImg },
     { title: "Digital Marketing", img: DigitalMarketingImg },
+    { title: "DevOps", img: DevOpsImg },
+    { title: "Social Media Marketing", img: ssm},
+    { title: "Fashion Designing", img: FashionImg },
+    { title: "Interior Designing", img: id },
+    { title: "Professional Makeup", img: mkpup },
+    { title: "HR Management", img: HR },
+    { title: "Marketing & Branding", img: MB },
+    { title: "LLM IT Certification Program", img: DigitalMarketingImg },
+    { title: "SEO(Search Engine Optimization)", img: SEO },
+    { title: "Salesforce CRM Administration", img: SLS },
+    { title: "Spoken English & Communication Skills", img: ENG },
+    
   ];
+export default function CoursesSection() {
+ 
 
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-gray-50">
@@ -46,7 +69,7 @@ export default function CoursesSection() {
               <div className="flex flex-col gap-3">
 
                 {/* Full Stack */}
-                {course.title === "Full Stack Web Development" && (
+                {course.title === "Full Stack Development" && (
                   <Link href="/coursepage">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
@@ -89,7 +112,97 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-
+                
+                {/* Front End Development */}
+                {course.title === "Front End Development" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                
+                {/* Back End Development */}
+                {course.title === "Back End Development" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* Social Media Marketing */}
+                {course.title === "Social Media Marketing" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* Interior Designing */}
+                {course.title === "Interior Designing" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* Professional Makeup & Hair Artist */}
+                {course.title === "Professional Makeup" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* Human Resource Management */}
+                {course.title === "HR Management" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* Marketing & Branding */}
+                {course.title === "Marketing & Branding" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* LLM IT Certification Program */}
+                {course.title === "LLM IT Certification Program" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* SEO(Search Engine Optimization) */}
+                {course.title === "SEO(Search Engine Optimization)" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* Salesforce CRM Administration */}
+                {course.title === "Salesforce CRM Administration" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                {/* Spoken English & Communication Skills*/}
+                {course.title === "Spoken English & Communication Skills" && (
+                  <Link href="/coursepage/digitalm">
+                    <Button variant="outline" className="w-full font-medium rounded-xl">
+                      View Course
+                    </Button>
+                  </Link>
+                )}
+                
                 <Button className="w-full text-white font-medium rounded-xl">
                   Start Learning
                 </Button>
