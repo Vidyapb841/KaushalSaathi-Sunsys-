@@ -138,74 +138,140 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* =====================================
+{/* =====================================
           TEAM SECTION
-      ======================================== */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-5xl mx-auto text-center">
+======================================== */}
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-5xl mx-auto text-center">
 
-          <h2 className="text-3xl font-bold text-[#001A6E] mb-6">Meet the Team</h2>
+    <h2 className="text-3xl font-bold text-[#001A6E] mb-6">Meet the Team</h2>
 
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Our leadership and team members are passionate about creating impact 
-            through skill-building and empowerment.
-          </p>
+    <p className="text-lg text-gray-600 leading-relaxed mb-6">
+      Our leadership and team members are passionate about creating impact 
+      through skill-building and empowerment.
+    </p>
 
-          <p className="text-lg text-gray-600 mb-4">
-            Our core team —{" "}
-            <a href="https://www.linkedin.com/in/vidya-p-b-03955a25b/"
-              className="text-[#009990] underline" target="_blank">
-              Vidya P. B
-            </a>
-            ,{" "}
-            <a href="https://www.linkedin.com/in/yogesh-lokhande-1b0b4029a/"
-              className="text-[#009990] underline" target="_blank">
-              Yogesh Sadanand Lokhande
-            </a>
-            ,{" "}
-            <a href="https://www.linkedin.com/in/divya-bhogawade-264194253/"
-              className="text-[#009990] underline" target="_blank">
-              Divya Bhogawade
-            </a>
-          </p>
+    <p className="text-lg text-gray-600 mb-4">
+      Our core team —{" "}
+      <a 
+        href="https://www.linkedin.com/in/vidya-p-b-03955a25b/"
+        className="text-[#009990] underline" 
+        target="_blank"
+      >
+        Vidya P. B
+      </a>
+      ,{" "}
+      <a 
+        href="https://www.linkedin.com/in/aneek-ghosh-a93127249"
+        className="text-[#009990] underline" 
+        target="_blank"
+      >
+        Aneek Ghosh
+      </a>
+      ,{" "}
+      <a 
+        href="https://www.linkedin.com/in/anushkajain1712"
+        className="text-[#009990] underline" 
+        target="_blank"
+      >
+        Anushka Jain
+      </a>
+      ,{" "}
+      <a 
+        href="https://www.linkedin.com/in/yogesh-lokhande-1b0b4029a/"
+        className="text-[#009990] underline" 
+        target="_blank"
+      >
+        Yogesh Lokhande
+      </a>
+    </p>
 
-          <p className="text-lg text-gray-600">
-            Guided by{" "}
-            <a href="https://www.linkedin.com/in/ashwanigarg-chro/"
-              className="text-[#009990] underline" target="_blank">
-              Ashwani Garg
-            </a>
-            , CHRO at Sunsys Techsol Pvt. Ltd.
-          </p>
-        </div>
-      </section>
+    <p className="text-lg text-gray-600">
+      Guided by{" "}
+      <a 
+        href="https://www.linkedin.com/in/ashwanigarg-chro/"
+        className="text-[#009990] underline" 
+        target="_blank"
+      >
+        Ashwani Garg
+      </a>
+      , CHRO at Sunsys Techsol Pvt. Ltd.
+    </p>
 
-      {/* =====================================
+  </div>
+</section>
+
+{/* =====================================
           PARTNERS
-      ======================================== */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto text-center">
+======================================== */}
+<section className="py-16 px-6 bg-gray-50">
+  <div className="max-w-5xl mx-auto text-center">
 
-          <h2 className="text-3xl font-bold text-[#001A6E] mb-8">Our Partners</h2>
+    <h2 className="text-3xl font-bold text-[#001A6E] mb-8">Our Partners</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 1</p>
-            </div>
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 2</p>
-            </div>
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 3</p>
-            </div>
-            <div className="h-24 bg-white shadow-md rounded-xl flex items-center justify-center">
-              <p className="text-[#001A6E] font-semibold">Partner 4</p>
-            </div>
-          </div>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-        </div>
-      </section>
+      {/* Partner 1 */}
+      <a 
+        href="https://chalosaathi.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+      >
+        <img 
+          src="/logos/chalosaathi.jpg" 
+          alt="ChaloSaathi" 
+          className="w-44 h-44 object-contain"
+        />
+      </a>
+
+      {/* Partner 2 */}
+      <a 
+        href="https://internsaathi.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+      >
+        <img 
+          src="/logos/internsaathi.jpg" 
+          alt="InternSaathi" 
+          className="w-44 h-44 object-contain"
+        />
+      </a>
+
+      {/* Partner 3 */}
+      <a 
+        href="https://naukrisaathi.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+      >
+        <img 
+          src="/logos/NAUKRISAATHI-Logo.jpg" 
+          alt="NaukriSaathi" 
+          className="w-44 h-44 object-contain"
+        />
+      </a>
+
+      {/* Partner 4 */}
+      <a 
+        href="https://tasksaathi.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+      >
+        <img 
+          src="/logos/task saathi png.png" 
+          alt="TaskSaathi" 
+          className="w-44 h-44 object-contain"
+        />
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
 
       <Footer />
     </div>

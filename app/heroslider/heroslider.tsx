@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const images = ["/logos/slide1.jpg", "/logos/slide2.jpg", "/logos/slide3.jpg"];
+const images = ["/logos/slide1.png", "/logos/slide2.png", "/logos/slide3.png", "/logos/slide4.png", "/logos/slide5.png"];
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);

@@ -16,9 +16,10 @@ const id = "/logos/9.png";
 const mkpup = "/logos/10.png";
 const HR = "/logos/11.png";
 const MB = "/logos/12.png";
-const SEO = "/logos/13.png";
-const SLS = "/logos/14.png";
-const ENG = "/logos/15.png";
+const LLM = "/logos/13.png";
+const SEO = "/logos/14.png";
+const SLS = "/logos/15.png";
+const ENG = "/logos/16.png";
 
   const courses = [
     { title: "Front End Development", img: Front },
@@ -33,7 +34,7 @@ const ENG = "/logos/15.png";
     { title: "Professional Makeup", img: mkpup },
     { title: "HR Management", img: HR },
     { title: "Marketing & Branding", img: MB },
-    { title: "LLM IT Certification Program", img: DigitalMarketingImg },
+    { title: "LLM IT Certification Program", img: LLM },
     { title: "SEO(Search Engine Optimization)", img: SEO },
     { title: "Salesforce CRM Administration", img: SLS },
     { title: "Spoken English & Communication Skills", img: ENG },
