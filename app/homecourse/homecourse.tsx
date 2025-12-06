@@ -71,7 +71,7 @@ export default function CoursesSection() {
 
                 {/* Full Stack */}
                 {course.title === "Full Stack Development" && (
-                  <Link href="/coursepage">
+                  <Link href="/coursepage/fullstack">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>
@@ -173,7 +173,7 @@ export default function CoursesSection() {
                 )}
                 {/* LLM IT Certification Program */}
                 {course.title === "LLM IT Certification Program" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/llm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>
@@ -189,7 +189,7 @@ export default function CoursesSection() {
                 )}
                 {/* Salesforce CRM Administration */}
                 {course.title === "Salesforce CRM Administration" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/salesforce">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>

@@ -20,13 +20,8 @@ function Chip({ children }) {
   );
 }
 
-// ---------------- SYLLABUS LIST (FIXED) ------------------
 function SyllabusList({ items }) {
   const [showAll, setShowAll] = useState(false);
-
-  // FIX 1: Remove max height when showAll=true
-  const listStyle = showAll ? {} : { maxHeight: "14rem" };
-
   const visibleItems = showAll ? items : items.slice(0, 4);
 
   return (
@@ -35,19 +30,13 @@ function SyllabusList({ items }) {
         <strong>Syllabus Overview</strong>
       </div>
 
-      {/* FIX 2: Remove overflow-hidden when showAll=true */}
-      <ul
-        className="overflow-auto"
-        style={{
-          ...listStyle,
-        }}
-      >
+      <ul className="max-h-56 overflow-auto">
         {visibleItems.map((it, i) => (
           <li
             key={i}
-            className="flex items-center px-4 py-3 border-b last:border-b-0 font-bold"
+            className="flex justify-start font-bold items-center px-4 py-3 border-b last:border-b-0"
           >
-            <div className="text-sm text-left w-full">{it.title}</div>
+            <div className="text-sm text-left whitespace-pre-line">{it.title}</div>
           </li>
         ))}
       </ul>
@@ -65,7 +54,6 @@ function SyllabusList({ items }) {
   );
 }
 
-// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -98,53 +86,138 @@ function FAQAccordion({ faqs }) {
   );
 }
 
-// ---------------- PAGE ------------------
 export default function CoursePage({
-  title = "Full Stack Development",
-  subtitle = "Become job-ready with complete hands-on training.",
-  rating = "4.8",
-  learners = "12,000+ learners",
+  title = "Full Stack Development – 6 Months (Day-by-Day Plan)",
+  subtitle = "Become a job-ready Full Stack Developer with a complete 6-month structured day-wise roadmap.",
+  rating = "4.9",
+  learners = "25,000+ learners",
   level = "Beginner to Advanced",
-  description = "Learn front-end, back-end, APIs, databases and deployment in one course.",
-  features = [
-    "Frontend Development",
-    "Backend APIs",
-    "Database Management",
-    "Deployment Skills",
-    "Debugging & Best Practices",
+  description =
+    "A complete 6-month Full Stack Development roadmap including HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL, DevOps basics, and deployment.",
+  
+  // ⭐ UPDATED FULL 6-MONTH SYLLABUS
+  syllabus = [
+    {
+      title: `Month 1 – HTML, CSS, Responsive Web Design (Days 1–30)
+Day 1: HTML Basics: Tags, Elements
+Day 2: HTML Forms & Validation
+Day 3: Semantic HTML
+Day 4: CSS Basics & Selectors
+Day 5: Flexbox Deep Dive
+Day 6: Grid Layout
+Day 7: Responsive Design
+Day 8: Media Queries
+Day 9: CSS Animations
+Day 10: Bootstrap / Tailwind CSS
+Day 11: Landing Page Project
+Day 12: Portfolio Layout`,
+    },
+    {
+      title: `Month 2 – JavaScript & Frontend Logic (Days 31–60)
+Day 13: JS Basics: Variables, Data Types
+Day 14: Functions & Scope
+Day 15: DOM Manipulation
+Day 16: Events & Event Handling
+Day 17: Async JS: Callbacks
+Day 18: Promises & Async/Await
+Day 19: Fetch API
+Day 20: ES6+ Concepts
+Day 21: Modules & Bundlers
+Day 22: LocalStorage & Sessions
+Day 23: Mini Project: To-Do App
+Day 24: JS Interview Questions`,
+    },
+    {
+      title: `Month 3 – React.js & Modern Frontend (Days 61–90)
+Day 25: React Basics & JSX
+Day 26: Components, Props, State
+Day 27: React Hooks
+Day 28: Context API
+Day 29: React Router
+Day 30: Forms & Validation
+Day 31: API Integration
+Day 32: State Management (Redux/Zustand)
+Day 33: Performance Optimization
+Day 34: React + Tailwind UI
+Day 35: Mini Project: Dashboard App
+Day 36: Major Project: Full Frontend App`,
+    },
+    {
+      title: `Month 4 – Backend (Node.js + Express + Databases) (Days 91–120)
+Day 37: Node.js Introduction
+Day 38: NPM & Modules
+Day 39: Express.js Basics
+Day 40: Routing & Middleware
+Day 41: REST API Development
+Day 42: MongoDB CRUD Operations
+Day 43: Mongoose Models & Schemas
+Day 44: Authentication (JWT)
+Day 45: Role-Based Access
+Day 46: SQL Basics (MySQL/PostgreSQL)
+Day 47: File Uploads & Pagination
+Day 48: Backend API Project`,
+    },
+    {
+      title: `Month 5 – Full Stack Integration & DevOps Basics (Days 121–150)
+Day 49: Frontend ↔ Backend Integration
+Day 50: State Lifting & Data Flow
+Day 51: Full Stack Architecture
+Day 52: Using Cloudinary / AWS S3
+Day 53: Payment Gateway Integration
+Day 54: CI/CD Basics
+Day 55: GitHub Actions Pipelines
+Day 56: Docker Basics for Developers
+Day 57: Deployment on Render / Railway
+Day 58: Deployment on AWS / Vercel
+Day 59: Full Stack Project Phase 1
+Day 60: Testing (Jest, Postman)`,
+    },
+    {
+      title: `Month 6 – Major Project, System Design & Interview Prep (Days 151–180)
+Day 61: System Design Basics
+Day 62: API Rate Limiting, Caching
+Day 63: Scalable Backend Patterns
+Day 64: Microservices Basics
+Day 65: Security Best Practices
+Day 66: Logging & Monitoring
+Day 67: Optimization Techniques
+Day 68: Resume Building
+Day 69: GitHub Portfolio Setup
+Day 70: Interview Q&A
+Day 71: Major Full Stack Capstone Project
+Day 72: Final Evaluation`,
+    },
   ],
 
-  syllabus = [
-    { title: "Module 1: Web Fundamentals (Frontend + Backend Basics)" },
-    { title: "Module 2: Front-End Development (HTML + CSS + JavaScript)" },
-    { title: "Module 3: Front-End Framework (React.js Basics + Hooks)" },
-    { title: "Module 4: Backend Foundations (Node.js Essentials)" },
-    { title: "Module 5: Backend Framework (Express.js + Routing)" },
-    { title: "Module 6: Databases (MongoDB + SQL Basics)" },
-    { title: "Module 7: Full-Stack Integration (Frontend + Backend Connect)" },
-    { title: "Module 8: Advanced Backend Concepts (Caching + Queues)" },
-    { title: "Module 9: DevOps Basics (Docker + CI/CD)" },
-    { title: "Module 10: Testing (Frontend + Backend + API)" },
-    { title: "Module 11: Deployment (Cloud + Production Build)" },
-    { title: "Full-Stack Capstone: Ecommerce Application" },
-    { title: "Full-Stack Capstone: Social Media App" },
-    { title: "Full-Stack Capstone: Hotel Booking App" },
-    { title: "Full-Stack Capstone: Chat App with WebSocket" },
+  features = [
+    "HTML, CSS, JS, React",
+    "Node.js, Express.js",
+    "MongoDB & SQL",
+    "API Development",
+    "DevOps Basics & Deployment",
+    "Full Stack Projects",
   ],
 
   instructor = {
-    name: "John Doe",
-    title: "Senior Software Engineer",
-    bio: "10+ years of experience in full-stack development.",
+    name: "Sarah Mitchell",
+    title: "Full Stack Architect",
+    bio: "10+ years of experience in MERN Stack, scalable systems, and cloud deployment.",
     photo: "/logos/profile.png",
   },
 
   faqs = [
-    { q: "Is the course free?", a: "Yes, this is 100% free to learn." },
-    { q: "Do I get a certificate?", a: "Yes, after completing the course." },
+    { q: "Is this course free?", a: "Yes, this Full Stack course is 100% free." },
+    {
+      q: "Do I get a certificate?",
+      a: "Yes, you will receive a verified completion certificate.",
+    },
+    {
+      q: "Do I need prior coding experience?",
+      a: "No. This roadmap starts from zero and goes to advanced level.",
+    },
   ],
 
-  heroImage = "/logos/course-banner.jpg",
+  heroImage = "/logos/4.png",
 }) {
   const modulesRef = useRef(null);
 
@@ -154,11 +227,13 @@ export default function CoursePage({
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* HERO */}
+
+      {/* HERO SECTION */}
       <section className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85 text-white">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            {/* Left */}
+
+            {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
                 Home &gt; SkillUp &gt; Course Page
@@ -185,7 +260,6 @@ export default function CoursePage({
                     </span>
                     <span>{learners}</span>
                   </div>
-
                   <Chip>{level}</Chip>
                 </div>
               </div>
@@ -197,13 +271,14 @@ export default function CoursePage({
                 >
                   Explore Course
                 </button>
+
                 <button className="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-md font-medium">
                   Watch Intro Video
                 </button>
               </div>
             </div>
 
-            {/* Right Card */}
+            {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
@@ -215,7 +290,7 @@ export default function CoursePage({
 
               <div className="text-sm">
                 <div className="text-green-700 font-bold text-lg">FREE</div>
-                <div className="mt-1">Self-Paced · 4 Hours</div>
+                <div className="mt-1">Self-Paced · 6 Months</div>
               </div>
 
               <div className="mt-3">
@@ -224,9 +299,10 @@ export default function CoursePage({
                     <span>Completion Certificate</span>
                     <span>Included</span>
                   </li>
+
                   <li className="flex justify-between py-1">
                     <span>Access</span>
-                    <span>90 Days</span>
+                    <span>180 Days</span>
                   </li>
                 </ul>
               </div>
@@ -241,7 +317,8 @@ export default function CoursePage({
 
       {/* MAIN CONTENT */}
       <section className="max-w-6xl mx-auto px-4 py-10">
-        {/* Skills */}
+
+        {/* SKILLS */}
         <div className="bg-white shadow rounded-md p-6 mb-8">
           <h2
             className="text-xl font-semibold mb-3"
@@ -270,20 +347,21 @@ export default function CoursePage({
           </div>
         </div>
 
-        {/* Syllabus */}
+        {/* SYLLABUS */}
         <div className="mb-10 w-full" ref={modulesRef}>
           <div className="text-center">
             <SyllabusList items={syllabus} />
           </div>
         </div>
 
-        {/* Certificate */}
+        {/* CERTIFICATE */}
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
-            Get A Completion Certificate
+            Earn a Full Stack Development Certificate
           </h4>
+
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Share your certificate on LinkedIn and showcase your skills.
+            Showcase your skills on LinkedIn and impress recruiters.
           </p>
 
           <div className="mb-6 flex justify-center">
@@ -295,23 +373,24 @@ export default function CoursePage({
           </div>
         </div>
 
-        {/* About */}
+        {/* ABOUT */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
 
           <p className="text-sm text-gray-700">
-            This course covers front-end, back-end, databases and deployment —
-            everything needed to build modern web applications.
+            This 6-month Full Stack roadmap covers everything from frontend
+            fundamentals to backend systems, databases, DevOps basics,
+            cloud deployment, and interview preparation with projects.
           </p>
         </div>
 
-        {/* FAQ */}
+        {/* FAQS */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-4">FAQs</h4>
           <FAQAccordion faqs={faqs} />
         </div>
 
-        {/* Instructor */}
+        {/* INSTRUCTOR */}
         <div className="bg-white rounded-md shadow p-6 flex gap-4 mb-10">
           <img
             src={instructor.photo}
@@ -320,19 +399,18 @@ export default function CoursePage({
 
           <div>
             <h5 className="font-semibold">{instructor.name}</h5>
-            <div className="text-sm text-gray-600 mb-2">
-              {instructor.title}
-            </div>
+            <div className="text-sm text-gray-600 mb-2">{instructor.title}</div>
             <p className="text-sm text-gray-700">{instructor.bio}</p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="bg-white rounded-md shadow p-6 text-center">
-          <h4 className="font-semibold mb-2">Ready to begin?</h4>
+          <h4 className="font-semibold mb-2">Ready to start learning?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Start learning today — it's completely free.
+            Begin your Full Stack Development journey today — it’s absolutely free.
           </p>
+
           <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
             Start Learning
           </button>

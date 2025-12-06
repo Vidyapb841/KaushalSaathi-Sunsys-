@@ -34,9 +34,10 @@ function SyllabusList({ items }) {
         {visibleItems.map((it, i) => (
           <li
             key={i}
-            className="flex justify-start font-bold items-center px-4 py-3 border-b last:border-b-0"
+            className="flex justify-between items-center px-4 py-3 border-b last:border-b-0"
           >
-            <div className="text-sm text-left">{it.title}</div>
+            <div className="text-sm font-semibold">{it.title}</div>
+            <div className="text-xs text-gray-600">{it.time}</div>
           </li>
         ))}
       </ul>
@@ -68,11 +69,13 @@ function FAQAccordion({ faqs }) {
               onClick={() => setOpenIndex(open ? null : i)}
             >
               <span className="font-medium">{f.q}</span>
-              <span className="ml-4 text-xl" style={{ color: COLORS.secondary }}>
+              <span
+                className="ml-4 text-xl"
+                style={{ color: COLORS.secondary }}
+              >
                 {open ? "−" : "+"}
               </span>
             </button>
-
             {open && (
               <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
             )}
@@ -83,57 +86,8 @@ function FAQAccordion({ faqs }) {
   );
 }
 
-export default function CoursePage({
-  title = "Full Stack Development – 6 Months Roadmap",
-  subtitle = "Become a job-ready Full Stack Developer with end-to-end hands-on training.",
-  rating = "4.9",
-  learners = "25,000+ learners",
-  level = "Beginner to Advanced",
-  description =
-    "Master HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL, Deployment, DevOps basics and build real-world full stack projects.",
-
-  // ⭐ FULL STACK DEVELOPMENT – SYLLABUS (Replacing DevOps Modules)
-  syllabus = [
-    { title: "Month 1: HTML, CSS, Responsive Web Design" },
-    { title: "Month 2: JavaScript & Frontend Logic" },
-    { title: "Month 3: React.js & Modern Frontend Development" },
-    { title: "Month 4: Node.js, Express & Databases (MongoDB + SQL)" },
-    { title: "Month 5: Full Stack Integration & Deployment" },
-    { title: "Month 6: Major Full Stack Project + Interview Prep" },
-  ],
-
-  features = [
-    "HTML, CSS, Responsive Design",
-    "JavaScript & ES6+",
-    "React.js, Hooks & Routing",
-    "Node.js, Express.js APIs",
-    "MongoDB & SQL Databases",
-    "Deployment & System Design",
-  ],
-
-  instructor = {
-    name: "Sarah Mitchell",
-    title: "Full Stack Architect",
-    bio: "10+ years of experience in JavaScript, MERN stack, cloud deployments, and building scalable systems.",
-    photo: "/logos/profile.png",
-  },
-
-  faqs = [
-    { q: "Is this course free?", a: "Yes, this Full Stack course is 100% free." },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, you will receive a verified completion certificate.",
-    },
-    {
-      q: "Do I need coding knowledge?",
-      a: "No. This course starts from absolute beginner level.",
-    },
-  ],
-
-  heroImage = "/logos/4.png",
-}) {
+export default function CoursePage() {
   const modulesRef = useRef(null);
-
   const handleExplore = () => {
     modulesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -144,35 +98,29 @@ export default function CoursePage({
       <section className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85 text-white">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Course Page
+                Home &gt; SkillUp &gt; LLM Course
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                {title}
+                LLM (Large Language Models) – IT Certification Program
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                {subtitle}
+                A complete 6-month program covering Python, Machine Learning, Deep Learning, NLP,
+                Transformers, Fine-Tuning, RAG Systems, LLM Deployment, Agents, and Interview Preparation.
               </p>
 
               <div className="mt-5 text-sm text-slate-100 max-w-3xl">
-                <p className="mb-3">{description}</p>
-
                 <div className="flex flex-wrap gap-3">
-                  <div className="flex items-center gap-2">
-                    <span className="bg-white/10 px-2 py-1 rounded">
-                      {rating} ★
-                    </span>
-                    <span>{learners}</span>
-                  </div>
-
-                  <Chip>{level}</Chip>
+                  <Chip>Beginner to Advanced</Chip>
+                  <Chip>Industry Ready</Chip>
                 </div>
               </div>
 
@@ -183,6 +131,7 @@ export default function CoursePage({
                 >
                   Explore Course
                 </button>
+
                 <button className="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-md font-medium">
                   Watch Intro Video
                 </button>
@@ -193,7 +142,7 @@ export default function CoursePage({
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
-                  src={heroImage}
+                  src="/logos/course-banner.jpg"
                   alt="Course Hero"
                   className="w-full h-full object-cover"
                 />
@@ -202,19 +151,6 @@ export default function CoursePage({
               <div className="text-sm">
                 <div className="text-green-700 font-bold text-lg">FREE</div>
                 <div className="mt-1">Self-Paced · 6 Months</div>
-              </div>
-
-              <div className="mt-3">
-                <ul className="text-sm">
-                  <li className="flex justify-between py-1">
-                    <span>Completion Certificate</span>
-                    <span>Included</span>
-                  </li>
-                  <li className="flex justify-between py-1">
-                    <span>Access</span>
-                    <span>180 Days</span>
-                  </li>
-                </ul>
               </div>
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
@@ -227,6 +163,7 @@ export default function CoursePage({
 
       {/* MAIN CONTENT */}
       <section className="max-w-6xl mx-auto px-4 py-10">
+
         {/* Skills */}
         <div className="bg-white shadow rounded-md p-6 mb-8">
           <h2
@@ -237,7 +174,16 @@ export default function CoursePage({
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {features.map((f, i) => (
+            {[
+              "Python Programming",
+              "Machine Learning Foundations",
+              "Deep Learning (NN, CNN, RNN)",
+              "Transformer Architecture",
+              "Prompt Engineering",
+              "Fine-Tuning (SFT, LoRA)",
+              "Vector Databases & RAG",
+              "LLM Deployment & Agents",
+            ].map((skill, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center"
@@ -250,74 +196,69 @@ export default function CoursePage({
                     />
                   </svg>
                 </div>
-                <span className="text-sm">{f}</span>
+                <span>{skill}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* SYLLABUS */}
+        {/* Syllabus */}
         <div className="mb-10 w-full" ref={modulesRef}>
-          <div className="text-center">
-            <SyllabusList items={syllabus} />
-          </div>
+          <SyllabusList
+            items={[
+              { title: "Month 1: Python, Math for ML & ML Fundamentals (Days 1–30)" },
+              { title: "Month 2: Deep Learning Foundations (Days 31–60)" },
+              { title: "Month 3: NLP Foundations & Vector Embeddings (Days 61–90)" },
+              { title: "Month 4: LLMs, Fine-Tuning & RAG Systems (Days 91–120)" },
+              { title: "Month 5: LLM Deployment, Agents & Automation (Days 121–150)" },
+              { title: "Month 6: Enterprise LLMs, Safety & Interview Prep (Days 151–180)" },
+            ]}
+          />
         </div>
 
-        {/* CERTIFICATE */}
-        <div className="bg-white rounded-md shadow mb-4 p-5">
-          <h4 className="font-semibold text-2xl mb-1">
-            Earn a Full Stack Development Certificate
-          </h4>
-
-          <p className="text-md font-semibold text-gray-600 mb-10">
-            Showcase your development journey on LinkedIn and impress recruiters.
-          </p>
-
-          <div className="mb-6 flex justify-center">
-            <img
-              src="/logos/certificate-sample.jpg"
-              alt="Certificate Example"
-              className="w-150 h-auto rounded-md border shadow"
-            />
-          </div>
-        </div>
-
-        {/* ABOUT SECTION */}
-        <div className="bg-white rounded-md shadow p-6 mb-10">
-          <h4 className="font-semibold mb-3">About the Course</h4>
-
-          <p className="text-sm text-gray-700">
-            This Full Stack Roadmap trains you across frontend, backend, databases,
-            integration and deployment. You will build multiple real-world projects
-            using HTML, CSS, JavaScript, React, Node.js, Express, MongoDB and SQL.
-          </p>
-        </div>
-
-        {/* FAQs */}
+        {/* FAQ */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-4">FAQs</h4>
-          <FAQAccordion faqs={faqs} />
+          <FAQAccordion
+            faqs={[
+              {
+                q: "Is this course beginner-friendly?",
+                a: "Yes, everything is taught from scratch.",
+              },
+              {
+                q: "Will I learn LLM Fine-Tuning and RAG?",
+                a: "Yes, full hands-on fine-tuning and RAG pipeline development is included.",
+              },
+              {
+                q: "Is this enough to get an AI/ML job?",
+                a: "Yes. This course covers skills needed for LLM Engineer, AI Engineer & ML Engineer roles.",
+              },
+            ]}
+          />
         </div>
 
-        {/* INSTRUCTOR */}
+        {/* Instructor */}
         <div className="bg-white rounded-md shadow p-6 flex gap-4 mb-10">
           <img
-            src={instructor.photo}
+            src="/logos/profile.png"
             className="w-20 h-20 rounded-full object-cover"
           />
 
           <div>
-            <h5 className="font-semibold">{instructor.name}</h5>
-            <div className="text-sm text-gray-600 mb-2">{instructor.title}</div>
-            <p className="text-sm text-gray-700">{instructor.bio}</p>
+            <h5 className="font-semibold">Abhishek Kumar Shaw</h5>
+            <div className="text-sm text-gray-600 mb-2">AI/ML Engineer & LLM Mentor</div>
+            <p className="text-sm text-gray-700">
+              7+ years of experience in AI/ML, LLMs, RAG systems, and end-to-end deployment.
+              Expert in Python, Deep Learning, LLM Fine-Tuning, and AI System Architecture.
+            </p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="bg-white rounded-md shadow p-6 text-center">
-          <h4 className="font-semibold mb-2">Ready to start learning?</h4>
+          <h4 className="font-semibold mb-2">Ready to start your AI journey?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Begin your Full Stack Development journey today — it's absolutely free.
+            Learn LLMs, Fine-Tuning, Agents, and build enterprise-level AI applications.
           </p>
           <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
             Start Learning

@@ -1,9 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/coursepage/digitalm/page": "app/coursepage/digitalm/page.js",
   "/home/page": "app/home/page.js",
-  "/page": "app/page.js",
   "/coursepage/ui-ux/page": "app/coursepage/ui-ux/page.js",
   "/coursepage/page": "app/coursepage/page.js",
-  "/about/page": "app/about/page.js",
-  "/courses/page": "app/courses/page.js"
+  "/coursepage/devops/page": "app/coursepage/devops/page.js",
+  "/coursepage/fullstack/page": "app/coursepage/fullstack/page.js"
 }

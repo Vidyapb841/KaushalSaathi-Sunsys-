@@ -235,7 +235,7 @@ export default function AboutPage() {
         <img 
           src="/logos/internsaathi.jpg" 
           alt="InternSaathi" 
-          className="w-44 h-44 object-contain"
+          className="w-84 h-54 object-contain"
         />
       </a>
 
