@@ -1,99 +1,150 @@
-"use client"
-
-import type React from "react"
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Card, CardHeader, CardTitle, CardDescription, CardContent,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Eye, EyeOff, Mail, Lock, User, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function SignupPage() {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const router = useRouter();
 
-  const handleSignup = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError(null)
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-    const formData = new FormData(e.target as HTMLFormElement)
-    const name = formData.get("name") as string
-    const email = formData.get("email") as string
-    const phone = formData.get("phone") as string
-    const password = formData.get("password") as string
+  const handleSignup = async (e: any) => {
+    e.preventDefault();
+    setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, password }),
-      })
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/register`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, phone, email, password: pass }),
+        }
+      );
 
-      const data = await res.json()
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message);
 
-      if (!res.ok) {
-        throw new Error(data.message || "Signup failed")
-      }
-
-      alert("Signup successful! Please login.")
-      router.push("/login")
-    } catch (err: any) {
-      setError(err.message)
+      localStorage.setItem("kaushalsaathi_user", JSON.stringify(data.user));
+      router.push("/home");
+    } catch (e: any) {
+      alert(e.message);
     } finally {
-      setIsLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <Card>
-          <CardHeader className="text-center">
-            <CardTitle>Create Account</CardTitle>
-            <CardDescription>Sign up to start your learning journey</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSignup} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
-                <Input id="name" name="name" type="text" placeholder="Enter your name" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" name="email" type="email" placeholder="Enter your email" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="text" placeholder="Enter your phone" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" name="password" type="password" placeholder="Create a password" required />
-              </div>
+    <div className="flex min-h-screen items-center justify-center bg-[#074799] relative">
+      <div className="absolute inset-0 bg-[url('/women-empowerment-digital-learning-illustration.png')] bg-cover opacity-10"></div>
 
-              {error && <p className="text-red-500 text-sm">{error}</p>}
+      <Card className="w-[430px] bg-[#5b92d5] text-white z-10">
+        <CardHeader className="text-center">
+          <Image
+            src="/logos/koushalsaathi.png"
+            width={150}
+            height={150}
+            alt="logo"
+            className="mx-auto m-4"
+          />
+          <CardTitle className="text-2xl">Sign Up</CardTitle>
+          <CardDescription className="text-[#E1FFBB]">
+            Create your account to begin your journey
+          </CardDescription>
+        </CardHeader>
 
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Signing Up..." : "Sign Up"}
-              </Button>
-            </form>
-
-            <div className="mt-6 text-center">
-              <p className="text-sm">
-                Already have an account?{" "}
-                <span
-                  onClick={() => router.push("/login")}
-                  className="text-primary hover:underline cursor-pointer"
-                >
-                  Log in
-                </span>
-              </p>
+        <CardContent>
+          <form className="space-y-4" onSubmit={handleSignup}>
+            <div>
+              <Label className="text-[#E1FFBB]">Full Name</Label>
+              <div className="relative">
+                <User className="absolute left-3 top-3 text-[#009990]" />
+                <Input
+                  className="pl-9 bg-white text-[#001A6E]"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+
+            <div>
+              <Label className="text-[#E1FFBB]">Phone</Label>
+              <div className="relative">
+                <Phone className="absolute left-3 top-3 text-[#009990]" />
+                <Input
+                  className="pl-9 bg-white text-[#001A6E]"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div>
+              <Label className="text-[#E1FFBB]">Email</Label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-3 text-[#009990]" />
+                <Input
+                  type="email"
+                  className="pl-9 bg-white text-[#001A6E]"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div>
+              <Label className="text-[#E1FFBB]">Password</Label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-3 text-[#009990]" />
+                <Input
+                  type={showPass ? "text" : "password"}
+                  className="pl-9 pr-9 bg-white text-[#001A6E]"
+                  required
+                  value={pass}
+                  onChange={(e) => setPass(e.target.value)}
+                />
+                <div
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute right-3 top-3 cursor-pointer"
+                >
+                  {showPass ? <EyeOff /> : <Eye />}
+                </div>
+              </div>
+            </div>
+
+            <Button type="submit" className="w-full bg-[#009990] text-white">
+              {loading ? "Loading..." : "Sign Up"}
+            </Button>
+          </form>
+
+          <div className="text-center text-sm mt-4">
+            <span className="text-white">
+              Already have an account?{" "}
+              <button
+                className="text-[#E1FFBB] underline"
+                onClick={() => router.push("/login")}
+              >
+                Sign In
+              </button>
+            </span>
+          </div>
+        </CardContent>
+      </Card>
     </div>
-  )
+  );
 }

@@ -21,28 +21,26 @@ const SEO = "/logos/14.png";
 const SLS = "/logos/15.png";
 const ENG = "/logos/16.png";
 
-  const courses = [
-    { title: "Front End Development", img: Front },
-    { title: "Back End Development", img: back },
-    { title: "Full Stack Development", img: FullStackImg },
-    { title: "UI/UX Designing", img: UIUXImg },
-    { title: "Digital Marketing", img: DigitalMarketingImg },
-    { title: "DevOps", img: DevOpsImg },
-    { title: "Social Media Marketing", img: ssm},
-    { title: "Fashion Designing", img: FashionImg },
-    { title: "Interior Designing", img: id },
-    { title: "Professional Makeup", img: mkpup },
-    { title: "HR Management", img: HR },
-    { title: "Marketing & Branding", img: MB },
-    { title: "LLM IT Certification Program", img: LLM },
-    { title: "SEO(Search Engine Optimization)", img: SEO },
-    { title: "Salesforce CRM Administration", img: SLS },
-    { title: "Spoken English & Communication Skills", img: ENG },
-    
-  ];
-export default function CoursesSection() {
- 
+const courses = [
+  { title: "Front End Development", img: Front },
+  { title: "Back End Development", img: back },
+  { title: "Full Stack Development", img: FullStackImg },
+  { title: "UI/UX Designing", img: UIUXImg },
+  { title: "Digital Marketing", img: DigitalMarketingImg },
+  { title: "DevOps", img: DevOpsImg },
+  { title: "Social Media Marketing", img: ssm },
+  { title: "Fashion Designing", img: FashionImg },
+  { title: "Interior Designing", img: id },
+  { title: "Professional Makeup", img: mkpup },
+  { title: "HR Management", img: HR },
+  { title: "Marketing & Branding", img: MB },
+  { title: "LLM IT Certification Program", img: LLM },
+  { title: "SEO(Search Engine Optimization)", img: SEO },
+  { title: "Salesforce CRM Administration", img: SLS },
+  { title: "Spoken English & Communication Skills", img: ENG },
+];
 
+export default function CoursesSection() {
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-gray-50">
       <h2 className="text-3xl font-bold mb-8 text-center">Our Courses</h2>
@@ -54,8 +52,7 @@ export default function CoursesSection() {
             className="min-w-[260px] max-w-[260px] rounded-2xl shadow-md bg-white"
           >
             <CardContent className="p-4">
-              
-              {/* FIXED IMAGE WRAPPER */}
+
               <div className="relative w-full h-44 mb-4 bg-white rounded-xl flex items-center justify-center p-2">
                 <Image
                   src={course.img}
@@ -69,7 +66,6 @@ export default function CoursesSection() {
 
               <div className="flex flex-col gap-3">
 
-                {/* Full Stack */}
                 {course.title === "Full Stack Development" && (
                   <Link href="/coursepage/fullstack">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -78,7 +74,6 @@ export default function CoursesSection() {
                   </Link>
                 )}
 
-                {/* DevOps */}
                 {course.title === "DevOps" && (
                   <Link href="/coursepage/devops">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -87,7 +82,6 @@ export default function CoursesSection() {
                   </Link>
                 )}
 
-                {/* UI/UX */}
                 {course.title === "UI/UX Designing" && (
                   <Link href="/coursepage/ui-ux">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -96,7 +90,6 @@ export default function CoursesSection() {
                   </Link>
                 )}
 
-                {/* Fashion Designing */}
                 {course.title === "Fashion Designing" && (
                   <Link href="/coursepage/fashiond">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -105,7 +98,6 @@ export default function CoursesSection() {
                   </Link>
                 )}
 
-                {/* Digital Marketing */}
                 {course.title === "Digital Marketing" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -113,8 +105,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                
-                {/* Front End Development */}
+
                 {course.title === "Front End Development" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -122,16 +113,15 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                
-                {/* Back End Development */}
+
                 {course.title === "Back End Development" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/backend">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>
                   </Link>
                 )}
-                {/* Social Media Marketing */}
+
                 {course.title === "Social Media Marketing" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -139,7 +129,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* Interior Designing */}
+
                 {course.title === "Interior Designing" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -147,7 +137,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* Professional Makeup & Hair Artist */}
+
                 {course.title === "Professional Makeup" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -155,7 +145,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* Human Resource Management */}
+
                 {course.title === "HR Management" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -163,7 +153,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* Marketing & Branding */}
+
                 {course.title === "Marketing & Branding" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -171,7 +161,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* LLM IT Certification Program */}
+
                 {course.title === "LLM IT Certification Program" && (
                   <Link href="/coursepage/llm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -179,7 +169,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* SEO(Search Engine Optimization) */}
+
                 {course.title === "SEO(Search Engine Optimization)" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -187,7 +177,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* Salesforce CRM Administration */}
+
                 {course.title === "Salesforce CRM Administration" && (
                   <Link href="/coursepage/salesforce">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -195,7 +185,7 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                {/* Spoken English & Communication Skills*/}
+
                 {course.title === "Spoken English & Communication Skills" && (
                   <Link href="/coursepage/digitalm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
@@ -203,10 +193,47 @@ export default function CoursesSection() {
                     </Button>
                   </Link>
                 )}
-                
-                <Button className="w-full text-white font-medium rounded-xl">
-                  Start Learning
-                </Button>
+
+                {/* ⭐ Watch & Enroll Button */}
+<Link href={
+  course.title === "Full Stack Development"
+    ? "/coursepage/fullstack#videos"
+    : course.title === "DevOps"
+    ? "/coursepage/devops#videos"
+    : course.title === "UI/UX Designing"
+    ? "/coursepage/ui-ux#videos"
+    : course.title === "Fashion Designing"
+    ? "/coursepage/fashiond#videos"
+    : course.title === "Digital Marketing"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "Front End Development"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "Back End Development"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "Social Media Marketing"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "Interior Designing"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "Professional Makeup"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "HR Management"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "Marketing & Branding"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "LLM IT Certification Program"
+    ? "/coursepage/llm#videos"
+    : course.title === "SEO(Search Engine Optimization)"
+    ? "/coursepage/digitalm#videos"
+    : course.title === "Salesforce CRM Administration"
+    ? "/coursepage/salesforce#videos"
+    : "/coursepage/digitalm#videos"
+}>
+  <Button variant="outline" className="w-full font-medium rounded-xl">
+    Watch & Enroll
+  </Button>
+</Link>
+
+
               </div>
             </CardContent>
           </Card>

@@ -92,7 +92,6 @@ export default function CoursePage({
   description =
     "Master HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL, Deployment, DevOps basics and build real-world full stack projects.",
 
-  // ⭐ FULL STACK DEVELOPMENT – SYLLABUS (Replacing DevOps Modules)
   syllabus = [
     { title: "Month 1: HTML, CSS, Responsive Web Design" },
     { title: "Month 2: JavaScript & Frontend Logic" },
@@ -133,9 +132,14 @@ export default function CoursePage({
   heroImage = "/logos/4.png",
 }) {
   const modulesRef = useRef(null);
+  const videosRef = useRef(null);
 
   const handleExplore = () => {
     modulesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleWatch = () => {
+    videosRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -183,7 +187,12 @@ export default function CoursePage({
                 >
                   Explore Course
                 </button>
-                <button className="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-md font-medium">
+
+                {/* ⭐ Updated button */}
+                <button
+                  onClick={handleWatch}
+                  className="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-md font-medium"
+                >
                   Watch Intro Video
                 </button>
               </div>
@@ -217,7 +226,11 @@ export default function CoursePage({
                 </ul>
               </div>
 
-              <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
+              {/* ⭐ Clicking enroll also opens videos */}
+              <button
+                onClick={handleWatch}
+                className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold"
+              >
                 Enroll Now
               </button>
             </aside>
@@ -293,6 +306,74 @@ export default function CoursePage({
           </p>
         </div>
 
+        {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}
+        <section id="videos" className="py-16 px-6 bg-white">
+
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-[#001A6E] mb-8 text-center">
+              Watch to Know More
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Video 1 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_1"
+                  title="Video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  Introduction to the Program
+                </div>
+              </div>
+
+              {/* Video 2 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_2"
+                  title="Video 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  What You Will Learn
+                </div>
+              </div>
+
+              {/* Video 3 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_3"
+                  title="Video 3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  Why Choose This Course?
+                </div>
+              </div>
+
+              {/* Video 4 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_4"
+                  title="Video 4"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  Career Opportunities
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQs */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-4">FAQs</h4>
@@ -319,7 +400,10 @@ export default function CoursePage({
           <p className="text-sm text-gray-600 mb-4">
             Begin your Full Stack Development journey today — it's absolutely free.
           </p>
-          <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
+          <button
+            onClick={handleWatch}
+            className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md"
+          >
             Start Learning
           </button>
         </div>

@@ -11,50 +11,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/api/auth/session/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/auth/session/route.js"
-    ],
     "/home/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/home/page.js"
-    ],
-    "/coursepage/digitalm/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/digitalm/page.js"
-    ],
-    "/coursepage/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/page.js"
     ],
     "/coursepage/ui-ux/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/coursepage/ui-ux/page.js"
     ],
-    "/coursepage/devops/page": [
+    "/about/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/devops/page.js"
+      "static/chunks/app/about/page.js"
     ],
-    "/coursepage/llm/page": [
+    "/coursepage/digitalm/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/llm/page.js"
-    ],
-    "/coursepage/salesforce/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/salesforce/page.js"
-    ],
-    "/coursepage/fullstack/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/fullstack/page.js"
+      "static/chunks/app/coursepage/digitalm/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
