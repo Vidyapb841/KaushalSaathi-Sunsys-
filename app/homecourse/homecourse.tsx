@@ -107,7 +107,7 @@ export default function CoursesSection() {
                 )}
 
                 {course.title === "Front End Development" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/front">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>

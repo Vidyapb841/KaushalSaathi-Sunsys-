@@ -207,14 +207,13 @@ export default function CoursePage() {
 
             {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
-                <img
-                  src="/logos/course-banner.jpg"
-                  alt="Course Hero"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
+  <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
+    <img
+      src="/logos/backend.PNG"
+      alt="Course Hero"
+      className="max-w-full max-h-full object-contain"
+    />
+  </div>
               <div className="text-sm">
                 <div className="text-green-700 font-bold text-lg">FREE</div>
                 <div className="mt-1">Self-Paced · 24 Weeks</div>
@@ -302,6 +301,74 @@ export default function CoursePage() {
            databases, REST APIs, authentication, cloud services, version control, and full deployment skills.
           </p>
         </div>
+
+         {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}
+        <section id="videos" className="py-16 px-6 bg-white">
+
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-[#001A6E] mb-8 text-center">
+              Watch to Know More
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Video 1 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_1"
+                  title="Video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  Introduction to the Program
+                </div>
+              </div>
+
+              {/* Video 2 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_2"
+                  title="Video 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  What You Will Learn
+                </div>
+              </div>
+
+              {/* Video 3 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_3"
+                  title="Video 3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  Why Choose This Course?
+                </div>
+              </div>
+
+              {/* Video 4 */}
+              <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100">
+                <iframe
+                  className="w-full h-56"
+                  src="https://www.youtube.com/embed/dummy_link_4"
+                  title="Video 4"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <div className="p-4 text-center font-semibold text-gray-800">
+                  Career Opportunities
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* FAQ */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
