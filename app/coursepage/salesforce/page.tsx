@@ -102,7 +102,7 @@ export default function CoursePage() {
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Salesforce Development
+                Home &gt; KoushalSaathi &gt; Salesforce Development
               </nav>
 
               <h1
@@ -149,8 +149,8 @@ export default function CoursePage() {
               </div>
 
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">FREE</div>
-                <div className="mt-1">Self-Paced · 6 Months</div>
+                <div className="text-green-700 font-bold text-lg">Live classes</div>
+                <div className="mt-1">Instructor-Led Program · 6 Months</div>
               </div>
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">

@@ -138,11 +138,11 @@ export function Footer() {
           <ul className="space-y-3 text-gray-300 text-sm">
             <li className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-[#009990]" />
-              <span>skillz@gmail.com</span>
+              <span>admin@kaushalsaathi.com</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone className="h-5 w-5 text-[#009990]" />
-              <span>+451 245 3687</span>
+              <span>9105837321 </span>
             </li>
           </ul>
         </div>

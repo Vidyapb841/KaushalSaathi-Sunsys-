@@ -12,6 +12,7 @@ import Image from "next/image";
 import HomeCourse from "../homecourse/homecourse";
 import FAQHome from "@/app/homecourse/faq-home";
 
+
 import {
   Code,
   Brush,

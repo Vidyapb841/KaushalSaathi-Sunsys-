@@ -20,36 +20,44 @@ function Chip({ children }) {
   );
 }
 
+// ---------------- SYLLABUS LIST ------------------
 function SyllabusList({ items }) {
+  const [showAll, setShowAll] = useState(false);
+
+  const listStyle = showAll ? {} : { maxHeight: "14rem" };
+  const visibleItems = showAll ? items : items.slice(0, 4);
+
   return (
     <div className="bg-white rounded-md shadow-sm overflow-hidden">
       <div className="p-4 border-b" style={{ background: COLORS.highlight }}>
         <strong>Syllabus Overview</strong>
       </div>
-      <ul className="max-h-56 overflow-auto">
-        {items.map((it, i) => (
+
+      <ul className="overflow-auto" style={{ ...listStyle }}>
+        {visibleItems.map((it, i) => (
           <li
             key={i}
-            className="flex justify-center font-bold items-center px-4 py-3 border-b last:border-b-0"
+            className="flex items-center px-4 py-3 border-b last:border-b-0 font-bold"
           >
-            <div className="text-sm">{it.title}</div>
-            <div className="text-xs text-gray-600">{it.time}</div>
+            <div className="text-sm text-left w-full">{it.title}</div>
           </li>
         ))}
       </ul>
 
       <div className="p-3 text-center">
         <button
+          onClick={() => setShowAll(!showAll)}
           className="text-sm underline"
           style={{ color: COLORS.secondary }}
         >
-          View More
+          {showAll ? "View Less" : "View More"}
         </button>
       </div>
     </div>
   );
 }
 
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -82,42 +90,70 @@ function FAQAccordion({ faqs }) {
   );
 }
 
-export default function CoursePage({
-  title = "Full Stack Development",
-  subtitle = "Become job-ready with complete hands-on training.",
-  rating = "4.8",
-  learners = "12,000+ learners",
-  level = "Beginner to Advanced",
-  description = "Learn front-end, back-end, APIs, databases and deployment in one course.",
-  features = [
-    "Frontend Development",
-    "Backend APIs",
-    "Database Management",
-    "Deployment Skills",
-    "Debugging & Best Practices",
-  ],
-  syllabus = [
-    { title: "Module 1: HTML & CSS", time: "1 hr" },
-    { title: "Module 2: JavaScript Basics", time: "1.2 hrs" },
-    { title: "Module 3: React Fundamentals", time: "1 hr" },
-    { title: "Module 4: Backend API", time: "40 mins" },
-  ],
-  instructor = {
-    name: "John Doe",
-    title: "Senior Software Engineer",
-    bio: "10+ years of experience in full-stack development.",
-    photo: "/logos/profile.png",
-  },
-  faqs = [
-    { q: "Is the course free?", a: "Yes, this is 100% free to learn." },
-    { q: "Do I get a certificate?", a: "Yes, after completing the course." },
-  ],
-  heroImage = "/logos/course-banner.jpg",
-}) {
+// ---------------- PAGE ------------------
+export default function CoursePage() {
   const modulesRef = useRef(null);
 
   const handleExplore = () => {
     modulesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // -----------------------------------------------
+  // Back_END SYLLABUS DATA
+  // -----------------------------------------------
+
+  const syllabus = [
+    { title: "Week 1 : Linux & Shell Basics" },
+    { title: "Week 2: Networking + HTTP" },
+    { title: "Week 3: Node.js Backend Development" },
+    { title: "Week 4 : Database Systems" },
+    { title: "Week 5 : Auth & Security" },
+    { title: "Week 6 : DevOps + Deployment" },
+    { title: "Week 7 : Linux & Shell Basics - Stage 2" },
+    { title: "Week 8 : Networking + HTTP - Stage 2" },
+    { title: "Week 9 : Node.js Backend Development - Stage 2" },
+    { title: "Week 10 : Database Systems - Stage 2" },
+    { title: "Week 11 : Auth & Security - Stage 2" },
+    { title: "Week 12 : DevOps + Deployment - Stage 2" },
+    { title: "Week 13: Linux & Shell Basics - Stage 3" },
+    { title: "Week 14: Networking + HTTP - Stage 3" },
+    { title: "Week 15: Node.js Backend Development - Stage 3" },
+    { title: "Week 16: Database Systems - Stage 3" },
+    { title: "Week 17: Auth & Security - Stage 3" },
+    { title: "Week 18: DevOps + Deployment - Stage 3" },
+  ];
+
+  const features = [
+    "Server-side programming & backend logic",
+    "Building and managing REST APIs",
+    "Working with SQL & NoSQL databases",
+    "Authentication & authorization systems",
+    "Handling servers, deployment & environment setup",
+    "Error handling, logging & debugging",
+    "Scalable backend architecture with Node.js",
+    "Cloud integration & backend performance optimization",
+  ];
+
+  const faqs = [
+    {
+      q: "Is this course free?",
+      a: "Yes, Back-End development course is 100% free.",
+    },
+    {
+      q: "Do I get a certificate?",
+      a: "Yes, a certificate is provided after completion.",
+    },
+    {
+      q: "Do I need prior knowledge?",
+      a: "No, this course starts from the basics.",
+    },
+  ];
+
+  const instructor = {
+    name: "Sarah Thompson",
+    title: "Back-End Development Instructor",
+    bio: "12+ years of experience global brands.",
+    photo: "/logos/profile.png",
   };
 
   return (
@@ -126,35 +162,33 @@ export default function CoursePage({
       <section className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85 text-white">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            {/* Left */}
+            {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Course Page
+                Home &gt; SkillUp &gt; Back-end Development
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                {title}
+                Back-end Development Curriculum 2025
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                {subtitle}
+                Become job-ready with a complete 12-week industry-standard
+                Back-end Development training.
               </p>
 
               <div className="mt-5 text-sm text-slate-100 max-w-3xl">
-                <p className="mb-3">{description}</p>
+                <p className="mb-3">
+                 Covers server-side programming, 
+                 RESTful API development, databases, authentication, cloud integration, deployment workflows, and backend performance optimization.
+                </p>
 
                 <div className="flex flex-wrap gap-3">
-                  <div className="flex items-center gap-2">
-                    <span className="bg-white/10 px-2 py-1 rounded">
-                      {rating} ★
-                    </span>
-                    <span>{learners}</span>
-                  </div>
-
-                  <Chip>{level}</Chip>
+                  <Chip>Beginner to Professional</Chip>
+                  <Chip>180 Hours</Chip>
                 </div>
               </div>
 
@@ -171,33 +205,31 @@ export default function CoursePage({
               </div>
             </div>
 
-            {/* Right Card */}
+            {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
-                  src={heroImage}
+                  src="/logos/course-banner.jpg"
                   alt="Course Hero"
                   className="w-full h-full object-cover"
                 />
               </div>
 
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg"></div>
-                <div className="mt-1">Self-Paced · 4 Hours</div>
+                <div className="text-green-700 font-bold text-lg">FREE</div>
+                <div className="mt-1">Self-Paced · 24 Weeks</div>
               </div>
 
-              <div className="mt-3">
-                <ul className="text-sm">
-                  <li className="flex justify-between py-1">
-                    <span>Completion Certificate</span>
-                    <span>Included</span>
-                  </li>
-                  <li className="flex justify-between py-1">
-                    <span>Access</span>
-                    <span>90 Days</span>
-                  </li>
-                </ul>
-              </div>
+              <ul className="text-sm mt-3">
+                <li className="flex justify-between py-1">
+                  <span>Completion Certificate</span>
+                  <span>Included</span>
+                </li>
+                <li className="flex justify-between py-1">
+                  <span>Access</span>
+                  <span>180 Days</span>
+                </li>
+              </ul>
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
                 Enroll Now
@@ -209,7 +241,7 @@ export default function CoursePage({
 
       {/* MAIN CONTENT */}
       <section className="max-w-6xl mx-auto px-4 py-10">
-        {/* Skills */}
+        {/* SKILLS */}
         <div className="bg-white shadow rounded-md p-6 mb-8">
           <h2
             className="text-xl font-semibold mb-3"
@@ -238,20 +270,19 @@ export default function CoursePage({
           </div>
         </div>
 
-        {/* Syllabus */}
+        {/* SYLLABUS */}
         <div className="mb-10 w-full" ref={modulesRef}>
-          <div className="text-center">
-            <SyllabusList items={syllabus} />
-          </div>
+          <SyllabusList items={syllabus} />
         </div>
 
-        {/* Certificate */}
+        {/* CERTIFICATE */}
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
-            Get A Completion Certificate
+            Get a Completion Certificate
           </h4>
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Share your certificate on LinkedIn and showcase your skills.
+            Showcase your Back-end development expertise and boost your LinkedIn
+            profile.
           </p>
 
           <div className="mb-6 flex justify-center">
@@ -263,13 +294,12 @@ export default function CoursePage({
           </div>
         </div>
 
-        {/* About */}
+        {/* ABOUT */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
-
           <p className="text-sm text-gray-700">
-            This course covers front-end, back-end, databases and deployment —
-            everything needed to build modern web applications.
+          A complete, industry-focused backend curriculum designed to make you job-ready—covering server-side programming,
+           databases, REST APIs, authentication, cloud services, version control, and full deployment skills.
           </p>
         </div>
 
@@ -279,18 +309,17 @@ export default function CoursePage({
           <FAQAccordion faqs={faqs} />
         </div>
 
-        {/* Instructor */}
+        {/* INSTRUCTOR */}
         <div className="bg-white rounded-md shadow p-6 flex gap-4 mb-10">
           <img
             src={instructor.photo}
             className="w-20 h-20 rounded-full object-cover"
+            alt=""
           />
 
           <div>
             <h5 className="font-semibold">{instructor.name}</h5>
-            <div className="text-sm text-gray-600 mb-2">
-              {instructor.title}
-            </div>
+            <div className="text-sm text-gray-600 mb-2">{instructor.title}</div>
             <p className="text-sm text-gray-700">{instructor.bio}</p>
           </div>
         </div>
@@ -299,13 +328,14 @@ export default function CoursePage({
         <div className="bg-white rounded-md shadow p-6 text-center">
           <h4 className="font-semibold mb-2">Ready to begin?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Start learning today — it's completely free.
+            Start learning Back-End Development today — it's completely free.
           </p>
           <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
             Start Learning
           </button>
         </div>
       </section>
+
       <Footer />
     </main>
   );

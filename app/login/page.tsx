@@ -1,115 +1,188 @@
-"use client"
-
-import type React from "react"
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Link from "next/link"
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Card, CardHeader, CardTitle, CardDescription, CardContent,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
+import Image from "next/image";
 
 export default function LoginPage() {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPass, setShowPass] = useState(false);
+  const [isForgot, setForgot] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError(null)
-
-    const formData = new FormData(e.target as HTMLFormElement)
-    const email = formData.get("email") as string
-    const password = formData.get("password") as string
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      })
-
-      const data = await res.json()
-
-      if (!res.ok) {
-        throw new Error(data.message || "Login failed")
+      if (isForgot) {
+        alert("Reset link sent!");
+        setForgot(false);
+        setLoading(false);
+        return;
       }
 
-      localStorage.setItem("token", data.token)
-      router.push("/home")
-    } catch (err: any) {
-      setError(err.message)
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message);
+
+      localStorage.setItem("kaushalsaathi_user", JSON.stringify(data.user));
+localStorage.setItem("ks_login_success", "yes");
+router.push("/home");
+
+    } catch (e: any) {
+      alert(e.message);
     } finally {
-      setIsLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-4 relative">
+    <div className="flex min-h-screen items-center justify-center bg-[#074799] relative">
+      <div className="absolute inset-0 bg-[url('/women-empowerment-digital-learning-illustration.png')] bg-cover opacity-10"></div>
 
-      {/* Left Logos */}
-      <div className="absolute left-2 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
-        <a href="https://chalosaathi.com" target="_blank" rel="noopener noreferrer">
-          <img src="/logos/chalosaathi.jpg" alt="ChaloSaathi" className="w-16 h-16 object-contain" />
-        </a>
-        <a href="https://internsaathi.com" target="_blank" rel="noopener noreferrer">
-          <img src="/logos/internsaathi.jpg" alt="InternSaathi" className="w-16 h-16 object-contain" />
-        </a>
-      </div>
+      <Card className="w-[430px] bg-[#5b92d5] text-white z-10">
+        <CardHeader className="text-center">
+          <Image
+            src="/logos/koushalsaathi.jpg"
+            width={150}
+            height={150}
+            alt="logo"
+            className="mx-auto m-4"
+          />
+          <CardTitle className="text-2xl">
+            {isForgot ? "Forgot Password" : "Sign In"}
+          </CardTitle>
+          <CardDescription className="text-[#E1FFBB]">
+            {isForgot ? "Reset your password" : "Welcome back"}
+          </CardDescription>
+        </CardHeader>
 
-      {/* Right Logos */}
-      <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
-        <a href="https://naukrisaathi.com" target="_blank" rel="noopener noreferrer">
-          <img src="/logos/NAUKRISAATHI-Logo.jpg" alt="NaukriSaathi" className="w-16 h-16 object-contain" />
-        </a>
-        <a href="https://tasksaathi.com" target="_blank" rel="noopener noreferrer">
-          <img src="/logos/task saathi png.png" alt="TaskSaathi" className="w-16 h-16 object-contain" />
-        </a>
-      </div>
-
-      {/* Login Card */}
-      <div className="w-full max-w-md z-40">
-        <div className="text-center mb-8">
-          <img src="/logos/kaushalsaathi.png" alt="KaushalSaathi" className="mx-auto mb-3 w-20 h-20 object-contain" />
-          <h1 className="text-3xl font-bold text-primary mb-2">KaushalSaathi</h1>
-          <p className="text-muted-foreground">Empowering Women Through Skills</p>
-        </div>
-
-        <Card>
-          <CardHeader className="text-center">
-            <CardTitle>Welcome Back</CardTitle>
-            <CardDescription>Sign in to continue your learning journey</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" name="email" type="email" placeholder="Enter your email" required />
+        <CardContent>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div>
+              <Label className="text-[#E1FFBB]">Email</Label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-3 text-[#009990]" />
+                <Input
+                  className="pl-9 bg-white text-[#001A6E]"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" name="password" type="password" placeholder="Enter your password" required />
-              </div>
-
-              {error && <p className="text-red-500 text-sm">{error}</p>}
-
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Signing In..." : "Sign In"}
-              </Button>
-            </form>
-
-            <div className="mt-6 text-center">
-              <p className="text-sm">
-                Don’t have an account?{" "}
-                <Link href="/signup" className="text-primary hover:underline">
-                  Sign up
-                </Link>
-              </p>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+
+            {!isForgot && (
+              <div>
+                <Label className="text-[#E1FFBB]">Password</Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-3 text-[#009990]" />
+                  <Input
+                    type={showPass ? "text" : "password"}
+                    className="pl-9 pr-9 bg-white text-[#001A6E]"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  <div
+                    onClick={() => setShowPass(!showPass)}
+                    className="absolute right-3 top-3 cursor-pointer"
+                  >
+                    {showPass ? <EyeOff /> : <Eye />}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {isForgot && (
+              <p className="text-white text-sm">
+                Reset link will be sent to: <strong>{email}</strong>
+              </p>
+            )}
+
+            <Button type="submit" className="w-full bg-[#009990] text-white">
+              {loading
+                ? "Loading..."
+                : isForgot
+                ? "Send Reset Link"
+                : "Sign In"}
+            </Button>
+          </form>
+
+          {!isForgot && (
+            <>
+              <div className="flex items-center my-7">
+                <div className="flex-1 h-px bg-[#E1FFBB]/40"></div>
+                <span className="px-2 text-sm text-white">
+                  or continue with
+                </span>
+                <div className="flex-1 h-px bg-[#E1FFBB]/40"></div>
+              </div>
+
+              <div className="flex justify-center gap-4">
+                <Button className="bg-white text-[#001A6E]">
+                  <FcGoogle /> Google
+                </Button>
+                <Button className="bg-blue-700 text-white">
+                  <FaFacebook /> Facebook
+                </Button>
+              </div>
+            </>
+          )}
+
+          <div className="text-center text-sm mt-4">
+            {!isForgot && (
+              <button
+                onClick={() => setForgot(true)}
+                className="text-white underline"
+              >
+                Forgot Password?
+              </button>
+            )}
+
+            <div className="mt-2">
+              {isForgot ? (
+                <button
+                  onClick={() => setForgot(false)}
+                  className="text-[#E1FFBB] underline"
+                >
+                  Back to Sign In
+                </button>
+              ) : (
+                <span className="text-white">
+                  Don't have an account?{" "}
+                  <button
+                    className="text-[#E1FFBB] underline"
+                    onClick={() => router.push("/signup")}
+                  >
+                    Sign Up
+                  </button>
+                </span>
+              )}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
-  )
+  );
 }
