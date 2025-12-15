@@ -9,6 +9,6 @@ export async function POST(req: NextRequest) {
   const item = { id: newId(), name, email, phone, subject, message, at: new Date().toISOString() }
   db.data.messages.push(item)
   await db.write()
-  await sendContactForward({ name, email, subject, message })
+  await sendContactForward({ name, email, message })
   return NextResponse.json({ ok: true })
 }
