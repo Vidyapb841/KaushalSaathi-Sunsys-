@@ -7,7 +7,7 @@ export default function FullStackCoursePage() {
   const data = {
     title: "Full-Stack Web Development Bootcamp",
     subtitle: "Beginner to Job-Ready · Free Certification Course",
-    rating: 4.7,
+    rating: "4.7",
     learners: "25,432 Learners Enrolled",
     level: "Beginner Level",
     description:
