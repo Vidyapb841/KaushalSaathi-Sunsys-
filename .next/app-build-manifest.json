@@ -16,35 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/home/page.js"
     ],
-    "/coursepage/devops/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/devops/page.js"
-    ],
-    "/coursepage/ui-ux/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/ui-ux/page.js"
-    ],
-    "/coursepage/front/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/front/page.js"
-    ],
     "/coursepage/digitalm/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/coursepage/digitalm/page.js"
     ],
-    "/coursepage/fullstack/page": [
+    "/coursepage/devops/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/fullstack/page.js"
-    ],
-    "/coursepage/backend/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/backend/page.js"
+      "static/chunks/app/coursepage/devops/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

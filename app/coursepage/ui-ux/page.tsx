@@ -103,7 +103,7 @@ export default function CoursePage() {
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; KoushaSaathi &gt; UI/UX Course
+                Home &gt; Courses &gt; UI/UX Course
               </nav>
 
               <h1
@@ -153,6 +153,15 @@ export default function CoursePage() {
                 <div className="text-green-700 font-bold text-lg">Live classes</div>
                 <div className="mt-1">Instructor-Led Program</div>
               </div>
+
+              <div className="mt-3">
+                <ul className="text-sm">
+                  <li className="flex justify-between py-1">
+                    <span>Completion Certificate</span>
+                    <span>Included</span>
+                  </li>
+                  </ul>
+                 </div> 
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
                 Enroll Now
@@ -228,7 +237,7 @@ export default function CoursePage() {
             Get a Completion Certificate
           </h4>
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Showcase your digital marketing expertise and boost your LinkedIn
+            Showcase your UI/UX expertise and boost your LinkedIn
             profile.
           </p>
 

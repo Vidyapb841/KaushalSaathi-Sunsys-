@@ -123,7 +123,7 @@ export default function CoursesSection() {
                 )}
 
                 {course.title === "Social Media Marketing" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/socialm">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>
@@ -139,7 +139,7 @@ export default function CoursesSection() {
                 )}
 
                 {course.title === "Professional Makeup" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/makeup">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>

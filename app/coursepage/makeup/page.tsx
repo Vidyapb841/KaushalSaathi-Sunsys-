@@ -99,45 +99,28 @@ export default function CoursePage() {
   };
 
   // -----------------------------------------------
-  // Front_END SYLLABUS DATA
+  // MAKE UP CONTENT
   // -----------------------------------------------
 
   const syllabus = [
-    { title: "Week 1 : HTML Mastery" },
-    { title: "Week 2: CSS Core Styling" },
-    { title: "Week 3: Advanced CSS + UI" },
-    { title: "Week 4 : JavaScript Foundations" },
-    { title: "Week 5 : Modern JavaScript" },
-    { title: "Week 6 : Version Control" },
-    { title: "Week 7 : HTML Mastery - Round 2" },
-    { title: "Week 8 : CSS Core Styling - Round 2" },
-    { title: "Week 9 : Advanced CSS + UI - Round 2" },
-    { title: "Week 10 : JavaScript Foundations - Round 2" },
-    { title: "Week 11 : Modern JavaScript - Round 2" },
-    { title: "Week 12 : Version Control - Round 2" },
-    { title: "Week 13: HTML Mastery - Round 3" },
-    { title: "Week 14: CSS Core Styling - Round 3" },
-    { title: "Week 15: Advanced CSS + UI - Round 3" },
-    { title: "Week 16: JavaScript Foundations - Round 3" },
-    { title: "Week 17: Modern JavaScript - Round 3" },
-    { title: "Week 18: Version Control - Round 3" },
-  ];
+    { title: "Month 1:MAKEUP FUNDAMENTALS & SKIN THEORY" },
+    { title: "Month 2: GLAM MAKEUP, EYE BASICS & HAIR BASICS" },
+    { title: "Month 3: BRIDAL MAKEUP & BRIDAL HAIRSTYLING" },
+    { title: "Month 4: FASHION, RUNWAY, EDITORIAL & BASIC SFX" },
+    { title: "Month 5: ADVANCED MAKEUP + NAIL ART + FREELANCE BASICS " },
+    { title: "Month 6: INTERNSHIP + PORTFOLIO + FINAL ASSESSMENT" },
+   ];
 
   const features = [
-    "HTML, Semantic Structure & Accessibility",
-    "CSS, Flexbox, Grid & Modern Layouts",
-    "Responsive & Mobile-First Design",
-    "Git & GitHub for Version Control",
-    "JavaScript Basics & DOM Manipulation",
-    "ES6+, APIs & Async Programming",
-    "React Components, State & Hooks",
-    "Advanced React: Routing & Context API",
+    "Makeup Fundamentals & Skin Theory",
+    "Glam Makeup Techniques",
+    "Bridal Makeup Artistry",
   ];
 
   const faqs = [
     {
       q: "Is this course free?",
-      a: "Yes, Front-End development course is 100% free.",
+      a: "Yes, this Professional Makeup course is 100% free.",
     },
     {
       q: "Do I get a certificate?",
@@ -151,8 +134,8 @@ export default function CoursePage() {
 
   const instructor = {
     name: "Sarah Thompson",
-    title: "Front-end Development Instructor",
-    bio: "12+ years of experience global brands.",
+    title: "Professional Makeup Artist",
+    bio: "10+ years of experience in bridal and fashion makeup artistry.",
     photo: "/logos/profile.png",
   };
 
@@ -165,30 +148,31 @@ export default function CoursePage() {
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Course &gt; Front-end Development
+                Home &gt; SkillUp &gt; Professional Makeup
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                Front-end Development Curriculum 2026
+                Professional Makeup Curriculum 2025
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                Become job-ready with a complete 18-week industry-standard
-                Front-end Development training.
+                Become job-ready with a complete 24-week industry-standard
+                Professional Makeup training.
               </p>
 
               <div className="mt-5 text-sm text-slate-100 max-w-3xl">
                 <p className="mb-3">
-                 Covers responsive design, modern UI development, JavaScript, 
-                 React, APIs, Git, deployment, and performance optimization.
+                  Covers Makeup fundamentals, Glam makeup, Bridal makeup,
+                  Fashion makeup, Advanced techniques, Nail art, and Portfolio
+                  building. 
                 </p>
 
                 <div className="flex flex-wrap gap-3">
                   <Chip>Beginner to Professional</Chip>
-                  <Chip>4.9 ★ Rating</Chip>
+                  <Chip>180 Hours</Chip>
                 </div>
               </div>
 
@@ -207,17 +191,17 @@ export default function CoursePage() {
 
             {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-  <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
-    <img
-      src="/logos/course1.png"
-      alt="Course Hero"
-      className="max-w-full max-h-full object-contain"
-    />
-  </div>
+              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
+                <img
+                  src="/logos/course-banner.jpg"
+                  alt="Course Hero"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">Live Classes</div>
-                <div className="mt-1">Instructor-Led Program</div>
+                <div className="text-green-700 font-bold text-lg">FREE</div>
+                <div className="mt-1">Self-Paced · 24 Weeks</div>
               </div>
 
               <ul className="text-sm mt-3">
@@ -225,7 +209,10 @@ export default function CoursePage() {
                   <span>Completion Certificate</span>
                   <span>Included</span>
                 </li>
-  
+                <li className="flex justify-between py-1">
+                  <span>Access</span>
+                  <span>180 Days</span>
+                </li>
               </ul>
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
@@ -278,7 +265,7 @@ export default function CoursePage() {
             Get a Completion Certificate
           </h4>
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Showcase your Front-end development expertise and boost your LinkedIn
+            Showcase your Professional Makeup expertise and boost your LinkedIn
             profile.
           </p>
 
@@ -295,8 +282,9 @@ export default function CoursePage() {
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
           <p className="text-sm text-gray-700">
-           A complete, industry-focused front-end curriculum designed to make you job-ready—covering modern UI development, 
-           JavaScript, React, version control, APIs, and full deployment skills.
+            A complete industry-ready Professional Makeup curriculum covering
+            Makeup fundamentals, Glam makeup, Bridal makeup, Fashion makeup,
+            Advanced techniques, Nail art, and Portfolio building.  
           </p>
         </div>
 
@@ -393,7 +381,7 @@ export default function CoursePage() {
         <div className="bg-white rounded-md shadow p-6 text-center">
           <h4 className="font-semibold mb-2">Ready to begin?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Start learning Front-End Development today — it's completely free.
+            Start learning digital marketing today — it's completely free.
           </p>
           <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
             Start Learning

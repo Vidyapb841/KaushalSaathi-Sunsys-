@@ -84,41 +84,39 @@ function FAQAccordion({ faqs }) {
 }
 
 export default function CoursePage({
-  title = "Full Stack Development – 6 Months Roadmap",
-  subtitle = "Become a job-ready Full Stack Developer with end-to-end hands-on training.",
+  title = "DevOps Development – 6 Months ",
+  subtitle = "Become a job-ready DevOps Developer with end-to-end hands-on training.",
   rating = "4.9",
-  learners = "25,000+ learners",
+  learners = "500+ learners",
   level = "Beginner to Advanced",
   description =
-    "Master HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL, Deployment, DevOps basics and build real-world full stack projects.",
+    "This DevOps Roadmap equips you with essential skills in Linux, CI/CD, Docker, Kubernetes, AWS, Terraform, Ansible, and more. Build real-world projects and get job-ready in 6 months.",
 
   syllabus = [
-    { title: "Month 1: HTML, CSS, Responsive Web Design" },
-    { title: "Month 2: JavaScript & Frontend Logic" },
-    { title: "Month 3: React.js & Modern Frontend Development" },
-    { title: "Month 4: Node.js, Express & Databases (MongoDB + SQL)" },
-    { title: "Month 5: Full Stack Integration & Deployment" },
-    { title: "Month 6: Major Full Stack Project + Interview Prep" },
+    { title: "Month 1: Linux Mastery + Shell Scripting" },
+    { title: "Month 2:  Git, GitHub, Jenkins & CI/CD" },
+    { title: "Month 3: Docker, Containers & Kubernetes" },
+    { title: "Month 4: Helm, AWS Cloud, Load Balancing" },
+    { title: "Month 5: Terraform, Ansible & Infrastructure Automation " },
+    { title: "Month 6:  Monitoring, Security, Final Projects & Interview Prep" },
   ],
 
   features = [
-    "HTML, CSS, Responsive Design",
-    "JavaScript & ES6+",
-    "React.js, Hooks & Routing",
-    "Node.js, Express.js APIs",
-    "MongoDB & SQL Databases",
-    "Deployment & System Design",
+    "Linux Fundamentals & Shell Scripting"
+    ,"Version Control with Git & GitHub"
+    ,"Continuous Integration & Jenkins"
+    ,"Containerization with Docker"
   ],
 
   instructor = {
     name: "Sarah Mitchell",
-    title: "Full Stack Architect",
-    bio: "10+ years of experience in JavaScript, MERN stack, cloud deployments, and building scalable systems.",
+    title: "DevOps Architect",
+    bio: "10+ years of experience in DevOPS, MERN stack, cloud deployments, and building scalable systems.",
     photo: "/logos/profile.png",
   },
 
   faqs = [
-    { q: "Is this course free?", a: "Yes, this Full Stack course is 100% free." },
+    { q: "Is this course free?", a: "Yes, this DevOps course is 100% free." },
     {
       q: "Do I get a certificate?",
       a: "Yes, you will receive a verified completion certificate.",
@@ -200,37 +198,28 @@ export default function CoursePage({
 
             {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
-                <img
-                  src={heroImage}
-                  alt="Course Hero"
-                  className="w-full h-full object-cover"
-                />
-              </div>
 
+  <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
+    <img
+      src="/logos/dp.PNG"
+      alt="Course Hero"
+      className="max-w-full max-h-full object-contain"
+    />
+  </div>
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">FREE</div>
-                <div className="mt-1">Self-Paced · 6 Months</div>
+                <div className="text-green-700 font-bold text-lg">Live Classes</div>
+                <div className="mt-1">Instructer-Led Program</div>
               </div>
 
-              <div className="mt-3">
-                <ul className="text-sm">
-                  <li className="flex justify-between py-1">
-                    <span>Completion Certificate</span>
-                    <span>Included</span>
-                  </li>
-                  <li className="flex justify-between py-1">
-                    <span>Access</span>
-                    <span>180 Days</span>
-                  </li>
-                </ul>
-              </div>
+              <ul className="text-sm mt-3">
+                <li className="flex justify-between py-1">
+                  <span>Completion Certificate</span>
+                  <span>Included</span>
+                </li>
+              
+              </ul>
 
-              {/* ⭐ Clicking enroll also opens videos */}
-              <button
-                onClick={handleWatch}
-                className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold"
-              >
+              <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
                 Enroll Now
               </button>
             </aside>
@@ -279,7 +268,7 @@ export default function CoursePage({
         {/* CERTIFICATE */}
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
-            Earn a Full Stack Development Certificate
+            Earn a DevOps Development Certificate
           </h4>
 
           <p className="text-md font-semibold text-gray-600 mb-10">
@@ -300,9 +289,9 @@ export default function CoursePage({
           <h4 className="font-semibold mb-3">About the Course</h4>
 
           <p className="text-sm text-gray-700">
-            This Full Stack Roadmap trains you across frontend, backend, databases,
-            integration and deployment. You will build multiple real-world projects
-            using HTML, CSS, JavaScript, React, Node.js, Express, MongoDB and SQL.
+            This DevOps Development course offers a comprehensive curriculum
+            designed to take you from a beginner to a job-ready DevOps professional
+            in just 6 months. You will learn essential skills including Linux
           </p>
         </div>
 
@@ -398,7 +387,7 @@ export default function CoursePage({
         <div className="bg-white rounded-md shadow p-6 text-center">
           <h4 className="font-semibold mb-2">Ready to start learning?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Begin your Full Stack Development journey today — it's absolutely free.
+            Begin your Devops Development journey today — it's absolutely free.
           </p>
           <button
             onClick={handleWatch}

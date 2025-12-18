@@ -87,10 +87,10 @@ function FAQAccordion({ faqs }) {
 }
 
 export default function CoursePage({
-  title = "Full Stack Development – 6 Months (Day-by-Day Plan)",
+  title = "Full Stack Development – 6 Months",
   subtitle = "Become a job-ready Full Stack Developer with a complete 6-month structured day-wise roadmap.",
   rating = "4.9",
-  learners = "25,000+ learners",
+  learners = "500+ learners enrolled",
   level = "Beginner to Advanced",
   description =
     "A complete 6-month Full Stack Development roadmap including HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL, DevOps basics, and deployment.",
@@ -236,7 +236,7 @@ Day 72: Final Evaluation`,
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Course Page
+                Home &gt; Course &gt; Course Page
               </nav>
 
               <h1
@@ -289,8 +289,8 @@ Day 72: Final Evaluation`,
   </div>
 
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">FREE</div>
-                <div className="mt-1">Self-Paced · 6 Months</div>
+                <div className="text-green-700 font-bold text-lg">Live Classes</div>
+                <div className="mt-1">Instructer-Led Program</div>
               </div>
 
               <div className="mt-3">
@@ -300,10 +300,7 @@ Day 72: Final Evaluation`,
                     <span>Included</span>
                   </li>
 
-                  <li className="flex justify-between py-1">
-                    <span>Access</span>
-                    <span>180 Days</span>
-                  </li>
+                  
                 </ul>
               </div>
 

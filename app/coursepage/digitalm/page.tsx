@@ -103,21 +103,12 @@ export default function CoursePage() {
   // -----------------------------------------------
 
   const syllabus = [
-    { title: "Module 1: Digital Marketing Foundations (6 hours)" },
-    { title: "Module 2: Website Strategy & CRO (10 hours)" },
-    { title: "Module 3: SEO 2025 (24 hours)" },
-    { title: "Module 4: SEM & PPC (20 hours)" },
-    { title: "Module 5: Social Media Marketing (26 hours)" },
-    { title: "Module 6: Content Marketing & Copywriting (14 hours)" },
-    { title: "Module 7: Email & WhatsApp Automation (12 hours)" },
-    { title: "Module 8: Influencer & Community Marketing (8 hours)" },
-    { title: "Module 9: Analytics & Attribution (14 hours)" },
-    { title: "Module 10: Performance Marketing Strategy (14 hours)" },
-    { title: "Module 11: E-Commerce & D2C Marketing (12 hours)" },
-    { title: "Module 12: AI in Digital Marketing (10 hours)" },
-    { title: "Module 13: Brand & Creative Strategy (10 hours)" },
-    { title: "Module 14: Affiliate & Partnership Marketing (6 hours)" },
-    { title: "Module 15: Career & Portfolio Development (4 hours)" },
+    { title: "Month 1: Introduction to Digital Marketing" },
+    { title: "Month 2: Canva & Content Creation" },
+    { title: "Month 3: Instagram & Facebook Marketing" },
+    { title: "Month 4: WordPress Website Design" },
+    { title: "Month 5: Meta & Google Ads" },
+    { title: "Month 6: Analytics, Freelancing & Portfolio" },
   ];
 
   const features = [
@@ -162,18 +153,18 @@ export default function CoursePage() {
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Digital Marketing
+                Home &gt; Courses &gt; Digital Marketing
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                Digital Marketing Curriculum 2025
+                Digital Marketing Curriculum 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                Become job-ready with a complete 24-week industry-standard
+                Become job-ready with a complete industry-standard
                 digital marketing training.
               </p>
 
@@ -185,7 +176,7 @@ export default function CoursePage() {
 
                 <div className="flex flex-wrap gap-3">
                   <Chip>Beginner to Professional</Chip>
-                  <Chip>180 Hours</Chip>
+                  <Chip>4.9 ratings</Chip>
                 </div>
               </div>
 
@@ -204,17 +195,16 @@ export default function CoursePage() {
 
             {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
-                <img
-                  src="/logos/course-banner.jpg"
-                  alt="Course Hero"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
+  <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
+    <img
+      src="/logos/dgtm.PNG"
+      alt="Course Hero"
+      className="max-w-full max-h-full object-contain"
+    />
+  </div>
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">FREE</div>
-                <div className="mt-1">Self-Paced · 24 Weeks</div>
+                <div className="text-green-700 font-bold text-lg">Live Classes</div>
+                <div className="mt-1">Instructer-Led Program</div>
               </div>
 
               <ul className="text-sm mt-3">
@@ -222,10 +212,7 @@ export default function CoursePage() {
                   <span>Completion Certificate</span>
                   <span>Included</span>
                 </li>
-                <li className="flex justify-between py-1">
-                  <span>Access</span>
-                  <span>180 Days</span>
-                </li>
+              
               </ul>
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">

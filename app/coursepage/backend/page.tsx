@@ -165,18 +165,18 @@ export default function CoursePage() {
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Back-end Development
+                Home &gt; Course &gt; Back-end Development
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                Back-end Development Curriculum 2025
+                Back-end Development Curriculum 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                Become job-ready with a complete 12-week industry-standard
+                Become job-ready with a complete 18-week industry-standard
                 Back-end Development training.
               </p>
 
@@ -188,7 +188,7 @@ export default function CoursePage() {
 
                 <div className="flex flex-wrap gap-3">
                   <Chip>Beginner to Professional</Chip>
-                  <Chip>180 Hours</Chip>
+                  <Chip>4.8 ★ Rating</Chip>
                 </div>
               </div>
 
@@ -215,8 +215,8 @@ export default function CoursePage() {
     />
   </div>
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">FREE</div>
-                <div className="mt-1">Self-Paced · 24 Weeks</div>
+                <div className="text-green-700 font-bold text-lg">Live Classes</div>
+                <div className="mt-1">Instructer-Led Program</div>
               </div>
 
               <ul className="text-sm mt-3">
@@ -224,10 +224,7 @@ export default function CoursePage() {
                   <span>Completion Certificate</span>
                   <span>Included</span>
                 </li>
-                <li className="flex justify-between py-1">
-                  <span>Access</span>
-                  <span>180 Days</span>
-                </li>
+              
               </ul>
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
