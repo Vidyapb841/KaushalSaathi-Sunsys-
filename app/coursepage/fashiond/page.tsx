@@ -122,24 +122,49 @@ export default function CoursePageFashion() {
     "Entrepreneurship & Branding",
   ];
 
-  const faqs = [
-    {
-      q: "Is this course suitable for beginners?",
-      a: "Yes! This program starts from absolute basics.",
-    },
-    {
-      q: "Do I need a sewing machine?",
-      a: "Yes, a basic sewing machine is required for practice.",
-    },
-    {
-      q: "Will I get a certificate?",
-      a: "Yes, a completion certificate will be provided.",
-    },
-    {
-      q: "Can I start a boutique after this?",
-      a: "Yes! The course includes entrepreneurship & marketing training.",
-    },
-  ];
+const faqs = [
+  {
+    q: "Is this course suitable for beginners?",
+    a: "Yes. The program starts from absolute basics and is designed for beginners."
+  },
+  {
+    q: "Do I need a sewing machine?",
+    a: "Yes, a basic sewing machine is required for hands-on practice."
+  },
+  {
+    q: "Will I get a certificate after completion?",
+    a: "Yes, a verified completion certificate will be provided."
+  },
+  {
+    q: "Can I start my own boutique after this course?",
+    a: "Yes. The course includes boutique management, entrepreneurship, and marketing guidance."
+  },
+  {
+    q: "Is this course only for women?",
+    a: "Yes. This program is specially designed to empower women through skill development."
+  },
+  {
+    q: "What skills will I learn in this program?",
+    a: "You will learn garment construction, pattern making, stitching, fabric knowledge, and basic fashion design."
+  },
+  {
+    q: "Will I learn both traditional and modern designs?",
+    a: "Yes. The curriculum covers both traditional Indian wear and modern fashion styles."
+  },
+  {
+    q: "Are there practical sessions included?",
+    a: "Yes. The course is highly practical with hands-on training and real garment creation."
+  },
+  {
+    q: "Can I earn from home after completing this course?",
+    a: "Yes. You can work from home by taking stitching orders or starting a small tailoring business."
+  },
+  {
+    q: "Is this program job-oriented or business-oriented?",
+    a: "It is both. You can pursue jobs in tailoring or start your own fashion-related business."
+  }
+];
+
 
   const instructor = {
     name: "Priya Sharma",
@@ -203,7 +228,7 @@ export default function CoursePageFashion() {
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
-                  src="/logos/course-banner.jpg"
+                  src="/logos/8.png"
                   alt="Fashion Course"
                   className="w-full h-full object-cover"
                 />
@@ -280,7 +305,7 @@ export default function CoursePageFashion() {
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />

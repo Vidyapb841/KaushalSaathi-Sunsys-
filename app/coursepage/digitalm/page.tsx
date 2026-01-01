@@ -122,20 +122,29 @@ export default function CoursePage() {
     "Performance Marketing Skills",
   ];
 
-  const faqs = [
-    {
-      q: "Is this course free?",
-      a: "Yes, this digital marketing course is 100% free.",
-    },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, a certificate is provided after completion.",
-    },
-    {
-      q: "Do I need prior knowledge?",
-      a: "No, this course starts from the basics.",
-    },
-  ];
+const faqs = [
+  {
+    q: "Is this Digital Marketing course completely free?",
+    a: "Yes. This Digital Marketing course is 100% free and includes practical training with real-world marketing strategies."
+  },
+  {
+    q: "Will I receive a certificate after completion?",
+    a: "Yes. A verified completion certificate will be provided after successfully finishing the course."
+  },
+  {
+    q: "Do I need any prior knowledge or experience?",
+    a: "No prior knowledge is required. The course starts from the basics and gradually covers advanced digital marketing concepts."
+  },
+  {
+    q: "What topics are covered in this course?",
+    a: "The course covers SEO, social media marketing, Google Ads, content marketing, email marketing, and analytics."
+  },
+  {
+    q: "Is this course suitable for beginners?",
+    a: "Yes. This course is designed for beginners, students, and professionals looking to start a career in digital marketing."
+  }
+];
+
 
   const instructor = {
     name: "Sarah Thompson",
@@ -160,7 +169,7 @@ export default function CoursePage() {
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                Digital Marketing Curriculum 2026
+                Digital Marketing Certification Program 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
@@ -271,7 +280,7 @@ export default function CoursePage() {
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />

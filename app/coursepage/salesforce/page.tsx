@@ -142,7 +142,7 @@ export default function CoursePage() {
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
-                  src="/logos/course-banner.jpg"
+                  src="/logos/15.png"
                   alt="Course Hero"
                   className="w-full h-full object-cover"
                 />
@@ -252,6 +252,25 @@ export default function CoursePage() {
             </p>
           </div>
         </div>
+        {/* CERTIFICATE */}
+<div className="bg-white rounded-md shadow mb-4 p-5">
+  <h4 className="font-semibold text-2xl mb-1">
+    Get a Completion Certificate
+  </h4>
+
+  <p className="text-md font-semibold text-gray-600 mb-10">
+    Showcase your Salesforce expertise and boost your LinkedIn profile.
+  </p>
+
+  <div className="mb-6 flex justify-center">
+    <img
+      src="/logos/certificate.jpg"
+      alt="Certificate Example"
+      className="w-[700px] h-auto rounded-md border shadow"
+    />
+  </div>
+</div>
+
 
         {/* CTA */}
         <div className="bg-white rounded-md shadow p-6 text-center">

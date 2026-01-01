@@ -171,7 +171,7 @@ export default function CoursesSection() {
                 )}
 
                 {course.title === "SEO(Search Engine Optimization)" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/SEO">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>
@@ -187,7 +187,7 @@ export default function CoursesSection() {
                 )}
 
                 {course.title === "Spoken English & Communication Skills" && (
-                  <Link href="/coursepage/digitalm">
+                  <Link href="/coursepage/English">
                     <Button variant="outline" className="w-full font-medium rounded-xl">
                       View Course
                     </Button>

@@ -122,20 +122,44 @@ export default function CoursePage() {
     "Performance Marketing Skills",
   ];
 
-  const faqs = [
-    {
-      q: "Is this course free?",
-      a: "Yes, this Social Media Marketing course is 100% free.",
-    },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, a certificate is provided after completion.",
-    },
-    {
-      q: "Do I need prior knowledge?",
-      a: "No, this course starts from the basics.",
-    },
-  ];
+const faqs = [
+  {
+    q: "Is this course free?",
+    a: "Yes, this Social Media Marketing course is 100% free."
+  },
+  {
+    q: "Do I get a certificate?",
+    a: "Yes, a verified completion certificate is provided after finishing the course."
+  },
+  {
+    q: "Do I need prior knowledge?",
+    a: "No. This course starts from the basics and is beginner-friendly."
+  },
+  {
+    q: "Which platforms will I learn?",
+    a: "You will learn marketing strategies for Instagram, Facebook, LinkedIn, YouTube, and other major platforms."
+  },
+  {
+    q: "Will I learn paid ads along with organic marketing?",
+    a: "Yes. The course covers both organic growth strategies and paid advertising fundamentals."
+  },
+  {
+    q: "Is this course useful for business owners and freelancers?",
+    a: "Absolutely. The course is ideal for students, freelancers, creators, and business owners."
+  },
+  {
+    q: "Will I learn content creation and strategy?",
+    a: "Yes. You will learn content planning, posting strategies, engagement techniques, and analytics."
+  },
+  {
+    q: "Is this course job-oriented?",
+    a: "Yes. The course focuses on practical skills required for social media marketing roles."
+  },
+  {
+    q: "Will there be live classes or recordings?",
+    a: "The program includes live instructor-led sessions along with recorded videos for revision."
+  }
+];
 
   const instructor = {
     name: "Sarah Thompson",
@@ -160,7 +184,7 @@ export default function CoursePage() {
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                SOCIAL MEDIA MARKETING  2025
+                SOCIAL MEDIA MARKETING SPEACIALIST COURSE 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
@@ -277,7 +301,7 @@ export default function CoursePage() {
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />

@@ -87,7 +87,7 @@ function FAQAccordion({ faqs }) {
 }
 
 export default function CoursePage({
-  title = "Full Stack Development – 6 Months",
+  title = "Full Stack Developer Certification 2026",
   subtitle = "Become a job-ready Full Stack Developer with a complete 6-month structured day-wise roadmap.",
   rating = "4.9",
   learners = "500+ learners enrolled",
@@ -97,96 +97,14 @@ export default function CoursePage({
   
   // ⭐ UPDATED FULL 6-MONTH SYLLABUS
   syllabus = [
-    {
-      title: `Month 1 – HTML, CSS, Responsive Web Design (Days 1–30)
-Day 1: HTML Basics: Tags, Elements
-Day 2: HTML Forms & Validation
-Day 3: Semantic HTML
-Day 4: CSS Basics & Selectors
-Day 5: Flexbox Deep Dive
-Day 6: Grid Layout
-Day 7: Responsive Design
-Day 8: Media Queries
-Day 9: CSS Animations
-Day 10: Bootstrap / Tailwind CSS
-Day 11: Landing Page Project
-Day 12: Portfolio Layout`,
-    },
-    {
-      title: `Month 2 – JavaScript & Frontend Logic (Days 31–60)
-Day 13: JS Basics: Variables, Data Types
-Day 14: Functions & Scope
-Day 15: DOM Manipulation
-Day 16: Events & Event Handling
-Day 17: Async JS: Callbacks
-Day 18: Promises & Async/Await
-Day 19: Fetch API
-Day 20: ES6+ Concepts
-Day 21: Modules & Bundlers
-Day 22: LocalStorage & Sessions
-Day 23: Mini Project: To-Do App
-Day 24: JS Interview Questions`,
-    },
-    {
-      title: `Month 3 – React.js & Modern Frontend (Days 61–90)
-Day 25: React Basics & JSX
-Day 26: Components, Props, State
-Day 27: React Hooks
-Day 28: Context API
-Day 29: React Router
-Day 30: Forms & Validation
-Day 31: API Integration
-Day 32: State Management (Redux/Zustand)
-Day 33: Performance Optimization
-Day 34: React + Tailwind UI
-Day 35: Mini Project: Dashboard App
-Day 36: Major Project: Full Frontend App`,
-    },
-    {
-      title: `Month 4 – Backend (Node.js + Express + Databases) (Days 91–120)
-Day 37: Node.js Introduction
-Day 38: NPM & Modules
-Day 39: Express.js Basics
-Day 40: Routing & Middleware
-Day 41: REST API Development
-Day 42: MongoDB CRUD Operations
-Day 43: Mongoose Models & Schemas
-Day 44: Authentication (JWT)
-Day 45: Role-Based Access
-Day 46: SQL Basics (MySQL/PostgreSQL)
-Day 47: File Uploads & Pagination
-Day 48: Backend API Project`,
-    },
-    {
-      title: `Month 5 – Full Stack Integration & DevOps Basics (Days 121–150)
-Day 49: Frontend ↔ Backend Integration
-Day 50: State Lifting & Data Flow
-Day 51: Full Stack Architecture
-Day 52: Using Cloudinary / AWS S3
-Day 53: Payment Gateway Integration
-Day 54: CI/CD Basics
-Day 55: GitHub Actions Pipelines
-Day 56: Docker Basics for Developers
-Day 57: Deployment on Render / Railway
-Day 58: Deployment on AWS / Vercel
-Day 59: Full Stack Project Phase 1
-Day 60: Testing (Jest, Postman)`,
-    },
-    {
-      title: `Month 6 – Major Project, System Design & Interview Prep (Days 151–180)
-Day 61: System Design Basics
-Day 62: API Rate Limiting, Caching
-Day 63: Scalable Backend Patterns
-Day 64: Microservices Basics
-Day 65: Security Best Practices
-Day 66: Logging & Monitoring
-Day 67: Optimization Techniques
-Day 68: Resume Building
-Day 69: GitHub Portfolio Setup
-Day 70: Interview Q&A
-Day 71: Major Full Stack Capstone Project
-Day 72: Final Evaluation`,
-    },
+
+      {title: "Month 1: HTML, CSS & Responsive Web Design"},
+      {title: "Month 2: JavaScript & Frontend Logic"},
+      {title: "Month 3: React.js & Modern Frontend Development"},
+      {title: "Month 4: Backend Development (Node.js, Express & Databases)"},
+      {title: "Month 5: Full Stack Integration & DevOps Basics"},
+      {title: "Month 6: Major Project, System Design & Interview Preparation"},
+      
   ],
 
   features = [
@@ -205,17 +123,41 @@ Day 72: Final Evaluation`,
     photo: "/logos/profile.png",
   },
 
-  faqs = [
-    { q: "Is this course free?", a: "Yes, this Full Stack course is 100% free." },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, you will receive a verified completion certificate.",
-    },
-    {
-      q: "Do I need prior coding experience?",
-      a: "No. This roadmap starts from zero and goes to advanced level.",
-    },
-  ],
+ faqs = [
+  {
+    q: "Is this Full-Stack Development course completely free?",
+    a: "Yes. This Full-Stack Development course is 100% free and includes live sessions, practical training, and real-world projects."
+  },
+  {
+    q: "Who should enroll in this Full-Stack course?",
+    a: "This course is ideal for beginners, students, and working professionals who want to become complete Full-Stack Developers."
+  },
+  {
+    q: "Do I need prior coding experience?",
+    a: "No prior experience is required. The course starts from basics and gradually moves to advanced full-stack concepts."
+  },
+  {
+    q: "Which technologies will I learn in this course?",
+    a: "You will learn HTML, CSS, JavaScript, React, Node.js, databases (SQL & NoSQL), REST APIs, authentication, and deployment."
+  },
+  {
+    q: "Will I build real-world projects?",
+    a: "Yes. You will build complete full-stack applications, including frontend UI, backend APIs, database integration, and deployment."
+  },
+  {
+    q: "Is this course job-oriented?",
+    a: "Absolutely. The curriculum is designed to match industry requirements and make you job-ready as a Full-Stack Developer."
+  },
+  {
+    q: "Will I receive a certificate after completion?",
+    a: "Yes. A verified completion certificate will be provided after successfully finishing the course."
+  },
+  {
+    q: "Will there be live classes and recordings?",
+    a: "Yes. The program includes live instructor-led sessions along with recorded videos for revision and self-paced learning."
+  }
+],
+
 
   heroImage = "/logos/4.png",
 }) {
@@ -354,7 +296,7 @@ Day 72: Final Evaluation`,
         {/* CERTIFICATE */}
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
-            Earn a Full Stack Development Certificate
+            Get a completion Certificate
           </h4>
 
           <p className="text-md font-semibold text-gray-600 mb-10">
@@ -363,7 +305,7 @@ Day 72: Final Evaluation`,
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />

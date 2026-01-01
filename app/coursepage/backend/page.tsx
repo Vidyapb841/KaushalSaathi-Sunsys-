@@ -134,20 +134,41 @@ export default function CoursePage() {
     "Cloud integration & backend performance optimization",
   ];
 
-  const faqs = [
-    {
-      q: "Is this course free?",
-      a: "Yes, Back-End development course is 100% free.",
-    },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, a certificate is provided after completion.",
-    },
-    {
-      q: "Do I need prior knowledge?",
-      a: "No, this course starts from the basics.",
-    },
-  ];
+const faqs = [
+  {
+    q: "Is this Back-End Development course really free?",
+    a: "Yes. This course is completely free and includes live sessions, hands-on practice, and real-world backend concepts."
+  },
+  {
+    q: "Who can enroll in this course?",
+    a: "Anyone can enroll. The course is designed for beginners, students, and professionals who want to build strong backend development skills."
+  },
+  {
+    q: "Do I need prior programming experience?",
+    a: "No prior backend experience is required. Basic computer knowledge is enough. Programming fundamentals are covered from scratch."
+  },
+  {
+    q: "Which technologies will I learn?",
+    a: "You will learn Node.js, REST APIs, databases (SQL & NoSQL), authentication, security, deployment, and backend architecture."
+  },
+  {
+    q: "Will I get a certificate after completion?",
+    a: "Yes. A verified completion certificate will be provided after successfully finishing the course."
+  },
+  {
+    q: "Is this course job-oriented?",
+    a: "Yes. The curriculum is designed to make you job-ready with industry-standard tools, backend workflows, and real-world use cases."
+  },
+  {
+    q: "Will there be live classes or recordings?",
+    a: "Yes. The program includes live instructor-led sessions along with recordings for revision."
+  },
+  {
+    q: "What kind of projects will I build?",
+    a: "You will work on real backend projects such as APIs, authentication systems, database-driven applications, and deployment-ready services."
+  }
+];
+
 
   const instructor = {
     name: "Sarah Thompson",
@@ -172,7 +193,7 @@ export default function CoursePage() {
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                Back-end Development Curriculum 2026
+                BACKEND Developer Certification Course 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
@@ -283,7 +304,7 @@ export default function CoursePage() {
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />

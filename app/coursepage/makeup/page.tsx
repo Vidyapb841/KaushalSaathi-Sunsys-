@@ -117,20 +117,41 @@ export default function CoursePage() {
     "Bridal Makeup Artistry",
   ];
 
-  const faqs = [
-    {
-      q: "Is this course free?",
-      a: "Yes, this Professional Makeup course is 100% free.",
-    },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, a certificate is provided after completion.",
-    },
-    {
-      q: "Do I need prior knowledge?",
-      a: "No, this course starts from the basics.",
-    },
-  ];
+const faqs = [
+  {
+    q: "Is this course free?",
+    a: "Yes, this Professional Makeup course is 100% free with no hidden charges.",
+  },
+  {
+    q: "Do I get a certificate?",
+    a: "Yes, you will receive a verified certificate after successfully completing the course.",
+  },
+  {
+    q: "Do I need prior knowledge of makeup?",
+    a: "No prior experience is required. The course starts from the basics and gradually moves to advanced techniques.",
+  },
+  {
+    q: "Who can join this course?",
+    a: "This course is ideal for beginners, beauty enthusiasts, and anyone looking to start a career in professional makeup.",
+  },
+  {
+    q: "Is this course suitable for career building?",
+    a: "Yes, the course is designed to help you build professional skills for freelancing, salons, or bridal makeup careers.",
+  },
+  {
+    q: "Will I learn practical makeup skills?",
+    a: "Yes, the course focuses on hands-on techniques along with theory for real-world application.",
+  },
+  {
+    q: "How long is the course?",
+    a: "The course duration is structured to be beginner-friendly and can be completed at your own pace.",
+  },
+  {
+    q: "Can I start my own makeup business after this course?",
+    a: "Yes, the course includes guidance on personal branding and career opportunities in the makeup industry.",
+  },
+];
+
 
   const instructor = {
     name: "Sarah Thompson",
@@ -155,7 +176,7 @@ export default function CoursePage() {
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                Professional Makeup Curriculum 2025
+                PROFESSIONAL MAKEUP & HAIR ARTIST COURSE 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
@@ -193,7 +214,7 @@ export default function CoursePage() {
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
-                  src="/logos/course-banner.jpg"
+                  src="/logos/10.png"
                   alt="Course Hero"
                   className="w-full h-full object-cover"
                 />
@@ -271,7 +292,7 @@ export default function CoursePage() {
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />

@@ -147,6 +147,15 @@ export default function CoursePage() {
       q: "Do I need prior knowledge?",
       a: "No, this course starts from the basics.",
     },
+    {
+  q: "Is this course suitable for beginners?",
+  a: "Yes, this course is designed for absolute beginners as well as learners with basic knowledge.",
+},
+{
+  q: "Will this course help me get a job?",
+  a: "Yes, the course focuses on practical skills and projects that help build a job-ready front-end profile.",
+},
+
   ];
 
   const instructor = {
@@ -172,7 +181,7 @@ export default function CoursePage() {
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                Front-end Development Curriculum 2026
+                Certified FrontEnd Developer 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
@@ -284,7 +293,7 @@ export default function CoursePage() {
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate-sample.jpg"
+              src="/logos/certificate.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />

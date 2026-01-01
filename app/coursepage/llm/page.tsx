@@ -109,7 +109,7 @@ export default function CoursePage() {
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                LLM (Large Language Models) – IT Certification Program
+                LLM (Large Language Models) – IT CERTIFICATION PROGRAM 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
@@ -142,7 +142,7 @@ export default function CoursePage() {
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
                           <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
                             <img
-                              src="/logos/scm.PNG"
+                              src="/logos/13.png"
                               alt="Course Hero"
                               className="max-w-full max-h-full object-contain"
                             />
@@ -215,6 +215,24 @@ export default function CoursePage() {
             ]}
           />
         </div>
+                {/* CERTIFICATE */}
+        <div className="bg-white rounded-md shadow mb-4 p-5">
+          <h4 className="font-semibold text-2xl mb-1">
+            Get a Completion Certificate
+          </h4>
+          <p className="text-md font-semibold text-gray-600 mb-10">
+            Showcase your Social Media marketing expertise and boost your LinkedIn
+            profile.
+          </p>
+
+          <div className="mb-6 flex justify-center">
+            <img
+              src="/logos/certificate.jpg"
+              alt="Certificate Example"
+              className="w-150 h-auto rounded-md border shadow"
+            />
+          </div>
+        </div>
 
         {/* FAQ */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
@@ -236,6 +254,7 @@ export default function CoursePage() {
             ]}
           />
         </div>
+        
 
         {/* Instructor */}
         <div className="bg-white rounded-md shadow p-6 flex gap-4 mb-10">
@@ -243,8 +262,8 @@ export default function CoursePage() {
             src="/logos/profile.png"
             className="w-20 h-20 rounded-full object-cover"
           />
-
-          <div>
+          
+                    <div>
             <h5 className="font-semibold">Abhishek Kumar Shaw</h5>
             <div className="text-sm text-gray-600 mb-2">AI/ML Engineer & LLM Mentor</div>
             <p className="text-sm text-gray-700">

@@ -114,21 +114,21 @@ export function Navigation() {
               >
                 <div className="w-1/3 border-r pr-4">
                   <ul className="space-y-2 text-sm">
-                    <li className="hover:text-[#009990] cursor-pointer">Front End Development</li>
-                    <li className="hover:text-[#009990] cursor-pointer">Back End Development</li>
-                    <li className="hover:text-[#009990] cursor-pointer">Full Stack Web Development</li>
-                    <li className="hover:text-[#009990] cursor-pointer">UI/UX Designing</li>
-                    <li className="hover:text-[#009990] cursor-pointer">Digital Marketing</li>
-                    <li className="hover:text-[#009990] cursor-pointer">DevOps</li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/front">Front End Development</a></li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/backend">Back End Development</a></li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/fullstack">Full Stack Web Development</a></li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/ui-ux">UI/UX Designing</a></li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/digitalm">Digital Marketing</a></li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/devops">DevOps</a></li>
                   </ul>
                 </div>
 
                 <div className="w-1/3 border-r px-4">
                   <ul className="space-y-2 text-sm">
-                    <li className="hover:text-[#009990] cursor-pointer">Social Media Marketing</li>
-                    <li className="hover:text-[#009990] cursor-pointer">Fashion Designing</li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/socialm">Social Media Marketing</a></li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/fashiond">Fashion Designing</a></li>
                     <li className="hover:text-[#009990] cursor-pointer">Interior Designing</li>
-                    <li className="hover:text-[#009990] cursor-pointer">Professional Makeup & Hair Artist</li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/makeup">Professional Makeup & Hair Artist</a></li>
                     <li className="hover:text-[#009990] cursor-pointer">Human Resource Management</li>
                   </ul>
                 </div>
@@ -136,9 +136,9 @@ export function Navigation() {
                 <div className="w-1/3 pl-4">
                   <ul className="space-y-2 text-sm">
                     <li className="hover:text-[#009990] cursor-pointer">Marketing & Branding</li>
-                    <li className="hover:text-[#009990] cursor-pointer">LIM IT Certification Program</li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/llm">LIM IT Certification Program</a></li>
                     <li className="hover:text-[#009990] cursor-pointer">SEO (Search Engine Optimization)</li>
-                    <li className="hover:text-[#009990] cursor-pointer">Salesforce CRM Administration</li>
+                    <li className="hover:text-[#009990] cursor-pointer"><a href="/coursepage/salesforce">Salesforce CRM Administration</a></li>
                     <li className="hover:text-[#009990] cursor-pointer">Spoken English & Communication Skills</li>
                   </ul>
                 </div>

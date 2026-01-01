@@ -1,1 +1,10 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/home/page": "app/home/page.js",
+  "/coursepage/front/page": "app/coursepage/front/page.js",
+  "/coursepage/ui-ux/page": "app/coursepage/ui-ux/page.js",
+  "/coursepage/makeup/page": "app/coursepage/makeup/page.js",
+  "/coursepage/fashiond/page": "app/coursepage/fashiond/page.js",
+  "/coursepage/SEO/page": "app/coursepage/SEO/page.js",
+  "/coursepage/salesforce/page": "app/coursepage/salesforce/page.js"
+}

@@ -20,9 +20,11 @@ function Chip({ children }) {
   );
 }
 
+// ---------------- SYLLABUS LIST ------------------
 function SyllabusList({ items }) {
   const [showAll, setShowAll] = useState(false);
 
+  const listStyle = showAll ? {} : { maxHeight: "14rem" };
   const visibleItems = showAll ? items : items.slice(0, 4);
 
   return (
@@ -31,14 +33,13 @@ function SyllabusList({ items }) {
         <strong>Syllabus Overview</strong>
       </div>
 
-      <ul className="max-h-56 overflow-auto">
+      <ul className="overflow-auto" style={{ ...listStyle }}>
         {visibleItems.map((it, i) => (
           <li
             key={i}
-            className="flex justify-between items-center px-4 py-3 border-b last:border-b-0"
+            className="flex items-center px-4 py-3 border-b last:border-b-0 font-bold"
           >
-            <div className="text-sm font-semibold">{it.title}</div>
-            <div className="text-xs text-gray-600">{it.time}</div>
+            <div className="text-sm text-left w-full">{it.title}</div>
           </li>
         ))}
       </ul>
@@ -56,6 +57,7 @@ function SyllabusList({ items }) {
   );
 }
 
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -77,6 +79,7 @@ function FAQAccordion({ faqs }) {
                 {open ? "−" : "+"}
               </span>
             </button>
+
             {open && (
               <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
             )}
@@ -87,11 +90,82 @@ function FAQAccordion({ faqs }) {
   );
 }
 
+// ---------------- PAGE ------------------
 export default function CoursePage() {
   const modulesRef = useRef(null);
 
   const handleExplore = () => {
     modulesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // -----------------------------------------------
+  // SOCIAL MEDIA CONTENT
+  // -----------------------------------------------
+
+  const syllabus = [
+    { title: "Month 1: Introduction to Social Media Marketing" },
+    { title: "Month 2: Content Creation (Graphic, Copy, and Video)" },
+    { title: "Month 3: Platform-Wise Strategy (Instagram + Facebook + LinkedIn + YouTube)" },
+    { title: "Month 4: Strategy, Planning & Branding" },
+    { title: "Month 5: Paid Social Media Advertising (Meta Ads + Influencer Marketing)" },
+    { title: "Month 6: Analytics + Freelancing + Portfolio Building" },
+  ];
+
+  const features = [
+    "Create complete end-to-end campaigns",
+    "Branding & Positioning",
+    "Content Marketing",
+    "AI Tools for Marketing",
+    "WhatsApp Automation",
+    "Analytics & Attribution",
+    "Content strategy",
+    "Performance Marketing Skills",
+  ];
+
+const faqs = [
+  {
+    q: "Is this course free?",
+    a: "Yes, this Social Media Marketing course is 100% free."
+  },
+  {
+    q: "Do I get a certificate?",
+    a: "Yes, a verified completion certificate is provided after finishing the course."
+  },
+  {
+    q: "Do I need prior knowledge?",
+    a: "No. This course starts from the basics and is beginner-friendly."
+  },
+  {
+    q: "Which platforms will I learn?",
+    a: "You will learn marketing strategies for Instagram, Facebook, LinkedIn, YouTube, and other major platforms."
+  },
+  {
+    q: "Will I learn paid ads along with organic marketing?",
+    a: "Yes. The course covers both organic growth strategies and paid advertising fundamentals."
+  },
+  {
+    q: "Is this course useful for business owners and freelancers?",
+    a: "Absolutely. The course is ideal for students, freelancers, creators, and business owners."
+  },
+  {
+    q: "Will I learn content creation and strategy?",
+    a: "Yes. You will learn content planning, posting strategies, engagement techniques, and analytics."
+  },
+  {
+    q: "Is this course job-oriented?",
+    a: "Yes. The course focuses on practical skills required for social media marketing roles."
+  },
+  {
+    q: "Will there be live classes or recordings?",
+    a: "The program includes live instructor-led sessions along with recorded videos for revision."
+  }
+];
+
+  const instructor = {
+    name: "Sarah Thompson",
+    title: "Social Media Marketing Strategist",
+    bio: "12+ years of experience in SEO, PPC, and performance marketing across global brands.",
+    photo: "/logos/profile.png",
   };
 
   return (
@@ -103,25 +177,32 @@ export default function CoursePage() {
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Courses &gt; UI/UX Course
+                Home &gt; SkillUp &gt; Social Media Marketing
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                UI/UX Design Professional Course
+                SOCIAL MEDIA MARKETING  2025
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                Learn UI/UX from beginner to advanced level — including research,
-                wireframing, visual design, prototyping, and portfolio building.
+                Become job-ready with a complete 24-week industry-standard
+                digital marketing training.
               </p>
 
               <div className="mt-5 text-sm text-slate-100 max-w-3xl">
+                <p className="mb-3">
+                  30 posts 10 reels
+                  Ads + analytics report
+                📝 Final Submission + Review + Certification.
+
+                </p>
+
                 <div className="flex flex-wrap gap-3">
-                  <Chip>Beginner to Advanced</Chip>
-                  <Chip>4.9 ★ Rating</Chip>
+                  <Chip>Beginner to Professional</Chip>
+                  <Chip>Self Paced</Chip>
                 </div>
               </div>
 
@@ -132,7 +213,6 @@ export default function CoursePage() {
                 >
                   Explore Course
                 </button>
-
                 <button className="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-md font-medium">
                   Watch Intro Video
                 </button>
@@ -141,27 +221,29 @@ export default function CoursePage() {
 
             {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-  <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
-    <img
-      src="/logos/uiux.PNG"
-      alt="Course Hero"
-      className="max-w-full max-h-full object-contain"
-    />
-  </div>
-
-              <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">Live classes</div>
-                <div className="mt-1">Instructor-Led Program</div>
+              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
+                <img
+                  src="/logos/course-banner.jpg"
+                  alt="Course Hero"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
-              <div className="mt-3">
-                <ul className="text-sm">
-                  <li className="flex justify-between py-1">
-                    <span>Completion Certificate</span>
-                    <span>Included</span>
-                  </li>
-                  </ul>
-                 </div> 
+              <div className="text-sm">
+                <div className="text-green-700 font-bold text-lg">FREE</div>
+                <div className="mt-1">Self-Paced · 24 Weeks</div>
+              </div>
+
+              <ul className="text-sm mt-3">
+                <li className="flex justify-between py-1">
+                  <span>Completion Certificate</span>
+                  <span>Included</span>
+                </li>
+                <li className="flex justify-between py-1">
+                  <span>Access</span>
+                  <span>Lifetime</span>
+                </li>
+              </ul>
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
                 Enroll Now
@@ -173,7 +255,7 @@ export default function CoursePage() {
 
       {/* MAIN CONTENT */}
       <section className="max-w-6xl mx-auto px-4 py-10">
-        {/* Skills */}
+        {/* SKILLS */}
         <div className="bg-white shadow rounded-md p-6 mb-8">
           <h2
             className="text-xl font-semibold mb-3"
@@ -183,14 +265,7 @@ export default function CoursePage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {[
-              "User Research",
-              "Wireframing & Prototyping",
-              "Visual & Interaction Design",
-              "Design Thinking",
-              "Figma Mastery",
-              "Information Architecture",
-            ].map((skill, i) => (
+            {features.map((f, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center"
@@ -203,55 +278,47 @@ export default function CoursePage() {
                     />
                   </svg>
                 </div>
-                <span>{skill}</span>
+                <span className="text-sm">{f}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Syllabus */}
-<div className="mb-10 w-full" ref={modulesRef}>
-  <SyllabusList
-    items={[
-      { title: "Module 1: Introduction to UI/UX (Basics + Foundation)" },
-      { title: "Module 2: UX Research & Strategy (Core Research Skills)" },
-      { title: "Module 3: Information Architecture (Structure + Organization)" },
-      { title: "Module 4: Interaction Design (User Behaviour + Actions)" },
-      { title: "Module 5: Wireframing (Layout + Sketching)" },
-      { title: "Module 6: Visual Design (UI) (Colors + Typography)" },
-      { title: "Module 7: Figma Mastery (Tools + Components)" },
-      { title: "Module 8: Responsive Design (Devices + Accessibility)" },
-      { title: "Module 9: Usability Testing (Testing + Validation)" },
-      { title: "Module 10: Prototyping (Animation + Flow)" },
-      { title: "Module 11: Design Systems (Consistency + Components)" },
-      { title: "Module 12: UX Writing (Content + Clarity)" },
-      { title: "Module 13: Portfolio Building (Presentation + Storytelling)" },
-      { title: "Module 14: Career Preparation (Jobs + Interviews)" },
-    ]}
-  />
-</div>
+        {/* SYLLABUS */}
+        <div className="mb-10 w-full" ref={modulesRef}>
+          <SyllabusList items={syllabus} />
+        </div>
 
-{/* CERTIFICATE */}
+        {/* CERTIFICATE */}
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
             Get a Completion Certificate
           </h4>
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Showcase your UI/UX expertise and boost your LinkedIn
+            Showcase your Social Media marketing expertise and boost your LinkedIn
             profile.
           </p>
 
           <div className="mb-6 flex justify-center">
             <img
-              src="/logos/certificate.jpg"
+              src="/logos/certificate-sample.jpg"
               alt="Certificate Example"
               className="w-150 h-auto rounded-md border shadow"
             />
           </div>
         </div>
 
+        {/* ABOUT */}
+        <div className="bg-white rounded-md shadow p-6 mb-10">
+          <h4 className="font-semibold mb-3">About the Course</h4>
+          <p className="text-sm text-gray-700">
+            A complete industry-ready Social Media marketing curriculum covering SEO,
+            PPC, content, AI tools, branding, D2C, funnels, CRO, analytics, and
+            full-funnel marketing frameworks.
+          </p>
+        </div>
 
- {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}
+         {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}
         <section id="videos" className="py-16 px-6 bg-white">
 
           <div className="max-w-6xl mx-auto">
@@ -319,43 +386,32 @@ export default function CoursePage() {
           </div>
         </section>
 
-
         {/* FAQ */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-4">FAQs</h4>
-          <FAQAccordion
-            faqs={[
-              { q: "Is this course beginner-friendly?", a: "Yes, no prior experience required." },
-              { q: "Will I learn Figma?", a: "Yes, full Figma mastery is included." },
-              { q: "Will this help me become a UI/UX designer?", a: "Yes, this covers everything needed for jobs." },
-            ]}
-          />
+          <FAQAccordion faqs={faqs} />
         </div>
 
-        {/* Instructor */}
+        {/* INSTRUCTOR */}
         <div className="bg-white rounded-md shadow p-6 flex gap-4 mb-10">
           <img
-            src="/logos/profile.png"
+            src={instructor.photo}
             className="w-20 h-20 rounded-full object-cover"
+            alt=""
           />
 
           <div>
-            <h5 className="font-semibold">Abhishek Kumar Shaw</h5>
-            <div className="text-sm text-gray-600 mb-2">
-              UI/UX Designer & Mentor
-            </div>
-            <p className="text-sm text-gray-700">
-              7+ years of UI/UX design experience, expert in Figma, User Research,
-              Prototyping, and Design Systems.
-            </p>
+            <h5 className="font-semibold">{instructor.name}</h5>
+            <div className="text-sm text-gray-600 mb-2">{instructor.title}</div>
+            <p className="text-sm text-gray-700">{instructor.bio}</p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="bg-white rounded-md shadow p-6 text-center">
-          <h4 className="font-semibold mb-2">Ready to start designing?</h4>
+          <h4 className="font-semibold mb-2">Ready to begin?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Learn UI/UX and build stunning portfolio case studies.
+            Start learning Social Media marketing today — it's completely free.
           </p>
           <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
             Start Learning
