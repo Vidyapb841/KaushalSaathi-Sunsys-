@@ -1,7 +1,6 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/home/page": "app/home/page.js",
-  "/coursepage/front/page": "app/coursepage/front/page.js",
   "/coursepage/SEO/page": "app/coursepage/SEO/page.js",
-  "/coursepage/hr/page": "app/coursepage/hr/page.js"
+  "/coursepage/hr/page": "app/coursepage/hr/page.js",
+  "/coursepage/front/page": "app/coursepage/front/page.js",
+  "/home/page": "app/home/page.js"
 }
