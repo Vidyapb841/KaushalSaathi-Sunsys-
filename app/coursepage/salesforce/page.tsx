@@ -139,14 +139,14 @@ export default function CoursePage() {
             </div>
 
             {/* RIGHT CARD */}
-            <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
-                <img
-                  src="/logos/15.png"
-                  alt="Course Hero"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
+  <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
+    <img
+      src="/logos/sale.PNG"
+      alt="Course Hero"
+      className="max-w-full max-h-full object-contain"
+    />
+  </div>
 
               <div className="text-sm">
                 <div className="text-green-700 font-bold text-lg">Live classes</div>

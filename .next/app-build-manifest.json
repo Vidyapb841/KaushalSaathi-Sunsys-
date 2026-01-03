@@ -16,35 +16,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/home/page.js"
     ],
-    "/coursepage/front/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/front/page.js"
-    ],
-    "/coursepage/ui-ux/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/ui-ux/page.js"
-    ],
-    "/coursepage/fashiond/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/fashiond/page.js"
-    ],
-    "/coursepage/makeup/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/makeup/page.js"
-    ],
     "/coursepage/SEO/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/coursepage/SEO/page.js"
     ],
-    "/coursepage/salesforce/page": [
+    "/coursepage/front/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/salesforce/page.js"
+      "static/chunks/app/coursepage/front/page.js"
+    ],
+    "/coursepage/hr/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/coursepage/hr/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

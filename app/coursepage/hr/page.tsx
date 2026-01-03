@@ -30,7 +30,7 @@ function SyllabusList({ items }) {
   return (
     <div className="bg-white rounded-md shadow-sm overflow-hidden">
       <div className="p-4 border-b" style={{ background: COLORS.highlight }}>
-        <strong>SEO Course Syllabus Overview</strong>
+        <strong>Syllabus Overview</strong>
       </div>
 
       <ul className="overflow-auto" style={{ ...listStyle }}>
@@ -99,116 +99,85 @@ export default function CoursePage() {
   };
 
   // -----------------------------------------------
-  // SEO SYLLABUS DATA
+  // HR SYLLABUS DATA
   // -----------------------------------------------
 
   const syllabus = [
-    { title: "Module 1: SEO Foundations (6 Hours) - How search engines work in 2026" },
-    { title: "Module 1: SEO Foundations (6 Hours) - Crawling, indexing & rendering" },
-    { title: "Module 1: SEO Foundations (6 Hours) - Search intent & user behavior" },
-    { title: "Module 1: SEO Foundations (6 Hours) - SEO vs Generative Engine Optimization (GEO)" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - Topic clustering & entity-based research" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - NLP-driven keyword discovery" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - Search journeys & zero-click searches" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - Voice & conversational queries" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - AI-assisted keyword research workflows" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Semantic SEO & NLP-friendly content structure" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Title tags, meta descriptions & CTR optimization" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Internal linking strategy" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Content freshness & decay management" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - EEAT & Helpful Content compliance" },
-    { title: "Module 4: Technical SEO (10 Hours) - Core Web Vitals (LCP, INP, CLS)" },
-    { title: "Module 4: Technical SEO (10 Hours) - Mobile-first & AI-first indexing" },
-    { title: "Module 4: Technical SEO (10 Hours) - Schema markup & rich results" },
-    { title: "Module 4: Technical SEO (10 Hours) - Crawl budget & log file analysis" },
-    { title: "Module 4: Technical SEO (10 Hours) - International SEO & hreflang" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - AI-human hybrid content workflows" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - SEO content briefs & frameworks" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - Topical authority building" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - Programmatic SEO fundamentals" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - Content pruning & consolidation" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - White-hat backlink strategies" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - Digital PR campaigns" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - Brand mentions & unlinked citations" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - Toxic link audits & recovery" },
-    { title: "Module 7: Local SEO (4 Hours) - Google Business Profile optimization" },
-    { title: "Module 7: Local SEO (4 Hours) - Local pack ranking factors" },
-    { title: "Module 7: Local SEO (4 Hours) - Reviews, proximity & trust signals" },
-    { title: "Module 7: Local SEO (4 Hours) - Multi-location SEO strategy" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - Category & product page optimization" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - Faceted navigation handling" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - Shopify & WooCommerce SEO" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - SEO-driven conversion optimization" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - GA4 & Search Console deep dive" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - SEO dashboards & KPIs" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - Traffic drop & penalty diagnosis" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - SEO forecasting & ROI modeling" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - Optimizing for AI-generated answers" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - SEO for ChatGPT, Copilot & Perplexity" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - Prompt engineering for SEO" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - Post-SERP search behavior" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - SEO audits & growth roadmaps" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - Client pitching & proposals" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - Automation basics (Sheets, APIs, AI)" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - Freelancing & in-house career paths" },
-    { title: "Capstone Project (10 Hours) - Full website SEO audit" },
-    { title: "Capstone Project (10 Hours) - Keyword & content strategy execution" },
-    { title: "Capstone Project (10 Hours) - Technical fixes implementation" },
-    { title: "Capstone Project (10 Hours) - AI-powered content deployment" },
-    { title: "Capstone Project (10 Hours) - Final performance & growth report" },
+    { title: "Module A: Talent Acquisition & Hiring - Job requirement understanding" },
+    { title: "Module A: Talent Acquisition & Hiring - Job description drafting" },
+    { title: "Module A: Talent Acquisition & Hiring - Job posting on portals & social platforms" },
+    { title: "Module A: Talent Acquisition & Hiring - Resume sourcing & screening" },
+    { title: "Module A: Talent Acquisition & Hiring - Interview scheduling & coordination" },
+    { title: "Module B: Screening, Selection & HR Operations - Shortlisting frameworks" },
+    { title: "Module B: Screening, Selection & HR Operations - Interview evaluation support" },
+    { title: "Module B: Screening, Selection & HR Operations - Offer coordination" },
+    { title: "Module B: Screening, Selection & HR Operations - Joining & onboarding process" },
+    { title: "Module B: Screening, Selection & HR Operations - HR documentation & compliance basics" },
+    { title: "Module C: Employer Branding & Company Image Building - HR role in brand perception" },
+    { title: "Module C: Employer Branding & Company Image Building - LinkedIn & social media hiring presence" },
+    { title: "Module C: Employer Branding & Company Image Building - Candidate experience management" },
+    { title: "Module C: Employer Branding & Company Image Building - Professional communication standards" },
+    { title: "Module D: Corporate HR Execution - Stakeholder coordination" },
+    { title: "Module D: Corporate HR Execution - Internal HR reporting" },
+    { title: "Module D: Corporate HR Execution - HR MIS basics" },
+    { title: "Module D: Corporate HR Execution - Confidentiality & ethics" },
+    { title: "Module E: Practical & Live Exposure - Live HR tasks" },
+    { title: "Module E: Practical & Live Exposure - Real job postings" },
+    { title: "Module E: Practical & Live Exposure - Actual candidate handling" },
+    { title: "Module E: Practical & Live Exposure - Performance-based evaluation" },
   ];
 
   const features = [
-    "Search Engine & AI Search Optimization (SEO + GEO)",
-    "Advanced Keyword Research & Topic Clustering",
-    "EEAT & Helpful Content Optimization",
-    "Technical SEO & Core Web Vitals",
-    "AI-Integrated Content Workflows",
-    "Link Building & Digital PR",
-    "Local & E-Commerce SEO",
-    "Analytics, Reporting & Career Readiness",
+    "Talent Acquisition & end-to-end hiring process",
+    "Job posting, resume screening & interview coordination",
+    "Shortlisting, selection & onboarding workflows",
+    "HR documentation & compliance management",
+    "Employer branding & social media presence",
+    "Candidate experience & professional communication",
+    "Corporate HR execution & stakeholder coordination",
+    "HR MIS, reporting & practical live exposure",
   ];
 
 const faqs = [
   {
-    q: "Is this SEO course really free?",
-    a: "Yes. This SEO Course Curriculum 2026 is completely free and includes live sessions, hands-on practice, and real-world SEO concepts."
+    q: "Is this HR course really free?",
+    a: "Yes. This course is completely free and includes live sessions, hands-on practice, and real-world HR concepts."
   },
   {
-    q: "Is AI included in this SEO course?",
-    a: "Yes. The course integrates AI tools, SGE (Search Generative Experience), and Generative SEO strategies throughout the curriculum."
+    q: "Who can enroll in this course?",
+    a: "Anyone can enroll. The course is designed for beginners, students, and professionals who want to build strong HR skills."
   },
   {
-    q: "Is this course beginner-friendly?",
-    a: "Yes. The course starts from SEO foundations and progresses to advanced topics like AI search optimization and technical SEO."
+    q: "Do I need prior HR experience?",
+    a: "No prior HR experience is required. Basic computer knowledge is enough. HR fundamentals are covered from scratch."
   },
   {
-    q: "Will this course help in getting SEO jobs or freelancing?",
-    a: "Yes. The course is designed to make you career-ready with real SEO projects, client pitching skills, and both freelancing and in-house career paths."
+    q: "Which HR domains will I learn?",
+    a: "You will learn Talent Acquisition, Screening & Selection, Employer Branding, Corporate HR Execution, and get practical live exposure."
   },
   {
-    q: "Do I get a certificate after completion?",
-    a: "Yes. You will receive a verified completion certificate after successfully finishing the course and capstone project."
+    q: "Will I get a certificate after completion?",
+    a: "Yes. A verified completion certificate will be provided after successfully finishing the course."
   },
   {
-    q: "What tools will I learn in this course?",
-    a: "You will learn GA4, Search Console, keyword research tools, AI-assisted workflows, schema markup, automation tools, and more."
+    q: "Is this course job-oriented?",
+    a: "Yes. The curriculum is designed to make you job-ready with industry-standard HR tools, workflows, and real-world use cases."
   },
   {
     q: "Will there be live classes or recordings?",
-    a: "Yes. The program includes instructor-led live sessions along with recordings for revision and self-paced learning."
+    a: "Yes. The program includes live instructor-led sessions along with recordings for revision."
   },
   {
-    q: "What projects will I work on?",
-    a: "You will complete a comprehensive capstone project including full website SEO audit, content strategy, technical fixes, and AI-powered deployment."
+    q: "What kind of projects will I work on?",
+    a: "You will work on real HR tasks such as job postings, resume screening, interview coordination, onboarding processes, and actual candidate handling."
   }
 ];
 
 
   const instructor = {
-    name: "Alex Morgan",
-    title: "SEO & AI Search Strategist",
-    bio: "12+ years of experience in SEO, AI search optimization, and enterprise growth strategies with leading global brands.",
+    name: "Sarah Thompson",
+    title: "HR & Talent Acquisition Specialist",
+    bio: "12+ years of experience in corporate HR and talent management with global brands.",
     photo: "/logos/profile.png",
   };
 
@@ -221,29 +190,30 @@ const faqs = [
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Course &gt; SEO
+                Home &gt; Course &gt; HR Management
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                SEO Course Curriculum 2026
+                HR Management Certification Course 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                AI-Integrated • Industry-Aligned • Career-Ready SEO Training
+                Become job-ready with a complete industry-standard
+                HR Management training program.
               </p>
 
               <div className="mt-5 text-sm text-slate-100 max-w-3xl">
                 <p className="mb-3">
-                 Master modern SEO including AI search, SGE, technical SEO, content strategy, 
-                 analytics, and real-world implementation with comprehensive 80-hour training.
+                 Covers talent acquisition, recruitment workflows, 
+                 HR operations, employer branding, corporate HR execution, and practical live exposure with real-world scenarios.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
-                  <Chip>Beginner to Advanced</Chip>
-                  <Chip>80 Hours Training</Chip>
+                  <Chip>Beginner to Professional</Chip>
+                  <Chip>4.8 ★ Rating</Chip>
                 </div>
               </div>
 
@@ -264,14 +234,14 @@ const faqs = [
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
   <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
     <img
-      src="/logos/seo.PNG"
-      alt="SEO Course"
+      src="/logos/hrm.PNG"
+      alt="Course Hero"
       className="max-w-full max-h-full object-contain"
     />
   </div>
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">Instructor-Led</div>
-                <div className="mt-1">Live + Hands-On Training</div>
+                <div className="text-green-700 font-bold text-lg">Live Classes</div>
+                <div className="mt-1">Instructor-Led Program</div>
               </div>
 
               <ul className="text-sm mt-3">
@@ -332,7 +302,7 @@ const faqs = [
             Get a Completion Certificate
           </h4>
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Showcase your SEO expertise and boost your LinkedIn
+            Showcase your HR Management expertise and boost your LinkedIn
             profile.
           </p>
 
@@ -349,9 +319,8 @@ const faqs = [
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
           <p className="text-sm text-gray-700">
-          A complete, industry-focused SEO curriculum designed to make you job-ready—covering search engine optimization,
-           AI search integration, keyword research, technical SEO, content strategy, analytics, and full implementation with hands-on projects. 
-           Delivery includes instructor-led sessions, hands-on assignments, real-world case studies, AI-assisted workflows, and a live capstone project.
+          A complete, industry-focused HR curriculum designed to make you job-ready—covering talent acquisition,
+           recruitment workflows, HR operations, employer branding, corporate execution, and practical exposure with real-world HR scenarios.
           </p>
         </div>
 
@@ -448,7 +417,7 @@ const faqs = [
         <div className="bg-white rounded-md shadow p-6 text-center">
           <h4 className="font-semibold mb-2">Ready to begin?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Start learning SEO today — it's completely free.
+            Start learning HR Management today — it's completely free.
           </p>
           <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
             Start Learning

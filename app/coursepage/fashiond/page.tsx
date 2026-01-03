@@ -226,11 +226,12 @@ const faqs = [
 
             {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
+      
+              <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
                 <img
-                  src="/logos/8.png"
-                  alt="Fashion Course"
-                  className="w-full h-full object-cover"
+                  src="/logos/fashd.PNG"
+                  alt="Interior Design"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
 

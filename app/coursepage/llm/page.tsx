@@ -102,7 +102,7 @@ export default function CoursePage() {
             {/* LEFT */}
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; LLM Course
+                Home &gt; Courses &gt; LLM Course
               </nav>
 
               <h1
@@ -142,7 +142,7 @@ export default function CoursePage() {
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
                           <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
                             <img
-                              src="/logos/13.png"
+                              src="/logos/llm.PNG"
                               alt="Course Hero"
                               className="max-w-full max-h-full object-contain"
                             />
