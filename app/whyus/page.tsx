@@ -12,7 +12,7 @@ export default function WhyUsSection() {
           <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#E1FFBB] rounded-tl-[60px] rounded-br-[60px]"></div>
 
           <Image
-            src="/logos/whybest.jpg"
+            src="/logos/whyb.jpg"
             alt="Students discussing learning"
             width={550}
             height={400}

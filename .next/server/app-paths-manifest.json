@@ -1,6 +1,6 @@
 {
-  "/coursepage/SEO/page": "app/coursepage/SEO/page.js",
-  "/coursepage/hr/page": "app/coursepage/hr/page.js",
-  "/coursepage/front/page": "app/coursepage/front/page.js",
-  "/home/page": "app/home/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/home/page": "app/home/page.js",
+  "/coursepage/makeup/page": "app/coursepage/makeup/page.js",
+  "/coursepage/English/page": "app/coursepage/English/page.js"
 }

@@ -16,20 +16,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/home/page.js"
     ],
-    "/coursepage/SEO/page": [
+    "/coursepage/makeup/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/SEO/page.js"
+      "static/chunks/app/coursepage/makeup/page.js"
     ],
-    "/coursepage/front/page": [
+    "/coursepage/English/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/front/page.js"
+      "static/chunks/app/coursepage/English/page.js"
     ],
-    "/coursepage/hr/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/coursepage/hr/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

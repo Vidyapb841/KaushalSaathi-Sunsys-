@@ -214,7 +214,7 @@ const faqs = [
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
               <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4">
                 <img
-                  src="/logos/10.png"
+                  src="/logos/pmh.png"
                   alt="Course Hero"
                   className="w-full h-full object-cover"
                 />
