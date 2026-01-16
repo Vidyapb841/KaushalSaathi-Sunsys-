@@ -31,7 +31,7 @@ export default function HeroSlider() {
               src={src}
               alt={`slide-${i}`}
               fill
-              className="object-cover"
+              className="object-contain bg-white"
               priority
             />
           </div>
