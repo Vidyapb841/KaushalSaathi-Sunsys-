@@ -28,7 +28,7 @@ function SyllabusList({ items }) {
   return (
     <div className="bg-white rounded-md shadow-sm overflow-hidden">
       <div className="p-4 border-b" style={{ background: COLORS.highlight }}>
-        <strong>SEO Course Syllabus Overview</strong>
+        <strong>FrontEnd Development Course Syllabus Overview</strong>
       </div>
 
       <ul className="overflow-auto max-h-56">
@@ -93,59 +93,68 @@ export default function CoursePage() {
     modulesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // ---------------- SEO SYLLABUS ------------------
+  // ---------------- Front END  SYLLABUS ------------------
   const syllabus = [
-    { title: "Module 1: SEO Foundations (6 Hours)" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours)" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours)" },
-    { title: "Module 4: Technical SEO (10 Hours)" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours)" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours)" },
-    { title: "Module 7: Local SEO (4 Hours)" },
-    { title: "Module 8: E-Commerce SEO (6 Hours)" },
-    { title: "Module 9: Analytics & Reporting (6 Hours)" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours)" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours)" },
-    { title: "Capstone Project: Full SEO Audit & Strategy (10 Hours)" },
+    { title: "Module 1:HTML Mastery" },
+    { title: "Module 2:CSS Core Styling" },
+    { title: "Module 3:Advanced CSS + UI" },
+    { title: "Module 4:JavaScript Foundations" },
+    { title: "Module 5:Modern JavaScript" },
+    { title: "Module 6:Version Control" },
+    { title: "Module 7:HTML Mastery - Round 2" },
+    { title: "Module 8:CSS Core Styling - Round 2" },
+    { title: "Module 9: Advanced CSS + UI - Round 2" },
+    { title: "Module 10:JavaScript Foundations - Round 2" },
+    { title: "Module 11:Modern JavaScript - Round 2" },
+    { title: "Module 12:Version Control - Round 2" },
+    { title: "Module 13:HTML Mastery - Round 3" },
+    { title: "Module 14:CSS Core Styling - Round 3" },
+    { title: "Module 15:Advanced CSS + UI - Round 3" },
+    { title: "Module 16:JavaScript Foundations - Round 3" },
+    { title: "Module 17:Version Control - Round 2" },
+    { title: "Module 18:Modern JavaScript - Round 3" },
+    { title: "Module 19:Version Control - Round 3" },
   ];
 
-  const features = [
-    "Search Engine & AI Search Optimization (SEO + GEO)",
-    "Advanced Keyword Research & Topic Clustering",
-    "EEAT & Helpful Content Optimization",
-    "Technical SEO & Core Web Vitals",
-    "AI-Integrated Content Workflows",
-    "Link Building & Digital PR",
-    "Local & E-Commerce SEO",
-    "Analytics, Reporting & Career Readiness",
-  ];
+const features = [
+  "HTML5, CSS3 & Modern JavaScript Fundamentals",
+  "Responsive Web Design (Flexbox, Grid & Media Queries)",
+  "Advanced JavaScript & DOM Manipulation",
+  "Modern UI Development with React",
+  "State Management & Component-Based Architecture",
+  "API Integration & Asynchronous Programming",
+  "Performance Optimization & Web Accessibility",
+  "Project-Based Learning, Git & Career Readiness",
+];
 
-  const faqs = [
-    {
-      q: "Is this SEO course free?",
-      a: "Yes, this SEO Course Curriculum 2026 is completely free.",
-    },
-    {
-      q: "Is AI included in this SEO course?",
-      a: "Yes, the course integrates AI tools, SGE, and Generative SEO strategies.",
-    },
-    {
-      q: "Is this course beginner-friendly?",
-      a: "Yes, it starts from fundamentals and progresses to advanced SEO.",
-    },
-    {
-      q: "Will this course help in getting SEO jobs or freelancing?",
-      a: "Yes, the course is designed to make you career-ready with real projects.",
-    },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, you will receive a completion certificate after finishing the course.",
-    },
-  ];
+
+const faqs = [
+  {
+    q: "Is this Front-End Development course free?",
+    a: "Yes, this Front-End Development Course 2026 is completely free.",
+  },
+  {
+    q: "Are modern frameworks like React included in this course?",
+    a: "Yes, the course covers React and modern front-end development practices.",
+  },
+  {
+    q: "Is this course beginner-friendly?",
+    a: "Yes, it starts from HTML, CSS, and JavaScript basics and progresses to advanced front-end concepts.",
+  },
+  {
+    q: "Will this course help in getting front-end developer jobs or internships?",
+    a: "Yes, the course is designed to make you job-ready with hands-on projects and real-world skills.",
+  },
+  {
+    q: "Do I get a certificate?",
+    a: "Yes, you will receive a completion certificate after successfully finishing the course.",
+  },
+];
+
 
   const instructor = {
     name: "Alex Morgan",
-    title: "SEO & AI Search Strategist",
+    title: "Front End Development Expert",
     bio: "12+ years of experience in SEO, AI search, and enterprise growth strategies.",
     photo: "/logos/profile.png",
   };
@@ -158,29 +167,29 @@ export default function CoursePage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-2">
               <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Course &gt; SEO
+                Home &gt; Course &gt; FrontEnd Development
               </nav>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                SEO Course Curriculum 2026
+                Certified FrontEnd Developer Curriculum 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                AI-Integrated • Industry-Aligned • Career-Ready SEO Training
+                AI-Integrated • Industry-Aligned • Career-Ready FrontEnd Development Training
               </p>
 
               <div className="mt-5 text-sm text-slate-100 max-w-3xl">
                 <p className="mb-3">
-                  Master modern SEO including AI search, SGE, technical SEO,
-                  content strategy, analytics, and real-world implementation.
+                 Master modern front-end development including HTML, CSS, JavaScript, React, responsive design, 
+                 performance optimization, and real-world project implementation.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
                   <Chip>Beginner to Advanced</Chip>
-                  <Chip>80 Hours Training</Chip>
+                  <Chip>Self Paced</Chip>
                 </div>
               </div>
 
