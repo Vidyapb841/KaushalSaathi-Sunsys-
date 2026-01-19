@@ -5,10 +5,20 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/admin/', '/dashboard/', '/private/'],
+      disallow: [
+        '/api/',
+        '/admin/',
+        '/dashboard/',
+        '/private/',
+        '/_next/',
+        '/static/',
+        '/login/',
+        '/register/',
+        '/test/',
+        '/temp/',
+      ],
     },
-    sitemap: 'https://kaushal-sathi-sunsys-q9rr.vercel.app/sitemap.xml',
-    host: 'https://kaushal-sathi-sunsys-q9rr.vercel.app',
+    sitemap: 'https://kaushal-saathi-sunsys.vercel.app/sitemap.xml',
+    host: 'https://kaushal-saathi-sunsys.vercel.app',
   }
 }
-// have to change the sitemap URL and host URL when deploying to production
