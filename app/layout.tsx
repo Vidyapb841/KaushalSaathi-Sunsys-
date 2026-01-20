@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kaushal-saathi-sunsys.vercel.app'),
   title: 'Kaushal Saathi - Empowering Skills Development in India',
   description: 'Kaushal Saathi is a comprehensive skill development platform offering vocational training, career guidance, and employment opportunities. Join thousands of learners in their journey to professional excellence.',
   keywords: 'skill development India, vocational training, career guidance, online courses, employment opportunities, skill India, Kaushal Saathi, digital learning',
