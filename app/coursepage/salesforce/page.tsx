@@ -1,5 +1,7 @@
 "use client";
-import React, { useState, useRef } from "react";
+export const dynamic = 'force-dynamic';
+import React, { useState, useRef, useEffect, Suspense } from "react";
+import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
 
 const COLORS = {
@@ -96,6 +98,14 @@ export default function CoursePage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* HERO */}
+      <Suspense fallback={
+        <div className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85">
+          <div className="h-16 bg-white/10"></div>
+        </div>
+      }>
+        <Navigation />
+      </Suspense>
+
       <section className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85 text-white">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
@@ -284,7 +294,9 @@ export default function CoursePage() {
         </div>
       </section>
 
-      <Footer />
+      <Suspense fallback={<div className="h-20 bg-gray-100"></div>}>
+        <Footer />
+      </Suspense>
     </main>
   );
 }

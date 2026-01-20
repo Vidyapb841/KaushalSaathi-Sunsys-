@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+export const dynamic = 'force-dynamic';
+import React, { useState, useRef, useEffect, Suspense } from "react";
+import { Navigation } from "@/components/navigation"
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

@@ -1,5 +1,8 @@
 "use client";
-import React, { useState, useRef } from "react";
+export const dynamic = 'force-dynamic';
+
+import React, { useState, useRef, useEffect, Suspense } from "react";
+import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
 
 const COLORS = {

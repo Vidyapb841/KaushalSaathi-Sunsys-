@@ -15,12 +15,20 @@ export function Navigation() {
   const [searchQuery, setSearchQuery] = useState("")
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const [user, setUser] = useState<any>(null)
+  const [isClient, setIsClient] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
   const profileRef = useRef<HTMLDivElement>(null)
 
-  // ⭐ LOAD USER ONLY IF login_success FLAG EXISTS
+  // Set isClient to true on mount (client-side only)
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // ⭐ LOAD USER ONLY IF login_success FLAG EXISTS - Client-side only
+  useEffect(() => {
+    if (!isClient) return;
+    
     const loginSuccess = localStorage.getItem("ks_login_success");
     const storedUser = localStorage.getItem("kaushalsaathi_user");
 
@@ -29,7 +37,7 @@ export function Navigation() {
     } else {
       setUser(null);
     }
-  }, []);
+  }, [isClient])
 
   // Close profile dropdown when clicking outside
   useEffect(() => {
@@ -44,19 +52,46 @@ export function Navigation() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    if (searchQuery.trim()) {
+    if (searchQuery.trim() && isClient) {
       router.push(`/search?query=${encodeURIComponent(searchQuery)}`)
       setSearchQuery("")
       setIsOpen(false)
     }
   }
 
-  // ⭐ LOGOUT
+  // ⭐ LOGOUT - Client-side only
   const handleLogout = () => {
+    if (!isClient) return;
     localStorage.removeItem("kaushalsaathi_user")
     localStorage.removeItem("ks_login_success")
     setUser(null)
     router.push("/login")
+  }
+
+  // Show loading state during SSR
+  if (!isClient) {
+    return (
+      <nav className="bg-[#001A6E] shadow-lg border-b border-border sticky top-0 z-50 text-white">
+        <div className="max-w-7xl mx-auto pl-0 pr-6">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo skeleton */}
+            <div className="flex items-center space-x-3 shrink-0">
+              <div className="h-16 w-64 bg-gray-300 animate-pulse rounded"></div>
+            </div>
+            
+            {/* Desktop nav skeleton */}
+            <div className="hidden md:flex items-center space-x-8">
+              <div className="h-4 w-16 bg-gray-300 animate-pulse rounded"></div>
+              <div className="h-4 w-20 bg-gray-300 animate-pulse rounded"></div>
+              <div className="h-10 w-60 bg-gray-300 animate-pulse rounded-full"></div>
+              <div className="h-10 w-20 bg-gray-300 animate-pulse rounded"></div>
+              <div className="h-10 w-20 bg-gray-300 animate-pulse rounded"></div>
+              <div className="h-10 w-24 bg-gray-300 animate-pulse rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    )
   }
 
   return (

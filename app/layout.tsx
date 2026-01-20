@@ -62,10 +62,7 @@ export const metadata: Metadata = {
   
   alternates: {
     canonical: 'https://kaushal-saathi-sunsys.vercel.app',
-  },
-  
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
-  
+  },  
   
   appleWebApp: {
     capable: true,
@@ -74,6 +71,10 @@ export const metadata: Metadata = {
   },
 }
 
+// export const viewport: Viewport = {
+//   width: 'device-width',
+//   initialScale: 1,
+// };
 export default function RootLayout({
   children,
 }: {

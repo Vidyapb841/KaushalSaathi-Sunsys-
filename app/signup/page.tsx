@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = 'force-dynamic';
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -68,7 +69,7 @@ export default function SignupPage() {
         <CardContent>
           <form className="space-y-4" onSubmit={handleSignup}>
             <div>
-              <Label className="text-[#E1FFBB]">Full Name</Label>
+              <label className="text-[#E1FFBB]">Full Name</label>
               <div className="relative">
                 <User className="absolute left-3 top-3 text-[#009990]" />
                 <Input
@@ -81,7 +82,7 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <Label className="text-[#E1FFBB]">Phone</Label>
+              <label className="text-[#E1FFBB]">Phone</label>
               <div className="relative">
                 <Phone className="absolute left-3 top-3 text-[#009990]" />
                 <Input
@@ -94,7 +95,7 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <Label className="text-[#E1FFBB]">Email</Label>
+              <label className="text-[#E1FFBB]">Email</label>
               <div className="relative">
                 <Mail className="absolute left-3 top-3 text-[#009990]" />
                 <Input
@@ -108,7 +109,7 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <Label className="text-[#E1FFBB]">Password</Label>
+              <label className="text-[#E1FFBB]">Password</label>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 text-[#009990]" />
                 <Input

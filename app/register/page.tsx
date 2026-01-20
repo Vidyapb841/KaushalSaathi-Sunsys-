@@ -1,4 +1,5 @@
 "use client"
+export const dynamic = 'force-dynamic';
 
 import type React from "react"
 
@@ -221,9 +222,9 @@ export default function RegisterPage() {
 
                   {/* Domain Selection */}
                   <div className="pt-4 border-t">
-                    <Label htmlFor="domain" className="text-base font-medium">
+                    <label htmlFor="domain" className="text-base font-medium">
                       Choose Your Domain
-                    </Label>
+                    </label>
                     <select
                       id="domain"
                       value={selectedDomain}
@@ -304,7 +305,7 @@ export default function RegisterPage() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="firstName">First Name *</Label>
+                          <label htmlFor="firstName">First Name *</label>
                           <Input
                             id="firstName"
                             name="firstName"
@@ -315,7 +316,7 @@ export default function RegisterPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="lastName">Last Name *</Label>
+                          <label htmlFor="lastName">Last Name *</label>
                           <Input
                             id="lastName"
                             name="lastName"
@@ -329,7 +330,7 @@ export default function RegisterPage() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="email">Email Address *</Label>
+                          <label htmlFor="email">Email Address *</label>
                           <Input
                             id="email"
                             name="email"
@@ -341,7 +342,7 @@ export default function RegisterPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="phone">Phone Number *</Label>
+                          <label htmlFor="phone">Phone Number *</label>
                           <Input
                             id="phone"
                             name="phone"
@@ -356,7 +357,7 @@ export default function RegisterPage() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="age">Age *</Label>
+                          <label htmlFor="age">Age *</label>
                           <Input
                             id="age"
                             name="age"
@@ -370,7 +371,7 @@ export default function RegisterPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="education">Highest Education *</Label>
+                          <label htmlFor="education">Highest Education *</label>
                           <select
                             id="education"
                             name="education"
@@ -395,7 +396,7 @@ export default function RegisterPage() {
                       <h3 className="text-lg font-semibold border-b pb-2">Background Information</h3>
 
                       <div>
-                        <Label htmlFor="experience">Previous Experience (if any)</Label>
+                        <label htmlFor="experience">Previous Experience (if any)</label>
                         <Textarea
                           id="experience"
                           name="experience"
@@ -407,7 +408,7 @@ export default function RegisterPage() {
                       </div>
 
                       <div>
-                        <Label htmlFor="motivation">Why do you want to join this course? *</Label>
+                        <label htmlFor="motivation">Why do you want to join this course? *</label>
                         <Textarea
                           id="motivation"
                           name="motivation"
@@ -421,7 +422,7 @@ export default function RegisterPage() {
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="availability">Weekly Availability *</Label>
+                          <label htmlFor="availability">Weekly Availability *</label>
                           <select
                             id="availability"
                             name="availability"
@@ -438,7 +439,7 @@ export default function RegisterPage() {
                           </select>
                         </div>
                         <div>
-                          <Label htmlFor="englishProficiency">English Proficiency *</Label>
+                          <label htmlFor="englishProficiency">English Proficiency *</label>
                           <select
                             id="englishProficiency"
                             name="englishProficiency"
@@ -468,9 +469,9 @@ export default function RegisterPage() {
                             checked={formData.deviceAccess}
                             onCheckedChange={(checked) => handleCheckboxChange("deviceAccess", checked as boolean)}
                           />
-                          <Label htmlFor="deviceAccess" className="text-sm">
+                          <label htmlFor="deviceAccess" className="text-sm">
                             I have access to a computer/laptop/smartphone for online learning *
-                          </Label>
+                          </label>
                         </div>
 
                         <div className="flex items-center space-x-2">
@@ -479,9 +480,9 @@ export default function RegisterPage() {
                             checked={formData.internetAccess}
                             onCheckedChange={(checked) => handleCheckboxChange("internetAccess", checked as boolean)}
                           />
-                          <Label htmlFor="internetAccess" className="text-sm">
+                          <label htmlFor="internetAccess" className="text-sm">
                             I have reliable internet connection for video classes and assignments *
-                          </Label>
+                          </label>
                         </div>
                       </div>
                     </div>
@@ -497,7 +498,7 @@ export default function RegisterPage() {
                             checked={formData.agreeTerms}
                             onCheckedChange={(checked) => handleCheckboxChange("agreeTerms", checked as boolean)}
                           />
-                          <Label htmlFor="agreeTerms" className="text-sm">
+                          <label htmlFor="agreeTerms" className="text-sm">
                             I agree to the{" "}
                             <Link href="#" className="text-primary hover:underline">
                               Terms of Service
@@ -507,7 +508,7 @@ export default function RegisterPage() {
                               Privacy Policy
                             </Link>{" "}
                             *
-                          </Label>
+                          </label>
                         </div>
 
                         <div className="flex items-start space-x-2">
@@ -516,10 +517,10 @@ export default function RegisterPage() {
                             checked={formData.agreeUpdates}
                             onCheckedChange={(checked) => handleCheckboxChange("agreeUpdates", checked as boolean)}
                           />
-                          <Label htmlFor="agreeUpdates" className="text-sm">
+                          <label htmlFor="agreeUpdates" className="text-sm">
                             I agree to receive course updates, announcements, and promotional materials via email and
                             SMS
-                          </Label>
+                          </label>
                         </div>
                       </div>
                     </div>

@@ -2,6 +2,7 @@ import CoursePage from "../../coursepage/page";
 import React from "react";
 import Image from "next/image";
 import fsHero from "/logos/fsw.jpg";
+export const dynamic = 'force-dynamic';
 
 export default function FullStackCoursePage() {
   const data = {
