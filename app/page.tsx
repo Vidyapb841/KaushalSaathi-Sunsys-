@@ -2,7 +2,8 @@
 import { redirect } from "next/navigation";
 import SEO from '@/components/SEO'
 import SchemaMarkup from '@/components/SchemaMarkup'
-
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 export default function Home() {
   const faqData = [
     {
@@ -24,8 +25,14 @@ export default function Home() {
     { name: "Skill Development", path: "/courses" }
   ]
   
+  useEffect(() => {
+    // Redirect to /home after 5 seconds
+    setTimeout(() => {
+      redirect("/home");
+    }, 5000);
+  }, []);
   // Immediately redirect to /home
-  redirect("/home");
+  // redirect("/home");
   
   return (
     <>

@@ -12,7 +12,7 @@ checkFile('robots.txt');
 checkFile('sitemap.xml');
 
 function checkGoogleVerification() {
-  const url = 'https://kaushal-saathi-sunsys.vercel.app';
+  const url = 'https://kaushal-saathi-sunsys.vercel.app/home';
   
   https.get(url, (res) => {
     let data = '';
@@ -54,7 +54,7 @@ function checkGoogleVerification() {
 }
 
 function checkFile(filename) {
-  const url = `https://kaushal-saathi-sunsys.vercel.app/${filename}`;
+  const url = `https://kaushal-saathi-sunsys.vercel.app/home/${filename}`;
   
   https.get(url, (res) => {
     if (res.statusCode === 200) {
