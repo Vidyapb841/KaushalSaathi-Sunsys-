@@ -3,6 +3,8 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
+import Link from "next/link";
+
 
 const COLORS = {
   primary: "#001A6E",
@@ -60,22 +62,24 @@ function SyllabusList({ items }) {
 }
 
 // ---------------- FAQ ------------------
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {faqs.map((f, i) => {
         const open = openIndex === i;
+
         return (
-          <div key={i} className="border rounded">
+          <div key={i} className="border rounded-md">
             <button
               className="w-full text-left px-4 py-3 flex justify-between items-center"
               onClick={() => setOpenIndex(open ? null : i)}
             >
               <span className="font-medium">{f.q}</span>
               <span
-                className="ml-4 text-xl"
+                className="ml-4 text-xl font-bold"
                 style={{ color: COLORS.secondary }}
               >
                 {open ? "−" : "+"}
@@ -83,7 +87,9 @@ function FAQAccordion({ faqs }) {
             </button>
 
             {open && (
-              <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
+              <div className="px-4 pb-4 text-sm text-gray-700">
+                {f.a}
+              </div>
             )}
           </div>
         );
@@ -91,6 +97,7 @@ function FAQAccordion({ faqs }) {
     </div>
   );
 }
+
 
 // ---------------- PAGE ------------------
 export default function CoursePage() {
@@ -178,9 +185,29 @@ const faqs = [
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {/* LEFT */}
             <div className="lg:col-span-2">
-              <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Social Media Marketing
-              </nav>
+<div className="mb-3">
+  <Link
+    href="/home"
+    className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-[#E1FFBB] transition-all duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 9.75L12 4l9 5.75M4.5 10.5V20h15v-9.5"
+      />
+    </svg>
+    <span>Home</span>
+  </Link>
+</div>
+
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
@@ -313,11 +340,14 @@ const faqs = [
         {/* ABOUT */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
-          <p className="text-sm text-gray-700">
-            A complete industry-ready Social Media marketing curriculum covering SEO,
-            PPC, content, AI tools, branding, D2C, funnels, CRO, analytics, and
-            full-funnel marketing frameworks.
-          </p>
+<p className="text-sm text-gray-700 leading-relaxed">
+  A comprehensive, industry-aligned Social Media Marketing program designed to take you from beginner to job-ready professional. This course covers the complete modern social media marketing stack—including content strategy, platform algorithms, community building, paid advertising (PPC), branding, influencer marketing, and AI-powered content tools—along with full-funnel marketing frameworks used by top brands.
+  <br /><br />
+  You will learn how to plan, create, publish, and optimize high-performing content across platforms like Instagram, Facebook, YouTube, LinkedIn, and X (Twitter). The curriculum emphasizes hands-on learning through real-world projects, case studies, and practical assignments covering SEO for social content, analytics, customer acquisition funnels, D2C strategies, conversion rate optimization (CRO), and performance marketing.
+  <br /><br />
+  By the end of the course, you will have built a strong social media marketing portfolio, gained practical experience with industry-standard tools like Meta Ads Manager, Google Ads, Canva, Hootsuite, and AI automation tools, and developed the confidence to apply for social media marketer roles, performance marketing roles, growth marketing roles, or freelance opportunities. This course is ideal for students, freshers, entrepreneurs, and professionals who want to build a future-proof career in social media marketing.
+</p>
+
         </div>
 
          {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}

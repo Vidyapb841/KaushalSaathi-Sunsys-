@@ -6,10 +6,9 @@ const COLORS = {
 };
 
 export default function FAQHome() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
-    // 📌 General FAQs
     {
       q: "What is Kaushal Sathi?",
       a: "Kaushal Sathi is a professional learning platform offering live skill-based courses in Full Stack Development, DevOps, Digital Marketing, Art & Beauty, Creative Design, HR, and Analytics. We also provide free internships and end-to-end placement assistance.",
@@ -30,8 +29,6 @@ export default function FAQHome() {
       q: "Do you provide placement support?",
       a: "Yes, we offer 100% placement assistance, including job referrals, resume building, interview preparation, and career guidance.",
     },
-
-    // 📌 Course-Specific FAQs
     {
       q: "What types of courses do you offer?",
       a: "We offer professional live courses in Full Stack Development, DevOps, Digital Marketing, Creative Design (UI/UX + Graphics), Art & Beauty Courses, HR Management, and Business & Data Analytics.",
@@ -52,8 +49,6 @@ export default function FAQHome() {
       q: "Do you provide certifications?",
       a: "Yes. Students receive a Kaushal Sathi Course Completion Certificate. Some programs also include industry-recognized certificates.",
     },
-
-    // 📌 Fees & Enrollment FAQs
     {
       q: "What are the fees for the courses?",
       a: "Fees vary by course. You can check the detailed fee structure on the course page or contact our support team.",
@@ -70,8 +65,6 @@ export default function FAQHome() {
       q: "Can I attend a demo class?",
       a: "Yes. We provide free demo sessions so you can understand the teaching style before enrolling.",
     },
-
-    // 📌 Learning Support FAQs
     {
       q: "Will I get study material?",
       a: "Yes. We provide PDF notes, practice files, tool access, recorded sessions, and project templates with every course.",
@@ -84,8 +77,6 @@ export default function FAQHome() {
       q: "Do you offer one-on-one doubt clearing?",
       a: "Yes. Mentors provide 1:1 doubt support during and after the live classes.",
     },
-
-    // 📌 Internship & Career Support FAQs
     {
       q: "What is included in your placement assistance?",
       a: "Our placement program covers resume & LinkedIn optimization, mock interviews, soft skill training, job alerts & referrals, internship opportunities, and portfolio building.",
@@ -104,17 +95,17 @@ export default function FAQHome() {
     <section className="max-w-6xl mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold text-center mb-6">FAQs</h2>
 
-      <div className="space-y-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {faqs.map((item, index) => {
           const open = openIndex === index;
 
           return (
             <div
               key={index}
-              className="border rounded-lg bg-white shadow-sm overflow-hidden"
+              className="border rounded-lg bg-white shadow-sm overflow-hidden break-inside-avoid min-h-[90px] flex flex-col justify-between"
             >
               <button
-                className="w-full text-left px-5 py-4 flex justify-between items-center font-medium"
+                className="w-full h-full text-left px-5 py-4 flex justify-between items-center font-medium"
                 onClick={() => setOpenIndex(open ? null : index)}
               >
                 <span>{item.q}</span>

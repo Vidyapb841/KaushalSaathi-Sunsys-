@@ -12,41 +12,48 @@ export default function AboutPage() {
       {/* =====================================
           TOP SECTION (IMAGE LEFT + TEXT RIGHT)
       ======================================== */}
-      <section className="w-full bg-white py-16 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
 
-          {/* IMAGE LEFT */}
-          <div className="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+          {/* IMAGE */}
+          <div className="relative w-full min-h-[450px] md:min-h-[600px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/logos/fullstack.jpg"
+              src="/logos/LST.png"
               alt="About Banner"
               fill
               priority
               unoptimized={true}
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
 
-          {/* TEXT RIGHT */}
-          <div className="text-[#001A6E]">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          {/* TEXT */}
+          <div className="flex flex-col justify-start h-full">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#001A6E]">
               We Transform Lives by Empowering People Via Digital Skills.
             </h1>
 
-            <div className="flex flex-col gap-6 mt-6">
+            {/* STATS — VERTICAL */}
+            <div className="flex flex-col gap-6 mt-10">
               <div>
-                <p className="text-5xl font-bold text-[#009990]">8M+</p>
-                <p className="text-lg text-gray-700">Careers Advanced</p>
+                <p className="text-4xl md:text-5xl font-bold text-[#009990]">1M+</p>
+                <p className="text-base md:text-lg text-gray-700">
+                  Careers Advanced
+                </p>
               </div>
 
               <div>
-                <p className="text-5xl font-bold text-[#009990]">1,500+</p>
-                <p className="text-lg text-gray-700">Live classes per month</p>
+                <p className="text-4xl md:text-5xl font-bold text-[#009990]">100+</p>
+                <p className="text-base md:text-lg text-gray-700">
+                  Live classes per month
+                </p>
               </div>
 
               <div>
-                <p className="text-5xl font-bold text-[#009990]">400+</p>
-                <p className="text-lg text-gray-700">Courses</p>
+                <p className="text-4xl md:text-5xl font-bold text-[#009990]">15+</p>
+                <p className="text-base md:text-lg text-gray-700">
+                  Courses
+                </p>
               </div>
             </div>
           </div>
@@ -65,7 +72,7 @@ export default function AboutPage() {
 
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
             KaushalSaathi is a women-centric initiative that uplifts and empowers
-            individuals through high-impact digital skills, career pathways, 
+            individuals through high-impact digital skills, career pathways,
             and lifestyle growth.
           </p>
 
@@ -138,140 +145,140 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-{/* =====================================
+
+      {/* =====================================
           TEAM SECTION
-======================================== */}
-<section className="py-16 px-6 bg-white">
-  <div className="max-w-5xl mx-auto text-center">
+      ======================================== */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
 
-    <h2 className="text-3xl font-bold text-[#001A6E] mb-6">Meet the Team</h2>
+          <h2 className="text-3xl font-bold text-[#001A6E] mb-6">
+            Meet the Team
+          </h2>
 
-    <p className="text-lg text-gray-600 leading-relaxed mb-6">
-      Our leadership and team members are passionate about creating impact 
-      through skill-building and empowerment.
-    </p>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Our leadership and team members are passionate about creating impact
+            through skill-building and empowerment.
+          </p>
 
-    <p className="text-lg text-gray-600 mb-4">
-      Our core team —{" "}
-      <a 
-        href="https://www.linkedin.com/in/vidya-p-b-03955a25b/"
-        className="text-[#009990] underline" 
-        target="_blank"
-      >
-        Vidya P. B
-      </a>
-      ,{" "}
-      <a 
-        href="https://www.linkedin.com/in/aneek-ghosh-a93127249"
-        className="text-[#009990] underline" 
-        target="_blank"
-      >
-        Aneek Ghosh
-      </a>
-      ,{" "}
-      <a 
-        href="https://www.linkedin.com/in/anushkajain1712"
-        className="text-[#009990] underline" 
-        target="_blank"
-      >
-        Anushka Jain
-      </a>
-      ,{" "}
-      <a 
-        href="https://www.linkedin.com/in/yogesh-lokhande-1b0b4029a/"
-        className="text-[#009990] underline" 
-        target="_blank"
-      >
-        Yogesh Lokhande
-      </a>
-    </p>
+          <p className="text-lg text-gray-600 mb-4">
+            Our core team —{" "}
+            <a
+              href="https://www.linkedin.com/in/vidya-p-b-03955a25b/"
+              className="text-[#009990] underline"
+              target="_blank"
+            >
+              Vidya P. B
+            </a>
+            ,{" "}
+            <a
+              href="https://www.linkedin.com/in/aneek-ghosh-a93127249"
+              className="text-[#009990] underline"
+              target="_blank"
+            >
+              Aneek Ghosh
+            </a>
+            ,{" "}
+            <a
+              href="https://www.linkedin.com/in/anushkajain1712"
+              className="text-[#009990] underline"
+              target="_blank"
+            >
+              Anushka Jain
+            </a>
+            ,{" "}
+            <a
+              href="https://www.linkedin.com/in/yogesh-lokhande-1b0b4029a/"
+              className="text-[#009990] underline"
+              target="_blank"
+            >
+              Yogesh Lokhande
+            </a>
+          </p>
 
-    <p className="text-lg text-gray-600">
-      Guided by{" "}
-      <a 
-        href="https://www.linkedin.com/in/ashwanigarg-chro/"
-        className="text-[#009990] underline" 
-        target="_blank"
-      >
-        Ashwani Garg
-      </a>
-      , CHRO at Sunsys Techsol Pvt. Ltd.
-    </p>
+          <p className="text-lg text-gray-600">
+            Guided by{" "}
+            <a
+              href="https://www.linkedin.com/in/ashwanigarg-chro/"
+              className="text-[#009990] underline"
+              target="_blank"
+            >
+              Ashwani Garg
+            </a>
+            , CHRO at Sunsys Techsol Pvt. Ltd.
+          </p>
 
-  </div>
-</section>
+        </div>
+      </section>
 
-{/* =====================================
+      {/* =====================================
           PARTNERS
-======================================== */}
-<section className="py-16 px-6 bg-gray-50">
-  <div className="max-w-5xl mx-auto text-center">
+      ======================================== */}
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto text-center">
 
-    <h2 className="text-3xl font-bold text-[#001A6E] mb-8">Our Partners</h2>
+          <h2 className="text-3xl font-bold text-[#001A6E] mb-8">
+            Our Partners
+          </h2>
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-      {/* Partner 1 */}
-      <a 
-        href="https://chalosaathi.com" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
-      >
-        <img 
-          src="/logos/chalosaathi.jpg" 
-          alt="ChaloSaathi" 
-          className="w-44 h-44 object-contain"
-        />
-      </a>
+            <a
+              href="https://chalosaathi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+            >
+              <img
+                src="/logos/chalosaathi.jpg"
+                alt="ChaloSaathi"
+                className="w-44 h-44 object-contain"
+              />
+            </a>
 
-      {/* Partner 2 */}
-      <a 
-        href="https://internsaathi.com" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
-      >
-        <img 
-          src="/logos/internsaathi.jpg" 
-          alt="InternSaathi" 
-          className="w-84 h-54 object-contain"
-        />
-      </a>
+            <a
+              href="https://internsaathi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+            >
+              <img
+                src="/logos/internsaathi.jpg"
+                alt="InternSaathi"
+                className="w-84 h-54 object-contain"
+              />
+            </a>
 
-      {/* Partner 3 */}
-      <a 
-        href="https://naukrisaathi.com" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
-      >
-        <img 
-          src="/logos/NAUKRISAATHI-Logo.jpg" 
-          alt="NaukriSaathi" 
-          className="w-44 h-44 object-contain"
-        />
-      </a>
+            <a
+              href="https://naukrisaathi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+            >
+              <img
+                src="/logos/NAUKRISAATHI-Logo.jpg"
+                alt="NaukriSaathi"
+                className="w-44 h-44 object-contain"
+              />
+            </a>
 
-      {/* Partner 4 */}
-      <a 
-        href="https://tasksaathi.com" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
-      >
-        <img 
-          src="/logos/task saathi png.png" 
-          alt="TaskSaathi" 
-          className="w-44 h-44 object-contain"
-        />
-      </a>
+            <a
+              href="https://tasksaathi.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-38 bg-white shadow-md rounded-xl flex items-center justify-center"
+            >
+              <img
+                src="/logos/task saathi png.png"
+                alt="TaskSaathi"
+                className="w-44 h-44 object-contain"
+              />
+            </a>
 
-    </div>
+          </div>
 
-  </div>
-</section>
-
+        </div>
+      </section>
 
       <Footer />
     </div>

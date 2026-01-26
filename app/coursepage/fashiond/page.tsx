@@ -3,6 +3,8 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
+import Link from "next/link";
+
 
 const COLORS = {
   primary: "#001A6E",
@@ -59,22 +61,24 @@ function SyllabusList({ items }) {
 }
 
 // ---------------- FAQ ------------------
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {faqs.map((f, i) => {
         const open = openIndex === i;
+
         return (
-          <div key={i} className="border rounded">
+          <div key={i} className="border rounded-md">
             <button
               className="w-full text-left px-4 py-3 flex justify-between items-center"
               onClick={() => setOpenIndex(open ? null : i)}
             >
               <span className="font-medium">{f.q}</span>
               <span
-                className="ml-4 text-xl"
+                className="ml-4 text-xl font-bold"
                 style={{ color: COLORS.secondary }}
               >
                 {open ? "−" : "+"}
@@ -82,7 +86,9 @@ function FAQAccordion({ faqs }) {
             </button>
 
             {open && (
-              <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
+              <div className="px-4 pb-4 text-sm text-gray-700">
+                {f.a}
+              </div>
             )}
           </div>
         );
@@ -90,6 +96,7 @@ function FAQAccordion({ faqs }) {
     </div>
   );
 }
+
 
 export default function CoursePageFashion() {
   const modulesRef = useRef(null);
@@ -183,9 +190,29 @@ const faqs = [
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {/* LEFT */}
             <div className="lg:col-span-2">
-              <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; SkillUp &gt; Fashion Design
-              </nav>
+<div className="mb-3">
+  <Link
+    href="/home"
+    className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-[#E1FFBB] transition-all duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 9.75L12 4l9 5.75M4.5 10.5V20h15v-9.5"
+      />
+    </svg>
+    <span>Home</span>
+  </Link>
+</div>
+
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
@@ -318,13 +345,14 @@ const faqs = [
         {/* ABOUT */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
-          <p className="text-sm text-gray-700">
-            This 6-month hands-on program builds strong foundational skills in
-            fashion, sewing, textile understanding, pattern drafting, garment
-            construction, illustration, embroidery & boutique management.
-            Tailored specifically to empower women and help them create income
-            opportunities.
-          </p>
+<p className="text-sm text-gray-700 leading-relaxed">
+  A comprehensive, industry-aligned Fashion Design and Boutique Management program designed to take you from beginner to job-ready professional in just 6 months. This hands-on course builds strong foundational skills in fashion design, sewing techniques, textile understanding, pattern drafting, garment construction, fashion illustration, and embroidery, along with essential business skills for running a boutique.
+  <br /><br />
+  You will learn how to transform creative ideas into professionally finished garments by working with real fabrics, sewing machines, and industry-standard design methods. The curriculum emphasizes practical learning through live workshops, guided projects, and real-world assignments covering custom tailoring, ethnic wear, western wear, embroidery techniques, and fabric sourcing.
+  <br /><br />
+  By the end of the program, you will have created a portfolio of original garments, gained the confidence to start your own boutique or tailoring business, and developed the skills required to take customer orders, manage production, price your products, and market your designs. This course is tailored specifically to empower women by helping them build independent income opportunities, launch home-based businesses, and pursue careers in fashion design and boutique management.
+</p>
+
         </div>
 
         {/* FAQ */}

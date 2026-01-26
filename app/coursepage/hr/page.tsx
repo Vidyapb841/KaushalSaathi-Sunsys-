@@ -3,6 +3,8 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
+import Link from "next/link";
+
 
 const COLORS = {
   primary: "#001A6E",
@@ -60,22 +62,24 @@ function SyllabusList({ items }) {
 }
 
 // ---------------- FAQ ------------------
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {faqs.map((f, i) => {
         const open = openIndex === i;
+
         return (
-          <div key={i} className="border rounded">
+          <div key={i} className="border rounded-md">
             <button
               className="w-full text-left px-4 py-3 flex justify-between items-center"
               onClick={() => setOpenIndex(open ? null : i)}
             >
               <span className="font-medium">{f.q}</span>
               <span
-                className="ml-4 text-xl"
+                className="ml-4 text-xl font-bold"
                 style={{ color: COLORS.secondary }}
               >
                 {open ? "−" : "+"}
@@ -83,7 +87,9 @@ function FAQAccordion({ faqs }) {
             </button>
 
             {open && (
-              <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
+              <div className="px-4 pb-4 text-sm text-gray-700">
+                {f.a}
+              </div>
             )}
           </div>
         );
@@ -91,6 +97,7 @@ function FAQAccordion({ faqs }) {
     </div>
   );
 }
+
 
 // ---------------- PAGE ------------------
 export default function CoursePage() {
@@ -104,30 +111,40 @@ export default function CoursePage() {
   // HR SYLLABUS DATA
   // -----------------------------------------------
 
-  const syllabus = [
-    { title: "Module A: Talent Acquisition & Hiring - Job requirement understanding" },
-    { title: "Module A: Talent Acquisition & Hiring - Job description drafting" },
-    { title: "Module A: Talent Acquisition & Hiring - Job posting on portals & social platforms" },
-    { title: "Module A: Talent Acquisition & Hiring - Resume sourcing & screening" },
-    { title: "Module A: Talent Acquisition & Hiring - Interview scheduling & coordination" },
-    { title: "Module B: Screening, Selection & HR Operations - Shortlisting frameworks" },
-    { title: "Module B: Screening, Selection & HR Operations - Interview evaluation support" },
-    { title: "Module B: Screening, Selection & HR Operations - Offer coordination" },
-    { title: "Module B: Screening, Selection & HR Operations - Joining & onboarding process" },
-    { title: "Module B: Screening, Selection & HR Operations - HR documentation & compliance basics" },
-    { title: "Module C: Employer Branding & Company Image Building - HR role in brand perception" },
-    { title: "Module C: Employer Branding & Company Image Building - LinkedIn & social media hiring presence" },
-    { title: "Module C: Employer Branding & Company Image Building - Candidate experience management" },
-    { title: "Module C: Employer Branding & Company Image Building - Professional communication standards" },
-    { title: "Module D: Corporate HR Execution - Stakeholder coordination" },
-    { title: "Module D: Corporate HR Execution - Internal HR reporting" },
-    { title: "Module D: Corporate HR Execution - HR MIS basics" },
-    { title: "Module D: Corporate HR Execution - Confidentiality & ethics" },
-    { title: "Module E: Practical & Live Exposure - Live HR tasks" },
-    { title: "Module E: Practical & Live Exposure - Real job postings" },
-    { title: "Module E: Practical & Live Exposure - Actual candidate handling" },
-    { title: "Module E: Practical & Live Exposure - Performance-based evaluation" },
-  ];
+const syllabus = [
+  { title: "Module 1: Talent Acquisition & Hiring Fundamentals" },
+  { title: "Module 1.1: Understanding Job Requirements & Role Analysis" },
+  { title: "Module 1.2: Job Description Drafting & Employer Branding" },
+  { title: "Module 1.3: Job Posting on Portals & Social Platforms" },
+  { title: "Module 1.4: Resume Sourcing & Screening Techniques" },
+  { title: "Module 1.5: Interview Scheduling & Candidate Coordination" },
+
+  { title: "Module 2: Screening, Selection & HR Operations" },
+  { title: "Module 2.1: Shortlisting Frameworks & Hiring Metrics" },
+  { title: "Module 2.2: Interview Evaluation Support" },
+  { title: "Module 2.3: Offer Letter Coordination & Salary Negotiation Basics" },
+  { title: "Module 2.4: Joining Formalities & Onboarding Process" },
+  { title: "Module 2.5: HR Documentation & Compliance Basics" },
+
+  { title: "Module 3: Employer Branding & Company Image Building" },
+  { title: "Module 3.1: HR Role in Brand Perception" },
+  { title: "Module 3.2: LinkedIn & Social Media Hiring Presence" },
+  { title: "Module 3.3: Candidate Experience Management" },
+  { title: "Module 3.4: Professional Communication Standards" },
+
+  { title: "Module 4: Corporate HR Execution" },
+  { title: "Module 4.1: Stakeholder Coordination" },
+  { title: "Module 4.2: Internal HR Reporting" },
+  { title: "Module 4.3: HR MIS Basics" },
+  { title: "Module 4.4: Confidentiality, Ethics & Data Privacy" },
+
+  { title: "Module 5: Practical & Live Exposure" },
+  { title: "Module 5.1: Live HR Tasks & Case Simulations" },
+  { title: "Module 5.2: Real Job Postings & Hiring Campaigns" },
+  { title: "Module 5.3: Actual Candidate Handling" },
+  { title: "Module 5.4: Performance-Based Evaluation & Feedback" },
+];
+
 
   const features = [
     "Talent Acquisition & end-to-end hiring process",
@@ -191,9 +208,29 @@ const faqs = [
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {/* LEFT */}
             <div className="lg:col-span-2">
-              <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Course &gt; HR Management
-              </nav>
+<div className="mb-3">
+  <Link
+    href="/home"
+    className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-[#E1FFBB] transition-all duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 9.75L12 4l9 5.75M4.5 10.5V20h15v-9.5"
+      />
+    </svg>
+    <span>Home</span>
+  </Link>
+</div>
+
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
@@ -320,10 +357,14 @@ const faqs = [
         {/* ABOUT */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
-          <p className="text-sm text-gray-700">
-          A complete, industry-focused HR curriculum designed to make you job-ready—covering talent acquisition,
-           recruitment workflows, HR operations, employer branding, corporate execution, and practical exposure with real-world HR scenarios.
-          </p>
+<p className="text-sm text-gray-700 leading-relaxed">
+  A comprehensive, industry-aligned Human Resources (HR) program designed to take you from beginner to job-ready HR professional. This course covers the complete modern HR stack—including talent acquisition, recruitment workflows, onboarding processes, HR operations, employer branding, corporate HR execution, and compliance fundamentals used by real organizations.
+  <br /><br />
+  You will learn how to manage the end-to-end employee lifecycle by working on real-world HR scenarios, case studies, and practical assignments. The curriculum emphasizes hands-on learning through resume screening, interview coordination, offer letter drafting, payroll basics, HR documentation, employee engagement strategies, and performance management processes.
+  <br /><br />
+  By the end of the program, you will have gained practical exposure to real HR workflows, built confidence to handle recruitment and HR operations tasks independently, and developed the skills required to apply for HR executive roles, talent acquisition roles, HR operations roles, or corporate HR positions. This course is ideal for students, freshers, and professionals who want to build a future-proof career in Human Resources and corporate management.
+</p>
+
         </div>
 
          {/* VIDEO SECTION */}

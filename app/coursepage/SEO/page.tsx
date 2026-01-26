@@ -3,6 +3,8 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
+import Link from "next/link";
+
 
 const COLORS = {
   primary: "#001A6E",
@@ -60,22 +62,24 @@ function SyllabusList({ items }) {
 }
 
 // ---------------- FAQ ------------------
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {faqs.map((f, i) => {
         const open = openIndex === i;
+
         return (
-          <div key={i} className="border rounded">
+          <div key={i} className="border rounded-md">
             <button
               className="w-full text-left px-4 py-3 flex justify-between items-center"
               onClick={() => setOpenIndex(open ? null : i)}
             >
               <span className="font-medium">{f.q}</span>
               <span
-                className="ml-4 text-xl"
+                className="ml-4 text-xl font-bold"
                 style={{ color: COLORS.secondary }}
               >
                 {open ? "−" : "+"}
@@ -83,7 +87,9 @@ function FAQAccordion({ faqs }) {
             </button>
 
             {open && (
-              <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
+              <div className="px-4 pb-4 text-sm text-gray-700">
+                {f.a}
+              </div>
             )}
           </div>
         );
@@ -91,6 +97,7 @@ function FAQAccordion({ faqs }) {
     </div>
   );
 }
+
 
 // ---------------- PAGE ------------------
 export default function CoursePage() {
@@ -105,59 +112,14 @@ export default function CoursePage() {
   // -----------------------------------------------
 
   const syllabus = [
-    { title: "Module 1: SEO Foundations (6 Hours) - How search engines work in 2026" },
-    { title: "Module 1: SEO Foundations (6 Hours) - Crawling, indexing & rendering" },
-    { title: "Module 1: SEO Foundations (6 Hours) - Search intent & user behavior" },
-    { title: "Module 1: SEO Foundations (6 Hours) - SEO vs Generative Engine Optimization (GEO)" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - Topic clustering & entity-based research" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - NLP-driven keyword discovery" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - Search journeys & zero-click searches" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - Voice & conversational queries" },
-    { title: "Module 2: Keyword Research 2.0 (6 Hours) - AI-assisted keyword research workflows" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Semantic SEO & NLP-friendly content structure" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Title tags, meta descriptions & CTR optimization" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Internal linking strategy" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - Content freshness & decay management" },
-    { title: "Module 3: On-Page SEO & EEAT (8 Hours) - EEAT & Helpful Content compliance" },
-    { title: "Module 4: Technical SEO (10 Hours) - Core Web Vitals (LCP, INP, CLS)" },
-    { title: "Module 4: Technical SEO (10 Hours) - Mobile-first & AI-first indexing" },
-    { title: "Module 4: Technical SEO (10 Hours) - Schema markup & rich results" },
-    { title: "Module 4: Technical SEO (10 Hours) - Crawl budget & log file analysis" },
-    { title: "Module 4: Technical SEO (10 Hours) - International SEO & hreflang" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - AI-human hybrid content workflows" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - SEO content briefs & frameworks" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - Topical authority building" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - Programmatic SEO fundamentals" },
-    { title: "Module 5: Content SEO & AI Integration (8 Hours) - Content pruning & consolidation" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - White-hat backlink strategies" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - Digital PR campaigns" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - Brand mentions & unlinked citations" },
-    { title: "Module 6: Link Building & Digital PR (6 Hours) - Toxic link audits & recovery" },
-    { title: "Module 7: Local SEO (4 Hours) - Google Business Profile optimization" },
-    { title: "Module 7: Local SEO (4 Hours) - Local pack ranking factors" },
-    { title: "Module 7: Local SEO (4 Hours) - Reviews, proximity & trust signals" },
-    { title: "Module 7: Local SEO (4 Hours) - Multi-location SEO strategy" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - Category & product page optimization" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - Faceted navigation handling" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - Shopify & WooCommerce SEO" },
-    { title: "Module 8: E-Commerce SEO (6 Hours) - SEO-driven conversion optimization" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - GA4 & Search Console deep dive" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - SEO dashboards & KPIs" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - Traffic drop & penalty diagnosis" },
-    { title: "Module 9: Analytics & Reporting (6 Hours) - SEO forecasting & ROI modeling" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - Optimizing for AI-generated answers" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - SEO for ChatGPT, Copilot & Perplexity" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - Prompt engineering for SEO" },
-    { title: "Module 10: AI Search, SGE & Future SEO (6 Hours) - Post-SERP search behavior" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - SEO audits & growth roadmaps" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - Client pitching & proposals" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - Automation basics (Sheets, APIs, AI)" },
-    { title: "Module 11: SEO Strategy & Career Readiness (4 Hours) - Freelancing & in-house career paths" },
-    { title: "Capstone Project (10 Hours) - Full website SEO audit" },
-    { title: "Capstone Project (10 Hours) - Keyword & content strategy execution" },
-    { title: "Capstone Project (10 Hours) - Technical fixes implementation" },
-    { title: "Capstone Project (10 Hours) - AI-powered content deployment" },
-    { title: "Capstone Project (10 Hours) - Final performance & growth report" },
+    { title: "Month 1: SEO Foundations" },
+    { title: "Month 2: Keyword Research & Content Strategy" },
+    { title: "Month 3: On-Page SEO & EEAT" },
+    { title: "Month 4: Technical SEO (24 Hours)" },
+    { title: "Month 5: Content SEO, AI Integration & Links" },
+    { title: "Month 6: Local, E-Commerce, Analytics & Future SEO" },
+    { title: "Capstone Project: Full SEO Audit & Implementation" },
+
   ];
 
   const features = [
@@ -216,15 +178,34 @@ const faqs = [
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* HERO */}
+     {/* HERO */}
       <section className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85 text-white">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
             {/* LEFT */}
             <div className="lg:col-span-2">
-              <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Course &gt; SEO
-              </nav>
+              <div className="mb-3">
+                <Link
+                  href="/home"
+                  className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-[#E1FFBB]"
+                >    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 9.75L12 4l9 5.75M4.5 10.5V20h15v-9.5"
+      />
+    </svg>
+                  <span>Home</span>
+                </Link>
+              </div>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
@@ -350,11 +331,14 @@ const faqs = [
         {/* ABOUT */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
-          <p className="text-sm text-gray-700">
-          A complete, industry-focused SEO curriculum designed to make you job-ready—covering search engine optimization,
-           AI search integration, keyword research, technical SEO, content strategy, analytics, and full implementation with hands-on projects. 
-           Delivery includes instructor-led sessions, hands-on assignments, real-world case studies, AI-assisted workflows, and a live capstone project.
-          </p>
+<p className="text-sm text-gray-700 leading-relaxed">
+  A comprehensive, industry-aligned SEO program designed to take you from beginner to job-ready SEO professional. This course covers the complete modern SEO stack—including search engine optimization fundamentals, AI search integration, keyword research, technical SEO, on-page and off-page SEO, content strategy, analytics, and full-funnel SEO implementation using industry-standard tools and frameworks.
+  <br /><br />
+  You will learn how to plan, execute, and scale data-driven SEO strategies for real websites and businesses. The curriculum emphasizes hands-on learning through instructor-led sessions, practical assignments, real-world case studies, and AI-assisted workflows covering site audits, keyword clustering, content optimization, link building, Core Web Vitals, schema markup, and local SEO.
+  <br /><br />
+  By the end of the program, you will have built a complete SEO portfolio, executed real SEO campaigns, and gained practical experience with tools like Google Search Console, Google Analytics (GA4), Ahrefs, SEMrush, Screaming Frog, and AI SEO platforms. You will also complete a live capstone project that demonstrates your ability to rank websites, drive organic traffic, and optimize performance—preparing you to apply for SEO specialist roles, digital marketing roles, growth marketing roles, or freelance SEO opportunities.
+</p>
+
         </div>
 
          {/* VIDEO SECTION */}

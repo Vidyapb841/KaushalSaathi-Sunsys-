@@ -247,74 +247,79 @@ export default function HomePage() {
 
       {/* Why Us Section */}
       <section className="w-full py-24 px-6 md:px-12 lg:px-20 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative flex justify-center items-center">
-            <Image
-              src="/logos/whybest.jpg"
-              alt="Why Us"
-              width={550}
-              height={400}
-              className="relative rounded-lg shadow-lg object-cover"
-            />
-          </div>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+<div className="relative flex justify-center md:justify-start items-start">
+  <Image
+    src="/logos/whyb.png"
+    alt="Why Us"
+    width={550}
+    height={400}
+    className="relative rounded-lg shadow-lg object-cover mt-2"
+  />
+</div>
+
 
           <div>
-            <h2 className="text-4xl font-extrabold text-[#001A6E] mb-4">
-              Why we are best <br />
-              <span className="text-[#009990]">from others?</span>
-            </h2>
+<h2 className="text-4xl md:text-5xl font-extrabold text-[#001A6E] mb-3 leading-tight">
+  Why we are best{" "}
+  <span className="text-[#009990]">from others?</span>
+</h2>
 
-            <p className="text-gray-700 mb-10">
-              Education that empowers you with skills that create real career
-              transformation.
-            </p>
 
-            {[
-              "Placement Support",
-              "Internship Opportunities",
-              "Live Classes",
-              "Best Class Instructors",
-              "Discover Courses",
-              "Flexible Course Plan",
-              "Align Skills & Goals",
-              "Post-Course Certificate",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-4 border border-gray-300 rounded-lg p-4 mb-4"
-              >
-                <div className="bg-[#E1FFBB] text-[#001A6E] font-bold rounded-full h-8 w-8 flex justify-center items-center">
-                  {index + 1}
-                </div>
+  <p className="text-gray-700 mb-10">
+    Education that empowers you with skills that create real career
+    transformation.
+  </p>
 
-                <div>
-                  <h3 className="font-semibold text-lg text-[#001A6E]">
-                    {item}
-                  </h3>
-                  <p className="text-gray-600 text-sm mt-1">
-                    {{
-                      "Placement Support":
-                        "Get complete placement assistance with resume building, mock interviews, and job referrals.",
-                      "Internship Opportunities":
-                        "Gain hands-on industry experience through guided internships.",
-                      "Live Classes":
-                        "Attend interactive live sessions for real-time learning and doubt-clearing.",
-                      "Best Class Instructors":
-                        "Get trained by industry experts with real-world experience.",
-                      "Discover Courses":
-                        "Learn at your own pace with structured lessons and expert guidance.",
-                      "Flexible Course Plan":
-                        "Study with complete freedom and choose schedules that fit your lifestyle.",
-                      "Align Skills & Goals":
-                        "Gain job-ready skills that match your career goals and industry demands.",
-                      "Post-Course Certificate":
-                        "Receive a verified certificate that enhances your professional credibility.",
-                    }[item]}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+  {/* GRID WRAPPER (THIS WAS MISSING) */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {[
+      "Placement Support",
+      "Internship Opportunities",
+      "Live Classes",
+      "Best Class Instructors",
+      "Discover Courses",
+      "Flexible Course Plan",
+      "Align Skills & Goals",
+      "Post-Course Certificate",
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="flex items-start gap-4 border border-gray-300 rounded-lg p-4"
+      >
+        <div className="bg-[#E1FFBB] text-[#001A6E] font-bold rounded-full h-8 w-8 flex justify-center items-center">
+          {index + 1}
+        </div>
+
+        <div>
+          <h3 className="font-semibold text-lg text-[#001A6E]">
+            {item}
+          </h3>
+          <p className="text-gray-600 text-sm mt-1">
+            {{
+              "Placement Support":
+                "Get complete placement assistance with resume building, mock interviews, and job referrals.",
+              "Internship Opportunities":
+                "Gain hands-on industry experience through guided internships.",
+              "Live Classes":
+                "Attend interactive live sessions for real-time learning and doubt-clearing.",
+              "Best Class Instructors":
+                "Get trained by industry experts with real-world experience.",
+              "Discover Courses":
+                "Learn at your own pace with structured lessons and expert guidance.",
+              "Flexible Course Plan":
+                "Study with complete freedom and choose schedules that fit your lifestyle.",
+              "Align Skills & Goals":
+                "Gain job-ready skills that match your career goals and industry demands.",
+              "Post-Course Certificate":
+                "Receive a verified certificate that enhances your professional credibility.",
+            }[item]}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
         </div>
       </section>
 

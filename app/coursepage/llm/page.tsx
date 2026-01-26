@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
+import Link from "next/link";
 
 const COLORS = {
   primary: "#001A6E",
@@ -57,29 +58,34 @@ function SyllabusList({ items }) {
   );
 }
 
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {faqs.map((f, i) => {
         const open = openIndex === i;
+
         return (
-          <div key={i} className="border rounded">
+          <div key={i} className="border rounded-md">
             <button
               className="w-full text-left px-4 py-3 flex justify-between items-center"
               onClick={() => setOpenIndex(open ? null : i)}
             >
               <span className="font-medium">{f.q}</span>
               <span
-                className="ml-4 text-xl"
+                className="ml-4 text-xl font-bold"
                 style={{ color: COLORS.secondary }}
               >
                 {open ? "−" : "+"}
               </span>
             </button>
+
             {open && (
-              <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
+              <div className="px-4 pb-4 text-sm text-gray-700">
+                {f.a}
+              </div>
             )}
           </div>
         );
@@ -87,6 +93,7 @@ function FAQAccordion({ faqs }) {
     </div>
   );
 }
+
 
 export default function CoursePage() {
   const modulesRef = useRef(null);
@@ -96,16 +103,34 @@ export default function CoursePage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* HERO */}
+     {/* HERO */}
       <section className="bg-gradient-to-b from-[#001A6E]/95 to-[#074799]/85 text-white">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
             {/* LEFT */}
             <div className="lg:col-span-2">
-              <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Courses &gt; LLM Course
-              </nav>
+              <div className="mb-3">
+                <Link
+                  href="/home"
+                  className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-[#E1FFBB]"
+                >    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 9.75L12 4l9 5.75M4.5 10.5V20h15v-9.5"
+      />
+    </svg>
+                  <span>Home</span>
+                </Link>
+              </div>
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
@@ -208,12 +233,12 @@ export default function CoursePage() {
         <div className="mb-10 w-full" ref={modulesRef}>
           <SyllabusList
             items={[
-              { title: "Month 1: Python, Math for ML & ML Fundamentals (Days 1–30)" },
-              { title: "Month 2: Deep Learning Foundations (Days 31–60)" },
-              { title: "Month 3: NLP Foundations & Vector Embeddings (Days 61–90)" },
-              { title: "Month 4: LLMs, Fine-Tuning & RAG Systems (Days 91–120)" },
-              { title: "Month 5: LLM Deployment, Agents & Automation (Days 121–150)" },
-              { title: "Month 6: Enterprise LLMs, Safety & Interview Prep (Days 151–180)" },
+              { title: "Month 1: Python, Math for ML & ML Fundamentals" },
+              { title: "Month 2: Deep Learning Foundations" },
+              { title: "Month 3: NLP Foundations & Vector Embeddings" },
+              { title: "Month 4: LLMs, Fine-Tuning & RAG Systems" },
+              { title: "Month 5: LLM Deployment, Agents & Automation" },
+              { title: "Month 6: Enterprise LLMs, Safety & Interview Prep" },
             ]}
           />
         </div>
@@ -223,7 +248,7 @@ export default function CoursePage() {
             Get a Completion Certificate
           </h4>
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Showcase your Social Media marketing expertise and boost your LinkedIn
+            Showcase your LLM an AI expertise and boost your LinkedIn
             profile.
           </p>
 
@@ -235,25 +260,59 @@ export default function CoursePage() {
             />
           </div>
         </div>
+        {/* ABOUT */}
+        <div className="bg-white rounded-md shadow p-6 mb-10">
+          <h4 className="font-semibold mb-3">About the Course</h4>
+<p className="text-sm text-gray-700 leading-relaxed">
+  A comprehensive, industry-aligned LLM (Large Language Models) program designed to take you from beginner to job-ready AI professional. This course covers the complete modern LLM stack—including NLP fundamentals, transformer architecture, prompt engineering, fine-tuning, embeddings, vector databases, and building real-world LLM-powered applications using industry-standard tools and frameworks.
+  <br /><br />
+  You will learn how to design, deploy, and optimize intelligent applications powered by large language models. The curriculum emphasizes hands-on learning through real-world projects, case studies, and practical assignments covering chatbots, AI agents, retrieval-augmented generation (RAG), document intelligence, API integrations, and cloud deployment of LLM solutions.
+  <br /><br />
+  By the end of the program, you will have built production-ready LLM applications, gained a strong understanding of model behavior, performance optimization, and ethical AI practices, and developed the confidence to apply for AI engineer, LLM engineer, machine learning engineer, or generative AI developer roles. This course is ideal for students, freshers, and professionals who want to build a future-proof career in artificial intelligence and generative AI.
+</p>
 
+
+        </div>
         {/* FAQ */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-4">FAQs</h4>
           <FAQAccordion
-            faqs={[
-              {
-                q: "Is this course beginner-friendly?",
-                a: "Yes, everything is taught from scratch.",
-              },
-              {
-                q: "Will I learn LLM Fine-Tuning and RAG?",
-                a: "Yes, full hands-on fine-tuning and RAG pipeline development is included.",
-              },
-              {
-                q: "Is this enough to get an AI/ML job?",
-                a: "Yes. This course covers skills needed for LLM Engineer, AI Engineer & ML Engineer roles.",
-              },
-            ]}
+faqs={[
+  {
+    q: "Is this course beginner-friendly?",
+    a: "Yes, everything is taught from scratch.",
+  },
+  {
+    q: "Will I learn LLM Fine-Tuning and RAG?",
+    a: "Yes, full hands-on fine-tuning and RAG pipeline development is included.",
+  },
+  {
+    q: "Is this enough to get an AI/ML job?",
+    a: "Yes. This course covers skills needed for LLM Engineer, AI Engineer & ML Engineer roles.",
+  },
+
+  {
+    q: "Do I need prior coding or AI knowledge?",
+    a: "Basic programming knowledge is helpful, but the course starts with fundamentals and gradually builds up to advanced AI concepts.",
+  },
+  {
+    q: "Will I work on real-world AI projects?",
+    a: "Yes, you will build real-world projects like chatbots, AI agents, RAG systems, and fine-tuned LLM applications.",
+  },
+  {
+    q: "Will I get a certificate after completing the course?",
+    a: "Yes, you will receive an industry-recognized completion certificate to showcase your AI skills.",
+  },
+  {
+    q: "Will I learn to use tools like LangChain, OpenAI API, and vector databases?",
+    a: "Yes, the course includes hands-on training with LangChain, OpenAI APIs, embeddings, and vector databases like Pinecone or FAISS.",
+  },
+  {
+    q: "Will this course help me with interviews and job preparation?",
+    a: "Yes, the course includes portfolio building, interview preparation, resume guidance, and career support for AI/ML roles.",
+  },
+]}
+
           />
         </div>
         

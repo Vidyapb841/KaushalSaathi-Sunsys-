@@ -3,6 +3,8 @@ export const dynamic = 'force-dynamic';
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer";
+import Link from "next/link";
+
 
 const COLORS = {
   primary: "#001A6E",
@@ -56,22 +58,24 @@ function SyllabusList({ items }) {
   );
 }
 
+// ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {faqs.map((f, i) => {
         const open = openIndex === i;
+
         return (
-          <div key={i} className="border rounded">
+          <div key={i} className="border rounded-md">
             <button
               className="w-full text-left px-4 py-3 flex justify-between items-center"
               onClick={() => setOpenIndex(open ? null : i)}
             >
               <span className="font-medium">{f.q}</span>
               <span
-                className="ml-4 text-xl"
+                className="ml-4 text-xl font-bold"
                 style={{ color: COLORS.secondary }}
               >
                 {open ? "−" : "+"}
@@ -79,7 +83,9 @@ function FAQAccordion({ faqs }) {
             </button>
 
             {open && (
-              <div className="px-4 pb-4 text-sm text-gray-700">{f.a}</div>
+              <div className="px-4 pb-4 text-sm text-gray-700">
+                {f.a}
+              </div>
             )}
           </div>
         );
@@ -87,6 +93,7 @@ function FAQAccordion({ faqs }) {
     </div>
   );
 }
+
 
 export default function CoursePage({
   title = "Full Stack Developer Certification 2026",
@@ -179,9 +186,29 @@ export default function CoursePage({
 
             {/* LEFT */}
             <div className="lg:col-span-2">
-              <nav className="text-sm mb-3 text-slate-200">
-                Home &gt; Course &gt; Course Page
-              </nav>
+<div className="mb-3">
+  <Link
+    href="/home"
+    className="inline-flex items-center gap-2 text-sm text-slate-200 hover:text-[#E1FFBB] transition-all duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 9.75L12 4l9 5.75M4.5 10.5V20h15v-9.5"
+      />
+    </svg>
+    <span>Home</span>
+  </Link>
+</div>
+
 
               <h1
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
@@ -318,11 +345,14 @@ export default function CoursePage({
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
 
-          <p className="text-sm text-gray-700">
-            This 6-month Full Stack roadmap covers everything from frontend
-            fundamentals to backend systems, databases, DevOps basics,
-            cloud deployment, and interview preparation with projects.
-          </p>
+<p className="text-sm text-gray-700 leading-relaxed">
+  A comprehensive, industry-aligned Full Stack Development program designed to take you from beginner to job-ready professional in 6 months. This roadmap covers the complete web development stack—from front-end fundamentals like HTML, CSS, JavaScript, and modern UI frameworks to back-end systems including server-side programming, RESTful APIs, databases, authentication, and scalable architecture.
+  <br /><br />
+  You will gain hands-on experience building real-world applications while learning DevOps basics, version control with Git, cloud deployment, and modern development workflows. The curriculum also includes interview preparation, coding practice, and portfolio development to ensure you are fully prepared for full stack developer roles.
+  <br /><br />
+  By the end of the program, you will have built multiple production-ready projects, developed a strong understanding of both front-end and back-end technologies, and gained the confidence to apply for full stack developer roles, internships, or freelance opportunities. This course is ideal for students, freshers, and professionals who want to become well-rounded, future-ready software developers.
+</p>
+
         </div>
 
          {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}

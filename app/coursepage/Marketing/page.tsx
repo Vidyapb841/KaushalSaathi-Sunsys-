@@ -26,6 +26,7 @@ function Chip({ children }) {
 
 function SyllabusList({ items }) {
   const [showAll, setShowAll] = useState(false);
+
   const visibleItems = showAll ? items : items.slice(0, 4);
 
   return (
@@ -38,9 +39,10 @@ function SyllabusList({ items }) {
         {visibleItems.map((it, i) => (
           <li
             key={i}
-            className="flex justify-start font-bold items-center px-4 py-3 border-b last:border-b-0"
+            className="flex justify-between items-center px-4 py-3 border-b last:border-b-0"
           >
-            <div className="text-sm text-left">{it.title}</div>
+            <div className="text-sm font-semibold">{it.title}</div>
+            <div className="text-xs text-gray-600">{it.time}</div>
           </li>
         ))}
       </ul>
@@ -57,7 +59,6 @@ function SyllabusList({ items }) {
     </div>
   );
 }
-
 // ---------------- FAQ ------------------
 function FAQAccordion({ faqs }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -95,82 +96,11 @@ function FAQAccordion({ faqs }) {
 }
 
 
-export default function CoursePage({
-  title = "DevOps Engineering Certification Course 2026",
-  subtitle = "Become a job-ready DevOps Developer with end-to-end hands-on training.",
-  rating = "4.9",
-  learners = "500+ learners",
-  level = "Beginner to Advanced",
-  description =
-    "This DevOps Roadmap equips you with essential skills in Linux, CI/CD, Docker, Kubernetes, AWS, Terraform, Ansible, and more. Build real-world projects and get job-ready in 6 months.",
-
-  syllabus = [
-    { title: "Month 1: Linux Mastery + Shell Scripting" },
-    { title: "Month 2:  Git, GitHub, Jenkins & CI/CD" },
-    { title: "Month 3: Docker, Containers & Kubernetes" },
-    { title: "Month 4: Helm, AWS Cloud, Load Balancing" },
-    { title: "Month 5: Terraform, Ansible & Infrastructure Automation " },
-    { title: "Month 6:  Monitoring, Security, Final Projects & Interview Prep" },
-  ],
-
-  features = [
-    "Linux Fundamentals & Shell Scripting"
-    ,"Version Control with Git & GitHub"
-    ,"Continuous Integration & Jenkins"
-    ,"Containerization with Docker"
-  ],
-
-  instructor = {
-    name: "Sarah Mitchell",
-    title: "DevOps Architect",
-    bio: "10+ years of experience in DevOPS, MERN stack, cloud deployments, and building scalable systems.",
-    photo: "/logos/profile.png",
-  },
-
-  faqs = [
-    { q: "Is this course free?", 
-      a: "Yes, this DevOps course is 100% free." },
-    {
-      q: "Do I get a certificate?",
-      a: "Yes, you will receive a verified completion certificate.",
-    },
-    {
-      q: "Do I need coding knowledge?",
-      a: "No. This course starts from absolute beginner level.",
-    },
-    {
-  q: "Will there be hands-on projects?",
-  a: "Yes. You will work on practical DevOps projects, including CI/CD pipelines and deployment setups."
-},
-{
-  q: "Are the classes live or recorded?",
-  a: "The program includes live instructor-led sessions along with recorded classes for revision."
-},
-{
-  q: "Can I switch to a DevOps role after this course?",
-  a: "Yes. With consistent practice and project experience, you can apply for entry-level DevOps roles."
-},
-{
-  q: "Do I need my own system to practice?",
-  a: "Yes. A basic laptop with internet access is sufficient to complete the hands-on labs."
-},
-{
-  q: "Will this course help me with cloud platforms?",
-  a: "Yes. You will get exposure to cloud platforms and modern deployment strategies."
-}
-  ],
-
-  heroImage = "/logos/4.png",
-}) {
+export default function CoursePage() {
   const modulesRef = useRef(null);
-  const videosRef = useRef(null);
 
   const handleExplore = () => {
     modulesRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleWatch = () => {
-    videosRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -209,25 +139,19 @@ export default function CoursePage({
                 className="text-3xl md:text-4xl font-extrabold leading-tight"
                 style={{ color: COLORS.highlight }}
               >
-                {title}
+                Marketing & Branding Professional Course 2026
               </h1>
 
               <p className="mt-3 text-lg text-slate-200 max-w-3xl">
-                {subtitle}
+               Learn Brand Management from beginner to advanced level — including brand strategy,
+                digital marketing, communication planning, growth frameworks, and portfolio building.
+
               </p>
 
               <div className="mt-5 text-sm text-slate-100 max-w-3xl">
-                <p className="mb-3">{description}</p>
-
                 <div className="flex flex-wrap gap-3">
-                  <div className="flex items-center gap-2">
-                    <span className="bg-white/10 px-2 py-1 rounded">
-                      {rating} ★
-                    </span>
-                    <span>{learners}</span>
-                  </div>
-
-                  <Chip>{level}</Chip>
+                  <Chip>Beginner to Advanced</Chip>
+                  <Chip>4.9 ★ Rating</Chip>
                 </div>
               </div>
 
@@ -239,11 +163,7 @@ export default function CoursePage({
                   Explore Course
                 </button>
 
-                {/* ⭐ Updated button */}
-                <button
-                  onClick={handleWatch}
-                  className="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-md font-medium"
-                >
+                <button className="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-md font-medium">
                   Watch Intro Video
                 </button>
               </div>
@@ -251,26 +171,27 @@ export default function CoursePage({
 
             {/* RIGHT CARD */}
             <aside className="bg-white rounded-md shadow-md p-5 text-gray-800">
-
   <div className="w-full h-36 rounded-md overflow-hidden bg-gray-100 mb-4 flex items-center justify-center">
     <img
-      src="/logos/dp.PNG"
+      src="/logos/M&B.jpeg"
       alt="Course Hero"
       className="max-w-full max-h-full object-contain"
     />
   </div>
+
               <div className="text-sm">
-                <div className="text-green-700 font-bold text-lg">Live Classes</div>
-                <div className="mt-1">Instructer-Led Program</div>
+                <div className="text-green-700 font-bold text-lg">Live classes</div>
+                <div className="mt-1">Instructor-Led Program</div>
               </div>
 
-              <ul className="text-sm mt-3">
-                <li className="flex justify-between py-1">
-                  <span>Completion Certificate</span>
-                  <span>Included</span>
-                </li>
-              
-              </ul>
+              <div className="mt-3">
+                <ul className="text-sm">
+                  <li className="flex justify-between py-1">
+                    <span>Completion Certificate</span>
+                    <span>Included</span>
+                  </li>
+                  </ul>
+                 </div> 
 
               <button className="w-full mt-4 bg-[#001A6E] hover:bg-[#073c8f] text-white py-2 rounded-md font-semibold">
                 Enroll Now
@@ -292,7 +213,16 @@ export default function CoursePage({
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {features.map((f, i) => (
+            {[
+                "Marketing Fundamentals",
+                "Brand Strategy & Positioning",
+                "Brand Identity & Storytelling",
+                "Digital Marketing",
+                "Communication Strategy",
+                "Performance Marketing",
+                "Sales & Growth Frameworks",
+                "Analytics & Reporting",]
+.map((skill, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center"
@@ -305,27 +235,34 @@ export default function CoursePage({
                     />
                   </svg>
                 </div>
-                <span className="text-sm">{f}</span>
+                <span>{skill}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* SYLLABUS */}
-        <div className="mb-10 w-full" ref={modulesRef}>
-          <div className="text-center">
-            <SyllabusList items={syllabus} />
-          </div>
-        </div>
+        {/* Syllabus */}
+<div className="mb-10 w-full" ref={modulesRef}>
+  <SyllabusList
+    items={[
+      { title: "Module 1: Marketing Fundamentals & Business Basics" },
+      { title: "Module 2: Digital Marketing Foundations" },
+      { title: "Module 3: Branding & Communication Strategy" },
+      { title: "Module 4: Performance Marketing & Tools" },
+      { title: "Module 5: Sales, Growth & Real Projects" },
+      { title: "Module 6: Portfolio Building & Career Readiness" },
+    ]}
+  />
+</div>
 
-        {/* CERTIFICATE */}
+{/* CERTIFICATE */}
         <div className="bg-white rounded-md shadow mb-4 p-5">
           <h4 className="font-semibold text-2xl mb-1">
-            Earn a Completion Certificate
+            Get a Completion Certificate
           </h4>
-
           <p className="text-md font-semibold text-gray-600 mb-10">
-            Showcase your development journey on LinkedIn and impress recruiters.
+            Showcase your Brand Management expertise and boost your LinkedIn
+            profile.
           </p>
 
           <div className="mb-6 flex justify-center">
@@ -336,22 +273,23 @@ export default function CoursePage({
             />
           </div>
         </div>
-
-        {/* ABOUT SECTION */}
+        {/* ABOUT */}
         <div className="bg-white rounded-md shadow p-6 mb-10">
           <h4 className="font-semibold mb-3">About the Course</h4>
 
 <p className="text-sm text-gray-700 leading-relaxed">
-  A comprehensive, industry-aligned DevOps Development program designed to take you from beginner to job-ready professional in just 6 months. This course covers the complete DevOps toolchain, including Linux fundamentals, shell scripting, Git and version control, CI/CD pipelines, containerization with Docker, orchestration with Kubernetes, cloud computing, and infrastructure automation.
+  A comprehensive, industry-aligned Brand Management program designed to take you from beginner to job-ready professional. This course covers the complete branding lifecycle—from marketing fundamentals and business basics to digital marketing, brand positioning, and communication strategy.
   <br /><br />
-  You will learn how to design, build, and manage scalable, reliable, and secure deployment pipelines used by modern tech companies. The curriculum emphasizes hands-on learning through real-world projects, cloud labs, and practical assignments covering continuous integration, continuous delivery, monitoring, logging, and system reliability engineering (SRE) concepts.
+  You will learn how to build, grow, and manage powerful brands by understanding consumer behavior, brand identity, storytelling, performance marketing, and growth frameworks. The curriculum emphasizes hands-on learning through real-world projects, case studies, campaign planning, and tool-based execution across digital platforms.
   <br /><br />
-  By the end of the course, you will have built production-grade CI/CD pipelines, deployed containerized applications to the cloud, automated infrastructure using Infrastructure as Code (IaC), and gained the confidence to apply for DevOps engineer roles, cloud engineer roles, or SRE roles. This course is ideal for students, freshers, and professionals who want to build a future-proof career in DevOps and cloud engineering.
+  By the end of the course, you will have built a professional brand portfolio, gained a strong understanding of branding strategy, marketing execution, and growth tactics, and developed the confidence to apply for brand manager roles, marketing strategist roles, growth marketer roles, or brand consulting positions. This course is ideal for students, freshers, entrepreneurs, and professionals who want to build a future-proof career in brand management and marketing.
 </p>
+
+
 
         </div>
 
-        {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}
+ {/* ⭐⭐ VIDEO SECTION WITH REF ⭐⭐ */}
         <section id="videos" className="py-16 px-6 bg-white">
 
           <div className="max-w-6xl mx-auto">
@@ -419,36 +357,75 @@ export default function CoursePage({
           </div>
         </section>
 
-        {/* FAQs */}
-        <div className="bg-white rounded-md shadow p-6 mb-10">
-          <h4 className="font-semibold mb-4">FAQs</h4>
-          <FAQAccordion faqs={faqs} />
-        </div>
 
-        {/* INSTRUCTOR */}
+{/* FAQ */}
+<div className="bg-white rounded-md shadow p-6 mb-10">
+  <h4 className="font-semibold mb-4">FAQs</h4>
+  <FAQAccordion
+    faqs={[
+      {
+        q: "Is this course beginner-friendly?",
+        a: "Yes, no prior marketing or business experience is required. The course starts from the fundamentals."
+      },
+      {
+        q: "Do I need any marketing or business background?",
+        a: "No, this course is designed for complete beginners and gradually builds advanced branding and marketing skills."
+      },
+      {
+        q: "Will I work on real-world brand projects?",
+        a: "Yes, you will work on real-world brand strategy projects, campaigns, and case studies to build your portfolio."
+      },
+      {
+        q: "What tools will I learn?",
+        a: "You will learn tools like Google Analytics (GA4), Meta Ads, Google Ads, Canva, and basic CRM and marketing automation tools."
+      },
+      {
+        q: "Will I get a certificate after completion?",
+        a: "Yes, you will receive an industry-recognized completion certificate after finishing the course."
+      },
+      {
+        q: "Is this course suitable for working professionals?",
+        a: "Yes, the course offers flexible schedules and learning options suitable for students and working professionals."
+      },
+      {
+        q: "Will this help me get a brand management or marketing job?",
+        a: "Yes, the course includes portfolio building, interview preparation, and career guidance to help you get hired."
+      },
+      {
+        q: "What career roles can I apply for after this course?",
+        a: "You can apply for roles such as Brand Manager, Marketing Executive, Growth Marketer, Digital Marketing Strategist, and Brand Consultant."
+      }
+    ]}
+  />
+</div>
+
+
+        {/* Instructor */}
         <div className="bg-white rounded-md shadow p-6 flex gap-4 mb-10">
           <img
-            src={instructor.photo}
+            src="/logos/profile.png"
             className="w-20 h-20 rounded-full object-cover"
           />
 
           <div>
-            <h5 className="font-semibold">{instructor.name}</h5>
-            <div className="text-sm text-gray-600 mb-2">{instructor.title}</div>
-            <p className="text-sm text-gray-700">{instructor.bio}</p>
+            <h5 className="font-semibold">Abhishek Kumar Shaw</h5>
+            <div className="text-sm text-gray-600 mb-2">
+              Brand Management Mentor
+            </div>
+            <p className="text-sm text-gray-700">
+              7+ years of Brand Management experience, expert in Figma, User Research,
+              Prototyping, and Design Systems.
+            </p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="bg-white rounded-md shadow p-6 text-center">
-          <h4 className="font-semibold mb-2">Ready to start learning?</h4>
+          <h4 className="font-semibold mb-2">Ready to start designing?</h4>
           <p className="text-sm text-gray-600 mb-4">
-            Begin your Devops Development journey today — it's absolutely free.
+            Learn Brand Management and build stunning portfolio case studies.
           </p>
-          <button
-            onClick={handleWatch}
-            className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md"
-          >
+          <button className="bg-[#009990] hover:bg-[#007f6f] text-white px-6 py-2 rounded-md">
             Start Learning
           </button>
         </div>
