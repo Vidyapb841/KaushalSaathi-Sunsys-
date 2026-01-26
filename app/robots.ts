@@ -18,7 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         '/temp/',
       ],
     },
-    sitemap: 'https://kaushal-saathi-sunsys.vercel.app/sitemap.xml',
-    host: 'https://kaushal-saathi-sunsys.vercel.app',
+    sitemap: 'https://kaushal-saathi-sunsys.vercel.app/home/sitemap.xml',
+    host: 'https://kaushal-saathi-sunsys.vercel.app/home',
   }
 }

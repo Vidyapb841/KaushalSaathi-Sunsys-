@@ -7,7 +7,7 @@ export const revalidate = 0;
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kaushal-saathi-sunsys.vercel.app'),
+  metadataBase: new URL('https://kaushal-saathi-sunsys.vercel.app/home'),
   title: 'Kaushal Saathi - Empowering Skills Development in India',
   description: 'Kaushal Saathi is a comprehensive skill development platform offering vocational training, career guidance, and employment opportunities. Join thousands of learners in their journey to professional excellence.',
   keywords: 'skill development India, vocational training, career guidance, online courses, employment opportunities, skill India, Kaushal Saathi, digital learning',
@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kaushal Saathi - Empowering Skills Development',
     description: 'Join India\'s premier skill development platform for vocational training and career growth',
-    url: 'https://kaushal-saathi-sunsys.vercel.app',
+    url: 'https://kaushal-saathi-sunsys.vercel.app/home',
     siteName: 'Kaushal Saathi',
     images: [
       {
-        url: 'https://kaushal-saathi-sunsys.vercel.app/images/og-image.jpg',
+        url: 'https://kaushal-saathi-sunsys.vercel.app/home/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Kaushal Saathi - Skill Development Platform',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kaushal Saathi - Empowering Skills Development',
     description: 'India\'s leading platform for skill development and vocational training',
-    images: ['https://kaushal-saathi-sunsys.vercel.app/images/twitter-image.jpg'],
+    images: ['https://kaushal-saathi-sunsys.vercel.app/home/images/twitter-image.jpg'],
     creator: '@kaushalsaathi',
     site: '@kaushalsaathi',
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   category: 'Education',
   
   alternates: {
-    canonical: 'https://kaushal-saathi-sunsys.vercel.app',
+    canonical: 'https://kaushal-saathi-sunsys.vercel.app/home',
   },  
   
   appleWebApp: {
@@ -125,13 +125,13 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
-              "@id": "https://kaushal-saathi-sunsys.vercel.app/#organization",
+              "@id": "https://kaushal-saathi-sunsys.vercel.app/home/#organization",
               "name": "Kaushal Saathi",
               "alternateName": "Kaushal Saathi Skill Development Platform",
               "description": "India's leading platform for skill development, vocational training, and career advancement",
-              "url": "https://kaushal-saathi-sunsys.vercel.app",
-              "logo": "https://kaushal-saathi-sunsys.vercel.app/logo.png",
-              "image": "https://kaushal-saathi-sunsys.vercel.app/images/og-image.jpg",
+              "url": "https://kaushal-saathi-sunsys.vercel.app/home",
+              "logo": "https://kaushal-saathi-sunsys.vercel.app/home/logo.png",
+              "image": "https://kaushal-saathi-sunsys.vercel.app/home/images/og-image.jpg",
               "foundingDate": "2023",
               "founders": [
                 {
@@ -176,20 +176,20 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://kaushal-saathi-sunsys.vercel.app/#website",
+              "@id": "https://kaushal-saathi-sunsys.vercel.app/home/#website",
               "name": "Kaushal Saathi",
               "alternateName": "Skill Development Platform",
-              "url": "https://kaushal-saathi-sunsys.vercel.app",
+              "url": "https://kaushal-saathi-sunsys.vercel.app/home",
               "description": "Comprehensive skill development and career advancement platform",
               "publisher": {
-                "@id": "https://kaushal-saathi-sunsys.vercel.app/#organization"
+                "@id": "https://kaushal-saathi-sunsys.vercel.app/home/#organization"
               },
               "inLanguage": "en-IN",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://kaushal-saathi-sunsys.vercel.app/search?q={search_term_string}"
+                  "urlTemplate": "https://kaushal-saathi-sunsys.vercel.app/home/search?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
               }
@@ -204,10 +204,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
-              "@id": "https://kaushal-saathi-sunsys.vercel.app/#localbusiness",
+              "@id": "https://kaushal-saathi-sunsys.vercel.app/home/#localbusiness",
               "name": "Kaushal Saathi",
-              "image": "https://kaushal-saathi-sunsys.vercel.app/logo.png",
-              "url": "https://kaushal-saathi-sunsys.vercel.app",
+              "image": "https://kaushal-saathi-sunsys.vercel.app/home/logo.png",
+              "url": "https://kaushal-saathi-sunsys.vercel.app/home",
               "telephone": "+91-XXXXXXXXXX",
               "address": {
                 "@type": "PostalAddress",
@@ -258,7 +258,7 @@ export default function RootLayout({
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://kaushal-saathi-sunsys.vercel.app"
+                  "item": "https://kaushal-saathi-sunsys.vercel.app/home"
                 }
               ]
             })
