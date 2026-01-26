@@ -325,3 +325,9 @@ export default function HomePage() {
     </div>
   );
 }
+
+export const metadata = {
+  alternates: {
+    canonical: "https://kaushal-saathi-sunsys.vercel.app/home"
+  }
+}
