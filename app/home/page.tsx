@@ -327,7 +327,10 @@ export default function HomePage() {
 }
 
 export const metadata = {
+  title: "Home - Kaushal Saathi",
+  description: "Your description",
   alternates: {
-    canonical: "https://kaushal-saathi-sunsys.vercel.app/home"
-  }
-}
+    canonical: "https://kaushal-saathi-sunsys.vercel.app/home",
+  },
+};
+
